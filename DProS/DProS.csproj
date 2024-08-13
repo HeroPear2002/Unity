@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D069DBD2-9E00-41AB-9691-5B44560E2016}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DProS</RootNamespace>
+    <AssemblyName>DProS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WMPLib.1.0.0\lib\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="ExcelDataReader, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.7.0\lib\netstandard2.0\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.7.0\lib\netstandard2.0\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WMPLib.1.0.0\lib\Interop.WMPLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CommonConstant.cs" />
+    <Compile Include="Common\CustomEvent.cs" />
+    <Compile Include="Common\ExcelReader.cs" />
+    <Compile Include="Common\SendMail.cs" />
+    <Compile Include="DeviceManagement\frmCategoryDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategoryDevice.Designer.cs">
+      <DependentUpon>frmCategoryDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategoryMainten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategoryMainten.Designer.cs">
+      <DependentUpon>frmCategoryMainten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCharMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCharMachine.Designer.cs">
+      <DependentUpon>frmCharMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCheckMachineQrCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCheckMachineQrCode.Designer.cs">
+      <DependentUpon>frmCheckMachineQrCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCheckMachineQrCodeCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCheckMachineQrCodeCamera.Designer.cs">
+      <DependentUpon>frmCheckMachineQrCodeCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCheckMaintenDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCheckMaintenDevice.Designer.cs">
+      <DependentUpon>frmCheckMaintenDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmHistoryMainten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmHistoryMainten.Designer.cs">
+      <DependentUpon>frmHistoryMainten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategoryImportFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategoryImportFile.Designer.cs">
+      <DependentUpon>frmCategoryImportFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmMachineImportFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmMachineImportFile.Designer.cs">
+      <DependentUpon>frmMachineImportFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmInforDetailDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmInforDetailDevice.Designer.cs">
+      <DependentUpon>frmInforDetailDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmLayoutMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmLayoutMachine.Designer.cs">
+      <DependentUpon>frmLayoutMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmListDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmListDevice.Designer.cs">
+      <DependentUpon>frmListDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmMachineList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmMachineList.Designer.cs">
+      <DependentUpon>frmMachineList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategorySampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmCategorySampleForm.Designer.cs">
+      <DependentUpon>frmCategorySampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmMachineSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmMachineSampleForm.Designer.cs">
+      <DependentUpon>frmMachineSampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmHistoryEditMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmHistoryEditMachine.Designer.cs">
+      <DependentUpon>frmHistoryEditMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmSetupMainten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmSetupMainten.Designer.cs">
+      <DependentUpon>frmSetupMainten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmErrorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmErrorList.Designer.cs">
+      <DependentUpon>frmErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmSetupMaintenEditInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmSetupMaintenEditInfor.Designer.cs">
+      <DependentUpon>frmSetupMaintenEditInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\frmListDeviceEditMachineCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\frmListDeviceEditMachineCode.Designer.cs">
+      <DependentUpon>frmListDeviceEditMachineCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\rpMachineQRCodeLarge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\rpMachineQRCodeLarge.Designer.cs">
+      <DependentUpon>rpMachineQRCodeLarge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\rpMachineQRCodeMedium.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\rpMachineQRCodeMedium.Designer.cs">
+      <DependentUpon>rpMachineQRCodeMedium.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceManagement\rpMachineQRCodeSmall.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeviceManagement\rpMachineQRCodeSmall.Designer.cs">
+      <DependentUpon>rpMachineQRCodeSmall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmCategoryTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmCategoryTest.Designer.cs">
+      <DependentUpon>frmCategoryTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmCharCheckData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmCharCheckData.Designer.cs">
+      <DependentUpon>frmCharCheckData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmCharWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmCharWeather.Designer.cs">
+      <DependentUpon>frmCharWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmHistoryCheckData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmHistoryCheckData.Designer.cs">
+      <DependentUpon>frmHistoryCheckData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmLocation.Designer.cs">
+      <DependentUpon>frmLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmSetupMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmSetupMachine.Designer.cs">
+      <DependentUpon>frmSetupMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmTableCheckData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmTableCheckData.Designer.cs">
+      <DependentUpon>frmTableCheckData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineData\frmWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MachineData\frmWeather.Designer.cs">
+      <DependentUpon>frmWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DeviceManagement\frmCategoryDevice.resx">
+      <DependentUpon>frmCategoryDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCategoryMainten.resx">
+      <DependentUpon>frmCategoryMainten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCharMachine.resx">
+      <DependentUpon>frmCharMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCheckMachineQrCode.resx">
+      <DependentUpon>frmCheckMachineQrCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCheckMachineQrCodeCamera.resx">
+      <DependentUpon>frmCheckMachineQrCodeCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCheckMaintenDevice.resx">
+      <DependentUpon>frmCheckMaintenDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmHistoryMainten.resx">
+      <DependentUpon>frmHistoryMainten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCategoryImportFile.resx">
+      <DependentUpon>frmCategoryImportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmMachineImportFile.resx">
+      <DependentUpon>frmMachineImportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmInforDetailDevice.resx">
+      <DependentUpon>frmInforDetailDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmLayoutMachine.resx">
+      <DependentUpon>frmLayoutMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmListDevice.resx">
+      <DependentUpon>frmListDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmMachineList.resx">
+      <DependentUpon>frmMachineList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmCategorySampleForm.resx">
+      <DependentUpon>frmCategorySampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmMachineSampleForm.resx">
+      <DependentUpon>frmMachineSampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmHistoryEditMachine.resx">
+      <DependentUpon>frmHistoryEditMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmSetupMainten.resx">
+      <DependentUpon>frmSetupMainten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmErrorList.resx">
+      <DependentUpon>frmErrorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmSetupMaintenEditInfor.resx">
+      <DependentUpon>frmSetupMaintenEditInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\frmListDeviceEditMachineCode.resx">
+      <DependentUpon>frmListDeviceEditMachineCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\rpMachineQRCodeLarge.resx">
+      <DependentUpon>rpMachineQRCodeLarge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\rpMachineQRCodeMedium.resx">
+      <DependentUpon>rpMachineQRCodeMedium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceManagement\rpMachineQRCodeSmall.resx">
+      <DependentUpon>rpMachineQRCodeSmall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmCategoryTest.resx">
+      <DependentUpon>frmCategoryTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmCharCheckData.resx">
+      <DependentUpon>frmCharCheckData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmCharWeather.resx">
+      <DependentUpon>frmCharWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmHistoryCheckData.resx">
+      <DependentUpon>frmHistoryCheckData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmLocation.resx">
+      <DependentUpon>frmLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmSetupMachine.resx">
+      <DependentUpon>frmSetupMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmTableCheckData.resx">
+      <DependentUpon>frmTableCheckData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineData\frmWeather.resx">
+      <DependentUpon>frmWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{c4ee540a-10cc-45c7-9dcb-180d7a3325e7}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{f5a3f838-cc44-4535-aab0-182861e8bef9}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Progress\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
