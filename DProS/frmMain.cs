@@ -157,5 +157,23 @@ namespace DProS
 			CloseForm(typeof(frmCharCheckData));
 			OpenForm(typeof(frmCharCheckData));
 		}
+
+		private void btnLocation_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmLocation));
+			OpenForm(typeof(frmLocation));
+		}
+
+		private void btnWeather_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmWeather));
+			OpenForm(typeof(frmWeather));
+		}
+
+		private void btnCharWeather_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmCharWeather));
+			OpenForm(typeof(frmCharWeather));
+		}
 	}
 }

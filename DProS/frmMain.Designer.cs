@@ -1058,7 +1058,6 @@
             this.btnHistoryCheckData,
             this.accordionControlSeparator55,
             this.btnCharCheckData});
-			this.accordionControlElement42.Expanded = true;
 			this.accordionControlElement42.Name = "accordionControlElement42";
 			this.accordionControlElement42.Text = "DỮ LIỆU MÁY";
 			// 
@@ -1284,6 +1283,7 @@
 			this.btnLocation.Name = "btnLocation";
 			this.btnLocation.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnLocation.Text = "VỊ TRÍ ĐO";
+			this.btnLocation.Click += new System.EventHandler(this.btnLocation_Click);
 			// 
 			// accordionControlSeparator65
 			// 
@@ -1295,6 +1295,7 @@
 			this.btnWeather.Name = "btnWeather";
 			this.btnWeather.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnWeather.Text = "NHIỆT ĐỘ/ ĐỘ ẨM";
+			this.btnWeather.Click += new System.EventHandler(this.btnWeather_Click);
 			// 
 			// accordionControlSeparator66
 			// 
@@ -1306,6 +1307,7 @@
 			this.btnCharWeather.Name = "btnCharWeather";
 			this.btnCharWeather.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnCharWeather.Text = "BIỂU ĐỒ";
+			this.btnCharWeather.Click += new System.EventHandler(this.btnCharWeather_Click);
 			// 
 			// accordionControlSeparator67
 			// 

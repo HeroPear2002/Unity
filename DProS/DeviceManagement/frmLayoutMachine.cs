@@ -162,7 +162,7 @@ namespace DProS.DeviceManagement
 		{
 			await Task.Run(() =>
 			{
-				List<MachineDTO> listMachine = MachineDAO.Instance.GetList();
+				List<MachineDTO> listMachine = MachineDAO.Instance.GetList().Where(x => x.StatusMachine != 10).ToList();
 				foreach (var item1 in listMachine)
 				{
 					int statusMachine = item1.StatusMachine;

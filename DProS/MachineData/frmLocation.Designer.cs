@@ -31,7 +31,7 @@ namespace DProS.MachineData
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocation));
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-			this.gcLoaction = new DevExpress.XtraGrid.GridControl();
+			this.gcLocation = new DevExpress.XtraGrid.GridControl();
 			this.gvLocation = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.gvcId = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.gvcName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +56,7 @@ namespace DProS.MachineData
 			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gcLoaction)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gcLocation)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gvLocation)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -75,7 +75,7 @@ namespace DProS.MachineData
 			// 
 			// layoutControl1
 			// 
-			this.layoutControl1.Controls.Add(this.gcLoaction);
+			this.layoutControl1.Controls.Add(this.gcLocation);
 			this.layoutControl1.Controls.Add(this.btnInsert);
 			this.layoutControl1.Controls.Add(this.btnUpdate);
 			this.layoutControl1.Controls.Add(this.btnDelete);
@@ -91,14 +91,14 @@ namespace DProS.MachineData
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
-			// gcLoaction
+			// gcLocation
 			// 
-			this.gcLoaction.Location = new System.Drawing.Point(12, 38);
-			this.gcLoaction.MainView = this.gvLocation;
-			this.gcLoaction.Name = "gcLoaction";
-			this.gcLoaction.Size = new System.Drawing.Size(1128, 654);
-			this.gcLoaction.TabIndex = 10;
-			this.gcLoaction.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+			this.gcLocation.Location = new System.Drawing.Point(12, 38);
+			this.gcLocation.MainView = this.gvLocation;
+			this.gcLocation.Name = "gcLocation";
+			this.gcLocation.Size = new System.Drawing.Size(1128, 654);
+			this.gcLocation.TabIndex = 10;
+			this.gcLocation.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLocation});
 			// 
 			// gvLocation
@@ -107,13 +107,14 @@ namespace DProS.MachineData
             this.gvcId,
             this.gvcName});
 			this.gvLocation.DetailHeight = 404;
-			this.gvLocation.GridControl = this.gcLoaction;
+			this.gvLocation.GridControl = this.gcLocation;
 			this.gvLocation.Name = "gvLocation";
 			this.gvLocation.OptionsCustomization.AllowGroup = false;
 			this.gvLocation.OptionsSelection.MultiSelect = true;
 			this.gvLocation.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
 			this.gvLocation.OptionsView.ShowAutoFilterRow = true;
 			this.gvLocation.OptionsView.ShowGroupPanel = false;
+			this.gvLocation.Click += new System.EventHandler(this.gvLocation_Click);
 			// 
 			// gvcId
 			// 
@@ -322,7 +323,7 @@ namespace DProS.MachineData
 			// 
 			// layoutControlItem7
 			// 
-			this.layoutControlItem7.Control = this.gcLoaction;
+			this.layoutControlItem7.Control = this.gcLocation;
 			this.layoutControlItem7.Location = new System.Drawing.Point(0, 26);
 			this.layoutControlItem7.Name = "layoutControlItem7";
 			this.layoutControlItem7.Size = new System.Drawing.Size(1132, 658);
@@ -339,7 +340,7 @@ namespace DProS.MachineData
 			this.Text = "VỊ TRÍ ĐO";
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.gcLoaction)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gcLocation)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gvLocation)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -379,7 +380,7 @@ namespace DProS.MachineData
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
-		private DevExpress.XtraGrid.GridControl gcLoaction;
+		private DevExpress.XtraGrid.GridControl gcLocation;
 		private DevExpress.XtraGrid.Views.Grid.GridView gvLocation;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
 		private DevExpress.XtraGrid.Columns.GridColumn gvcId;

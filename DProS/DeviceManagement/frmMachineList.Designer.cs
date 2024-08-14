@@ -217,6 +217,7 @@
 			this.gvMachineList.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
 			this.gvMachineList.OptionsView.ShowAutoFilterRow = true;
 			this.gvMachineList.OptionsView.ShowGroupPanel = false;
+			this.gvMachineList.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvMachineList_RowStyle);
 			this.gvMachineList.Click += new System.EventHandler(this.gridView1_Click);
 			// 
 			// gvcMachineCode

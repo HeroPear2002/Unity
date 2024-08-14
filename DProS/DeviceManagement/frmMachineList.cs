@@ -222,7 +222,15 @@ namespace DProS.DeviceManagement
 		}
 		private void btnMachineTemporary_Click(object sender, EventArgs e)
 		{
-
+			if (MessageBox.Show("bạn muốn xác nhận máy tạm!".ToUpper(), "Thông báo", MessageBoxButtons.OK) == DialogResult.OK)
+			{
+				foreach (var item in gvMachineList.GetSelectedRows())
+				{
+					int id = int.Parse(gvMachineList.GetRowCellValue(item, "Id").ToString());
+					MachineDAO.Instance.UpdateStatusMachine(id, 10);
+				}
+				LoadControl();
+			}
 		}
 
 		private void btnSampleForm_Click(object sender, EventArgs e)
@@ -264,5 +272,18 @@ namespace DProS.DeviceManagement
 			}
 		}
 
+		private void gvMachineList_RowStyle(object sender, RowStyleEventArgs e)
+		{
+			GridView view = sender as GridView;
+			if (e.RowHandle >= 0) // chỉ xử lý trong cột họ tên thôi 
+			{
+				int id = int.Parse(view.GetRowCellValue(e.RowHandle, view.Columns["Id"]).ToString());
+				int status = MachineDAO.Instance.GetItem(id).StatusMachine;
+				if (status == 10)
+				{
+					e.Appearance.BackColor = Color.Gray;
+				}
+			}
+		}
 	}
 }

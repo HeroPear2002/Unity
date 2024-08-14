@@ -31,13 +31,14 @@ namespace DProS.MachineData
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWeather));
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-			this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-			this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gcWeather = new DevExpress.XtraGrid.GridControl();
+			this.gvWeather = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.gvcDateWeather = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcName = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcTemperature = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcHumidity = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcUserName = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcId = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.btnSave = new DevExpress.XtraEditors.SimpleButton();
 			this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
 			this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -45,7 +46,7 @@ namespace DProS.MachineData
 			this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
 			this.txtTemperature = new System.Windows.Forms.TextBox();
 			this.txtHumidity = new System.Windows.Forms.TextBox();
-			this.cbAddressMeasure = new System.Windows.Forms.ComboBox();
+			this.cbLocation = new System.Windows.Forms.ComboBox();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -65,8 +66,8 @@ namespace DProS.MachineData
 			this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gcWeather)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gvWeather)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -88,7 +89,7 @@ namespace DProS.MachineData
 			// 
 			// layoutControl1
 			// 
-			this.layoutControl1.Controls.Add(this.gridControl1);
+			this.layoutControl1.Controls.Add(this.gcWeather);
 			this.layoutControl1.Controls.Add(this.btnSave);
 			this.layoutControl1.Controls.Add(this.btnEdit);
 			this.layoutControl1.Controls.Add(this.btnDelete);
@@ -96,7 +97,7 @@ namespace DProS.MachineData
 			this.layoutControl1.Controls.Add(this.btnUpdate);
 			this.layoutControl1.Controls.Add(this.txtTemperature);
 			this.layoutControl1.Controls.Add(this.txtHumidity);
-			this.layoutControl1.Controls.Add(this.cbAddressMeasure);
+			this.layoutControl1.Controls.Add(this.cbLocation);
 			this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.layoutControl1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControl1.Name = "layoutControl1";
@@ -106,102 +107,117 @@ namespace DProS.MachineData
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
-			// gridControl1
+			// gcWeather
 			// 
-			this.gridControl1.Location = new System.Drawing.Point(12, 63);
-			this.gridControl1.MainView = this.gridView1;
-			this.gridControl1.Name = "gridControl1";
-			this.gridControl1.Size = new System.Drawing.Size(1128, 629);
-			this.gridControl1.TabIndex = 14;
-			this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+			this.gcWeather.Location = new System.Drawing.Point(12, 63);
+			this.gcWeather.MainView = this.gvWeather;
+			this.gcWeather.Name = "gcWeather";
+			this.gcWeather.Size = new System.Drawing.Size(1128, 629);
+			this.gcWeather.TabIndex = 14;
+			this.gcWeather.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvWeather});
 			// 
-			// gridView1
+			// gvWeather
 			// 
-			this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5});
-			this.gridView1.DetailHeight = 404;
-			this.gridView1.GridControl = this.gridControl1;
-			this.gridView1.Name = "gridView1";
-			this.gridView1.OptionsCustomization.AllowGroup = false;
-			this.gridView1.OptionsSelection.MultiSelect = true;
-			this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-			this.gridView1.OptionsView.ShowAutoFilterRow = true;
-			this.gridView1.OptionsView.ShowGroupPanel = false;
+			this.gvWeather.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvcDateWeather,
+            this.gvcName,
+            this.gvcTemperature,
+            this.gvcHumidity,
+            this.gvcUserName,
+            this.gvcId});
+			this.gvWeather.DetailHeight = 404;
+			this.gvWeather.GridControl = this.gcWeather;
+			this.gvWeather.Name = "gvWeather";
+			this.gvWeather.OptionsCustomization.AllowGroup = false;
+			this.gvWeather.OptionsSelection.MultiSelect = true;
+			this.gvWeather.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+			this.gvWeather.OptionsView.ShowAutoFilterRow = true;
+			this.gvWeather.OptionsView.ShowGroupPanel = false;
+			this.gvWeather.Click += new System.EventHandler(this.gvWeather_Click);
 			// 
-			// gridColumn1
+			// gvcDateWeather
 			// 
-			this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn1.AppearanceCell.Options.UseFont = true;
-			this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn1.Caption = "Ngày / Giờ";
-			this.gridColumn1.Name = "gridColumn1";
-			this.gridColumn1.Visible = true;
-			this.gridColumn1.VisibleIndex = 1;
-			this.gridColumn1.Width = 248;
+			this.gvcDateWeather.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcDateWeather.AppearanceCell.Options.UseFont = true;
+			this.gvcDateWeather.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcDateWeather.AppearanceHeader.Options.UseFont = true;
+			this.gvcDateWeather.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcDateWeather.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcDateWeather.Caption = "Ngày / Giờ";
+			this.gvcDateWeather.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+			this.gvcDateWeather.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+			this.gvcDateWeather.FieldName = "DateWeather";
+			this.gvcDateWeather.Name = "gvcDateWeather";
+			this.gvcDateWeather.Visible = true;
+			this.gvcDateWeather.VisibleIndex = 1;
+			this.gvcDateWeather.Width = 248;
 			// 
-			// gridColumn2
+			// gvcName
 			// 
-			this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn2.AppearanceCell.Options.UseFont = true;
-			this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn2.Caption = "Vị trí đo";
-			this.gridColumn2.Name = "gridColumn2";
-			this.gridColumn2.Visible = true;
-			this.gridColumn2.VisibleIndex = 2;
-			this.gridColumn2.Width = 314;
+			this.gvcName.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcName.AppearanceCell.Options.UseFont = true;
+			this.gvcName.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcName.AppearanceHeader.Options.UseFont = true;
+			this.gvcName.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcName.Caption = "Vị trí đo";
+			this.gvcName.FieldName = "Name";
+			this.gvcName.Name = "gvcName";
+			this.gvcName.Visible = true;
+			this.gvcName.VisibleIndex = 2;
+			this.gvcName.Width = 314;
 			// 
-			// gridColumn3
+			// gvcTemperature
 			// 
-			this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn3.AppearanceCell.Options.UseFont = true;
-			this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn3.Caption = "Nhiệt đọ ( °C )";
-			this.gridColumn3.Name = "gridColumn3";
-			this.gridColumn3.Visible = true;
-			this.gridColumn3.VisibleIndex = 3;
-			this.gridColumn3.Width = 197;
+			this.gvcTemperature.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcTemperature.AppearanceCell.Options.UseFont = true;
+			this.gvcTemperature.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcTemperature.AppearanceHeader.Options.UseFont = true;
+			this.gvcTemperature.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcTemperature.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcTemperature.Caption = "Nhiệt đọ ( °C )";
+			this.gvcTemperature.FieldName = "Temperature";
+			this.gvcTemperature.Name = "gvcTemperature";
+			this.gvcTemperature.Visible = true;
+			this.gvcTemperature.VisibleIndex = 3;
+			this.gvcTemperature.Width = 197;
 			// 
-			// gridColumn4
+			// gvcHumidity
 			// 
-			this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn4.AppearanceCell.Options.UseFont = true;
-			this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn4.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn4.Caption = "Độ ẩm ( % )";
-			this.gridColumn4.Name = "gridColumn4";
-			this.gridColumn4.Visible = true;
-			this.gridColumn4.VisibleIndex = 4;
-			this.gridColumn4.Width = 166;
+			this.gvcHumidity.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcHumidity.AppearanceCell.Options.UseFont = true;
+			this.gvcHumidity.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcHumidity.AppearanceHeader.Options.UseFont = true;
+			this.gvcHumidity.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcHumidity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcHumidity.Caption = "Độ ẩm ( % )";
+			this.gvcHumidity.FieldName = "Humidity";
+			this.gvcHumidity.Name = "gvcHumidity";
+			this.gvcHumidity.Visible = true;
+			this.gvcHumidity.VisibleIndex = 4;
+			this.gvcHumidity.Width = 166;
 			// 
-			// gridColumn5
+			// gvcUserName
 			// 
-			this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn5.AppearanceCell.Options.UseFont = true;
-			this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn5.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn5.Caption = "Người check";
-			this.gridColumn5.Name = "gridColumn5";
-			this.gridColumn5.Visible = true;
-			this.gridColumn5.VisibleIndex = 5;
-			this.gridColumn5.Width = 319;
+			this.gvcUserName.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcUserName.AppearanceCell.Options.UseFont = true;
+			this.gvcUserName.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcUserName.AppearanceHeader.Options.UseFont = true;
+			this.gvcUserName.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcUserName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcUserName.Caption = "Người check";
+			this.gvcUserName.FieldName = "UserName";
+			this.gvcUserName.Name = "gvcUserName";
+			this.gvcUserName.Visible = true;
+			this.gvcUserName.VisibleIndex = 5;
+			this.gvcUserName.Width = 319;
+			// 
+			// gvcId
+			// 
+			this.gvcId.Caption = "Id";
+			this.gvcId.FieldName = "Id";
+			this.gvcId.Name = "gvcId";
 			// 
 			// btnSave
 			// 
@@ -212,6 +228,7 @@ namespace DProS.MachineData
 			this.btnSave.StyleController = this.layoutControl1;
 			this.btnSave.TabIndex = 13;
 			this.btnSave.Text = "Lưu";
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// btnEdit
 			// 
@@ -222,6 +239,7 @@ namespace DProS.MachineData
 			this.btnEdit.StyleController = this.layoutControl1;
 			this.btnEdit.TabIndex = 12;
 			this.btnEdit.Text = "Sửa";
+			this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
 			// 
 			// btnDelete
 			// 
@@ -232,6 +250,7 @@ namespace DProS.MachineData
 			this.btnDelete.StyleController = this.layoutControl1;
 			this.btnDelete.TabIndex = 10;
 			this.btnDelete.Text = "Xóa";
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// btnInsert
 			// 
@@ -242,6 +261,7 @@ namespace DProS.MachineData
 			this.btnInsert.StyleController = this.layoutControl1;
 			this.btnInsert.TabIndex = 9;
 			this.btnInsert.Text = "Thêm";
+			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
 			// btnUpdate
 			// 
@@ -252,6 +272,7 @@ namespace DProS.MachineData
 			this.btnUpdate.StyleController = this.layoutControl1;
 			this.btnUpdate.TabIndex = 8;
 			this.btnUpdate.Text = "Cập nhật";
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// txtTemperature
 			// 
@@ -267,13 +288,13 @@ namespace DProS.MachineData
 			this.txtHumidity.Size = new System.Drawing.Size(249, 20);
 			this.txtHumidity.TabIndex = 5;
 			// 
-			// cbAddressMeasure
+			// cbLocation
 			// 
-			this.cbAddressMeasure.FormattingEnabled = true;
-			this.cbAddressMeasure.Location = new System.Drawing.Point(65, 12);
-			this.cbAddressMeasure.Name = "cbAddressMeasure";
-			this.cbAddressMeasure.Size = new System.Drawing.Size(403, 23);
-			this.cbAddressMeasure.TabIndex = 4;
+			this.cbLocation.FormattingEnabled = true;
+			this.cbLocation.Location = new System.Drawing.Point(65, 12);
+			this.cbLocation.Name = "cbLocation";
+			this.cbLocation.Size = new System.Drawing.Size(403, 23);
+			this.cbLocation.TabIndex = 4;
 			// 
 			// Root
 			// 
@@ -302,7 +323,7 @@ namespace DProS.MachineData
 			// 
 			// layoutControlItem1
 			// 
-			this.layoutControlItem1.Control = this.cbAddressMeasure;
+			this.layoutControlItem1.Control = this.cbLocation;
 			this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem1.Name = "layoutControlItem1";
 			this.layoutControlItem1.Size = new System.Drawing.Size(460, 25);
@@ -380,7 +401,7 @@ namespace DProS.MachineData
 			// 
 			// layoutControlItem11
 			// 
-			this.layoutControlItem11.Control = this.gridControl1;
+			this.layoutControlItem11.Control = this.gcWeather;
 			this.layoutControlItem11.Location = new System.Drawing.Point(0, 51);
 			this.layoutControlItem11.Name = "layoutControlItem11";
 			this.layoutControlItem11.Size = new System.Drawing.Size(1132, 633);
@@ -453,8 +474,8 @@ namespace DProS.MachineData
 			this.Text = "NHIỆT ĐỘ/ ĐỘ ẨM";
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gcWeather)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gvWeather)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -480,8 +501,8 @@ namespace DProS.MachineData
 
 		private DevExpress.XtraLayout.LayoutControl layoutControl1;
 		private DevExpress.XtraLayout.LayoutControlGroup Root;
-		private DevExpress.XtraGrid.GridControl gridControl1;
-		private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+		private DevExpress.XtraGrid.GridControl gcWeather;
+		private DevExpress.XtraGrid.Views.Grid.GridView gvWeather;
 		private DevExpress.XtraEditors.SimpleButton btnSave;
 		private DevExpress.XtraEditors.SimpleButton btnEdit;
 		private DevExpress.XtraEditors.SimpleButton btnDelete;
@@ -489,7 +510,7 @@ namespace DProS.MachineData
 		private DevExpress.XtraEditors.SimpleButton btnUpdate;
 		private System.Windows.Forms.TextBox txtTemperature;
 		private System.Windows.Forms.TextBox txtHumidity;
-		private System.Windows.Forms.ComboBox cbAddressMeasure;
+		private System.Windows.Forms.ComboBox cbLocation;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -506,10 +527,11 @@ namespace DProS.MachineData
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcDateWeather;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcName;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcTemperature;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcHumidity;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcUserName;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcId;
 	}
 }

@@ -48,6 +48,7 @@
     <Compile Include="DeviceDAO.cs" />
     <Compile Include="HistoryDeviceDAO.cs" />
     <Compile Include="HistoryEditMachineDAO.cs" />
+    <Compile Include="LocationDAO.cs" />
     <Compile Include="MachineDAO.cs" />
     <Compile Include="EMailDetailDAO.cs" />
     <Compile Include="MachineDetailDAO.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="RelationMachineCateDAO.cs" />
     <Compile Include="ResoucesDAO.cs" />
     <Compile Include="SetupDefaultDAO.cs" />
+    <Compile Include="WeatherDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

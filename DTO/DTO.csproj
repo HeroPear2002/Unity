@@ -48,6 +48,7 @@
     <Compile Include="HistoryCheckDataDTO.cs" />
     <Compile Include="HistoryDeviceDTO.cs" />
     <Compile Include="HistoryEditMachineDTO.cs" />
+    <Compile Include="LocationDTO.cs" />
     <Compile Include="MachineDetailDTO.cs" />
     <Compile Include="MachineDTO.cs" />
     <Compile Include="EMailDetail.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="ResourcesDTO.cs" />
     <Compile Include="SetupDefaultDTO.cs" />
     <Compile Include="UserDTO.cs" />
+    <Compile Include="WeatherDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
