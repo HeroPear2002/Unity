@@ -139,6 +139,11 @@ namespace DProS
 			CloseForm(typeof(frmSetupMachine));
 			OpenForm(typeof(frmSetupMachine));
 		}
+		private void btnCharMachine_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmCharMachine));
+			OpenForm(typeof(frmCharMachine));
+		}
 
 		private void btnTableCheckData_Click(object sender, EventArgs e)
 		{
@@ -175,5 +180,7 @@ namespace DProS
 			CloseForm(typeof(frmCharWeather));
 			OpenForm(typeof(frmCharWeather));
 		}
+
+		
 	}
 }

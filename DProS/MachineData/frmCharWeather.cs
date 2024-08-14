@@ -8,6 +8,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DTO;
+using DevExpress.XtraCharts;
+using System.Globalization;
+using DAO;
 
 namespace DProS.MachineData
 {
@@ -16,6 +20,83 @@ namespace DProS.MachineData
 		public frmCharWeather()
 		{
 			InitializeComponent();
+		}
+
+		private void btnSee_Click(object sender, EventArgs e)
+		{
+			System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-CA");
+			chartControl1.Series.Clear();
+			DateTime today = dtpkDate.Value.Date;
+			int year = today.Year;
+			int month = (today.Date.Month);
+			int day = today.Date.Day;
+			DateTime Date1 = today.AddDays((-day) + 1);
+			DateTime Date2 = Date1.AddMonths(1);
+			int dateEnd = Date2.Day;
+			int dateStart = Date1.Day;
+			List<WeatherDTO> listW = WeatherDAO.Instance.GetList().Where(x => x.DateWeather >= Date1 && x.DateWeather <= Date2).ToList();
+			var name = listW.Select(x => x.Name).Distinct().ToList();
+			foreach (var item in name)
+			{
+				Series series1 = new Series(item, ViewType.Line);
+				series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+				((LineSeriesView)series1.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+				((LineSeriesView)series1.View).LineMarkerOptions.Size = 3;
+				series1.Label.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
+				series1.Label.LineVisibility = DevExpress.Utils.DefaultBoolean.True;
+				series1.Label.BackColor = Color.Transparent;
+				//series1.ArgumentScaleType = ScaleType.Numerical;
+				//series1.ValueScaleType = ScaleType.Numerical;
+				List<WeatherDTO> listN = listW.Where(x => x.Name == item).ToList();
+				foreach (WeatherDTO item1 in listW.Where(x => x.Name == item).ToList())
+				{
+					DateTime h = item1.DateWeather;
+					float k = (float)Math.Round(item1.Temperature, 2);
+					series1.Points.Add(new SeriesPoint(h, Math.Round(k, 2)));
+				}
+				chartControl1.Series.AddRange(series1);
+			}
+			foreach (var item in name)
+			{
+
+				Series series1 = new Series(item, ViewType.Line);
+				series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+				((LineSeriesView)series1.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+				((LineSeriesView)series1.View).LineMarkerOptions.Size = 3;
+				series1.Label.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
+				series1.Label.LineVisibility = DevExpress.Utils.DefaultBoolean.True;
+				series1.Label.BackColor = Color.Transparent;
+				//series1.ArgumentScaleType = ScaleType.Numerical;
+				//series1.ValueScaleType = ScaleType.Numerical;
+				List<WeatherDTO> listN = listW.Where(x => x.Name == item).ToList();
+				foreach (WeatherDTO item1 in listW.Where(x => x.Name == item).ToList())
+				{
+					DateTime h = item1.DateWeather;
+					float k = (float)Math.Round(item1.Humidity, 2);
+					series1.Points.Add(new SeriesPoint(h, Math.Round(k, 2)));
+				}
+				chartControl2.Series.AddRange(series1);
+			}
+
+			((XYDiagram)chartControl1.Diagram).AxisX.NumericScaleOptions.GridAlignment = NumericGridAlignment.Ones;
+			((XYDiagram)chartControl1.Diagram).AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+			((XYDiagram)chartControl1.Diagram).AxisX.Label.TextPattern = "{A:dd-MM}";
+			((XYDiagram)chartControl1.Diagram).AxisX.Title.Text = "Thời Gian(Ngày)";
+			((XYDiagram)chartControl1.Diagram).AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+			((XYDiagram)chartControl1.Diagram).AxisY.Title.Text = "Nhiệt Độ (°C)";
+			((XYDiagram)chartControl1.Diagram).AxisX.Alignment = AxisAlignment.Zero;
+			((XYDiagram)chartControl1.Diagram).AxisX.NumericScaleOptions.GridSpacing = 1;
+
+			((XYDiagram)chartControl2.Diagram).EnableAxisXZooming = true;
+			((XYDiagram)chartControl2.Diagram).AxisX.NumericScaleOptions.GridAlignment = NumericGridAlignment.Ones;
+			((XYDiagram)chartControl2.Diagram).AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+			((XYDiagram)chartControl2.Diagram).AxisX.Label.TextPattern = "{A:dd-MM}";
+			((XYDiagram)chartControl2.Diagram).AxisX.Title.Text = "Thời Gian(Ngày)";
+			((XYDiagram)chartControl2.Diagram).AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+			((XYDiagram)chartControl2.Diagram).AxisY.Title.Text = "Độ Ẩm (%)";
+			((XYDiagram)chartControl2.Diagram).AxisX.Alignment = AxisAlignment.Zero;
+			((XYDiagram)chartControl2.Diagram).AxisX.NumericScaleOptions.GridSpacing = 1;
+			((XYDiagram)chartControl2.Diagram).EnableAxisXZooming = true;
 		}
 	}
 }

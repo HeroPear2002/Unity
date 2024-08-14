@@ -1143,6 +1143,7 @@
             this.btnCategoryDevice,
             this.accordionControlSeparator64,
             this.btnCharMachine});
+			this.accordionControlElement43.Expanded = true;
 			this.accordionControlElement43.Name = "accordionControlElement43";
 			this.accordionControlElement43.Text = "QUẢN LÝ THIẾT BỊ";
 			// 
@@ -1260,6 +1261,7 @@
 			this.btnCharMachine.Name = "btnCharMachine";
 			this.btnCharMachine.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnCharMachine.Text = "BIỂU ĐỒ";
+			this.btnCharMachine.Click += new System.EventHandler(this.btnCharMachine_Click);
 			// 
 			// accordionControlSeparator51
 			// 

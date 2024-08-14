@@ -32,13 +32,15 @@
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
 			this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
 			this.btnSee = new DevExpress.XtraEditors.SimpleButton();
-			this.dtpMonth = new System.Windows.Forms.DateTimePicker();
+			this.dtpkDate = new System.Windows.Forms.DateTimePicker();
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+			this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
+			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
@@ -48,13 +50,16 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// layoutControl1
 			// 
+			this.layoutControl1.Controls.Add(this.chartControl2);
 			this.layoutControl1.Controls.Add(this.chartControl1);
 			this.layoutControl1.Controls.Add(this.btnSee);
-			this.layoutControl1.Controls.Add(this.dtpMonth);
+			this.layoutControl1.Controls.Add(this.dtpkDate);
 			this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.layoutControl1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControl1.Name = "layoutControl1";
@@ -70,7 +75,7 @@
 			this.chartControl1.Location = new System.Drawing.Point(12, 38);
 			this.chartControl1.Name = "chartControl1";
 			this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-			this.chartControl1.Size = new System.Drawing.Size(1128, 654);
+			this.chartControl1.Size = new System.Drawing.Size(1128, 325);
 			this.chartControl1.TabIndex = 6;
 			// 
 			// btnSee
@@ -82,15 +87,16 @@
 			this.btnSee.StyleController = this.layoutControl1;
 			this.btnSee.TabIndex = 5;
 			this.btnSee.Text = "Xem";
+			this.btnSee.Click += new System.EventHandler(this.btnSee_Click);
 			// 
-			// dtpMonth
+			// dtpkDate
 			// 
-			this.dtpMonth.CustomFormat = "MM";
-			this.dtpMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dtpMonth.Location = new System.Drawing.Point(58, 12);
-			this.dtpMonth.Name = "dtpMonth";
-			this.dtpMonth.Size = new System.Drawing.Size(285, 22);
-			this.dtpMonth.TabIndex = 4;
+			this.dtpkDate.CustomFormat = "MM";
+			this.dtpkDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtpkDate.Location = new System.Drawing.Point(58, 12);
+			this.dtpkDate.Name = "dtpkDate";
+			this.dtpkDate.Size = new System.Drawing.Size(285, 22);
+			this.dtpkDate.TabIndex = 4;
 			// 
 			// Root
 			// 
@@ -101,14 +107,15 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.emptySpaceItem2,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.layoutControlItem4});
 			this.Root.Name = "Root";
 			this.Root.Size = new System.Drawing.Size(1152, 704);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlItem1
 			// 
-			this.layoutControlItem1.Control = this.dtpMonth;
+			this.layoutControlItem1.Control = this.dtpkDate;
 			this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
 			this.layoutControlItem1.Name = "layoutControlItem1";
 			this.layoutControlItem1.Size = new System.Drawing.Size(335, 26);
@@ -131,7 +138,7 @@
 			this.layoutControlItem3.Control = this.chartControl1;
 			this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
 			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(1132, 658);
+			this.layoutControlItem3.Size = new System.Drawing.Size(1132, 329);
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem3.TextVisible = false;
 			// 
@@ -151,6 +158,24 @@
 			this.emptySpaceItem3.Size = new System.Drawing.Size(585, 26);
 			this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
 			// 
+			// chartControl2
+			// 
+			this.chartControl2.Legend.Name = "Default Legend";
+			this.chartControl2.Location = new System.Drawing.Point(12, 367);
+			this.chartControl2.Name = "chartControl2";
+			this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
+			this.chartControl2.Size = new System.Drawing.Size(1128, 325);
+			this.chartControl2.TabIndex = 7;
+			// 
+			// layoutControlItem4
+			// 
+			this.layoutControlItem4.Control = this.chartControl2;
+			this.layoutControlItem4.Location = new System.Drawing.Point(0, 355);
+			this.layoutControlItem4.Name = "layoutControlItem4";
+			this.layoutControlItem4.Size = new System.Drawing.Size(1132, 329);
+			this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem4.TextVisible = false;
+			// 
 			// frmCharWeather
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -168,6 +193,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -178,11 +205,13 @@
 		private DevExpress.XtraLayout.LayoutControlGroup Root;
 		private DevExpress.XtraCharts.ChartControl chartControl1;
 		private DevExpress.XtraEditors.SimpleButton btnSee;
-		private System.Windows.Forms.DateTimePicker dtpMonth;
+		private System.Windows.Forms.DateTimePicker dtpkDate;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+		private DevExpress.XtraCharts.ChartControl chartControl2;
+		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
 	}
 }

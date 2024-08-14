@@ -30,6 +30,18 @@ namespace DAO
 			}
 			return lsv;
 		}
+		public List<CateTestMachineDTO> GetListCateHis(DateTime date1, DateTime date2, int idMachine)
+		{
+			string query = "select DISTINCT(CateTestMachine.Id), NameCategory, Detail, Timer, Method, StatusCate, Name, Limit, NoteCate, CateTestMachine.IdDevice  FROM HistoryDevice,CateTestMachine,RelationMachineCate, Device WHERE IdRelationShip = RelationMachineCate.Id AND IdCategory = CateTestMachine.Id and CateTestMachine.IdDevice = Device.Id and DateCheck > @1 and DateCheck < @2 and IdMachine = @3 ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { date1, date2, idMachine });
+			List<CateTestMachineDTO> lsv = new List<CateTestMachineDTO>();
+			foreach (DataRow item in data.Rows)
+			{
+				CateTestMachineDTO DTO = new CateTestMachineDTO(item);
+				lsv.Add(DTO);
+			}
+			return lsv;
+		}
 		public List<CateTestMachineDTO> GetList(int idDevice)
 		{
 			string query = "select ctm.Id, NameCategory, Detail, timer, Method, StatusCate, Name, Limit, NoteCate, ctm.IdDevice  from CateTestMachine ctm join Device d on ctm.IdDevice = d.Id where IdDevice = @1 ";

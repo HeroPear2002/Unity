@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CateDataDefaultDTO.cs" />
     <Compile Include="CateTestMachineDTO.cs" />
+    <Compile Include="ChartMachineDataDTO.cs" />
     <Compile Include="DataCheckDTO.cs" />
     <Compile Include="DeviceDTO.cs" />
     <Compile Include="HistoryCheckDataDTO.cs" />

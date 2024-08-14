@@ -28,6 +28,18 @@ namespace DAO
 			}
 			return lsv;
 		}
+		public List<CateDataDefaultDTO> GetList(int idmold, int idmachine)
+		{
+			string query = "select * from CateDataDefault,SetupDefault,Machine,Mold where IdCate = CateDataDefault.Id and IdMachine = Machine.Id and IdMold = Mold.Id and IdMold = @1 and IdMachine = @2 ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idmold, idmachine });
+			List<CateDataDefaultDTO> lsv = new List<CateDataDefaultDTO>();
+			foreach (DataRow item in data.Rows)
+			{
+				CateDataDefaultDTO DTO = new CateDataDefaultDTO(item);
+				lsv.Add(DTO);
+			}
+			return lsv;
+		}
 		public CateDataDefaultDTO GetItem(int Id)
 		{
 			return GetList().Find(x => x.Id == Id);

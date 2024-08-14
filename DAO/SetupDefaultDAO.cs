@@ -28,6 +28,7 @@ namespace DAO
 			}
 			return lsv;
 		}
+
 		public SetupDefaultDTO GetItem(long Id)
 		{
 			return GetList().Find(x => x.Id == Id);

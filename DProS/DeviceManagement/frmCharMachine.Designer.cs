@@ -29,12 +29,9 @@ namespace DProS.DeviceManagement
 		/// </summary>
 		private void InitializeComponent()
 		{
-			DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-			DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-			DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCharMachine));
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-			this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+			this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
 			this.btnHMChartMainten = new DevExpress.XtraEditors.SimpleButton();
 			this.btnHMChartEveryday = new DevExpress.XtraEditors.SimpleButton();
 			this.dtpMonthYear = new System.Windows.Forms.DateTimePicker();
@@ -44,36 +41,26 @@ namespace DProS.DeviceManagement
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+			this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// layoutControl1
 			// 
-			this.layoutControl1.Controls.Add(this.chartControl1);
+			this.layoutControl1.Controls.Add(this.flpMain);
 			this.layoutControl1.Controls.Add(this.btnHMChartMainten);
 			this.layoutControl1.Controls.Add(this.btnHMChartEveryday);
 			this.layoutControl1.Controls.Add(this.dtpMonthYear);
@@ -87,43 +74,34 @@ namespace DProS.DeviceManagement
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
-			// chartControl1
+			// flpMain
 			// 
-			xyDiagram1.AxisX.Title.Text = "Ngày";
-			xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-			xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-			xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-			this.chartControl1.Diagram = xyDiagram1;
-			this.chartControl1.Legend.Name = "Default Legend";
-			this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-			this.chartControl1.Location = new System.Drawing.Point(12, 38);
-			this.chartControl1.Name = "chartControl1";
-			series1.Name = "Series 1";
-			series1.View = lineSeriesView1;
-			this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-			this.chartControl1.Size = new System.Drawing.Size(751, 227);
-			this.chartControl1.TabIndex = 8;
+			this.flpMain.Location = new System.Drawing.Point(12, 38);
+			this.flpMain.Name = "flpMain";
+			this.flpMain.Size = new System.Drawing.Size(1128, 654);
+			this.flpMain.TabIndex = 8;
 			// 
 			// btnHMChartMainten
 			// 
 			this.btnHMChartMainten.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHMChartMainten.ImageOptions.Image")));
-			this.btnHMChartMainten.Location = new System.Drawing.Point(746, 12);
+			this.btnHMChartMainten.Location = new System.Drawing.Point(947, 12);
 			this.btnHMChartMainten.Name = "btnHMChartMainten";
-			this.btnHMChartMainten.Size = new System.Drawing.Size(134, 22);
+			this.btnHMChartMainten.Size = new System.Drawing.Size(193, 22);
 			this.btnHMChartMainten.StyleController = this.layoutControl1;
 			this.btnHMChartMainten.TabIndex = 7;
 			this.btnHMChartMainten.Text = "Biểu đồ HM định kỳ";
+			this.btnHMChartMainten.Click += new System.EventHandler(this.btnHMChartMainten_Click);
 			// 
 			// btnHMChartEveryday
 			// 
 			this.btnHMChartEveryday.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHMChartEveryday.ImageOptions.Image")));
-			this.btnHMChartEveryday.Location = new System.Drawing.Point(581, 12);
+			this.btnHMChartEveryday.Location = new System.Drawing.Point(745, 12);
 			this.btnHMChartEveryday.Name = "btnHMChartEveryday";
-			this.btnHMChartEveryday.Size = new System.Drawing.Size(151, 22);
+			this.btnHMChartEveryday.Size = new System.Drawing.Size(188, 22);
 			this.btnHMChartEveryday.StyleController = this.layoutControl1;
 			this.btnHMChartEveryday.TabIndex = 6;
 			this.btnHMChartEveryday.Text = "Biểu đồ HM hàng ngày";
+			this.btnHMChartEveryday.Click += new System.EventHandler(this.btnHMChartEveryday_Click);
 			// 
 			// dtpMonthYear
 			// 
@@ -131,7 +109,7 @@ namespace DProS.DeviceManagement
 			this.dtpMonthYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 			this.dtpMonthYear.Location = new System.Drawing.Point(443, 12);
 			this.dtpMonthYear.Name = "dtpMonthYear";
-			this.dtpMonthYear.Size = new System.Drawing.Size(124, 22);
+			this.dtpMonthYear.Size = new System.Drawing.Size(162, 22);
 			this.dtpMonthYear.TabIndex = 5;
 			// 
 			// cbMachineCode
@@ -151,13 +129,10 @@ namespace DProS.DeviceManagement
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5,
             this.emptySpaceItem1,
             this.emptySpaceItem3,
             this.emptySpaceItem4,
-            this.emptySpaceItem5,
-            this.emptySpaceItem6,
-            this.emptySpaceItem2});
+            this.layoutControlItem5});
 			this.Root.Name = "Root";
 			this.Root.Size = new System.Drawing.Size(1152, 704);
 			this.Root.TextVisible = false;
@@ -178,7 +153,7 @@ namespace DProS.DeviceManagement
 			this.layoutControlItem2.Control = this.dtpMonthYear;
 			this.layoutControlItem2.Location = new System.Drawing.Point(360, 0);
 			this.layoutControlItem2.Name = "layoutControlItem2";
-			this.layoutControlItem2.Size = new System.Drawing.Size(199, 26);
+			this.layoutControlItem2.Size = new System.Drawing.Size(237, 26);
 			this.layoutControlItem2.Text = "Tháng năm: ";
 			this.layoutControlItem2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(66, 15);
@@ -187,34 +162,25 @@ namespace DProS.DeviceManagement
 			// layoutControlItem3
 			// 
 			this.layoutControlItem3.Control = this.btnHMChartEveryday;
-			this.layoutControlItem3.Location = new System.Drawing.Point(569, 0);
+			this.layoutControlItem3.Location = new System.Drawing.Point(733, 0);
 			this.layoutControlItem3.Name = "layoutControlItem3";
-			this.layoutControlItem3.Size = new System.Drawing.Size(155, 26);
+			this.layoutControlItem3.Size = new System.Drawing.Size(192, 26);
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem3.TextVisible = false;
 			// 
 			// layoutControlItem4
 			// 
 			this.layoutControlItem4.Control = this.btnHMChartMainten;
-			this.layoutControlItem4.Location = new System.Drawing.Point(734, 0);
+			this.layoutControlItem4.Location = new System.Drawing.Point(935, 0);
 			this.layoutControlItem4.Name = "layoutControlItem4";
-			this.layoutControlItem4.Size = new System.Drawing.Size(138, 26);
+			this.layoutControlItem4.Size = new System.Drawing.Size(197, 26);
 			this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem4.TextVisible = false;
-			// 
-			// layoutControlItem5
-			// 
-			this.layoutControlItem5.Control = this.chartControl1;
-			this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
-			this.layoutControlItem5.Name = "layoutControlItem5";
-			this.layoutControlItem5.Size = new System.Drawing.Size(755, 231);
-			this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem5.TextVisible = false;
 			// 
 			// emptySpaceItem1
 			// 
 			this.emptySpaceItem1.AllowHotTrack = false;
-			this.emptySpaceItem1.Location = new System.Drawing.Point(724, 0);
+			this.emptySpaceItem1.Location = new System.Drawing.Point(925, 0);
 			this.emptySpaceItem1.Name = "emptySpaceItem1";
 			this.emptySpaceItem1.Size = new System.Drawing.Size(10, 26);
 			this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -222,9 +188,9 @@ namespace DProS.DeviceManagement
 			// emptySpaceItem3
 			// 
 			this.emptySpaceItem3.AllowHotTrack = false;
-			this.emptySpaceItem3.Location = new System.Drawing.Point(559, 0);
+			this.emptySpaceItem3.Location = new System.Drawing.Point(597, 0);
 			this.emptySpaceItem3.Name = "emptySpaceItem3";
-			this.emptySpaceItem3.Size = new System.Drawing.Size(10, 26);
+			this.emptySpaceItem3.Size = new System.Drawing.Size(136, 26);
 			this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
 			// 
 			// emptySpaceItem4
@@ -235,29 +201,14 @@ namespace DProS.DeviceManagement
 			this.emptySpaceItem4.Size = new System.Drawing.Size(10, 26);
 			this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
 			// 
-			// emptySpaceItem5
+			// layoutControlItem5
 			// 
-			this.emptySpaceItem5.AllowHotTrack = false;
-			this.emptySpaceItem5.Location = new System.Drawing.Point(872, 0);
-			this.emptySpaceItem5.Name = "emptySpaceItem5";
-			this.emptySpaceItem5.Size = new System.Drawing.Size(260, 26);
-			this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-			// 
-			// emptySpaceItem2
-			// 
-			this.emptySpaceItem2.AllowHotTrack = false;
-			this.emptySpaceItem2.Location = new System.Drawing.Point(755, 26);
-			this.emptySpaceItem2.Name = "emptySpaceItem2";
-			this.emptySpaceItem2.Size = new System.Drawing.Size(377, 231);
-			this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-			// 
-			// emptySpaceItem6
-			// 
-			this.emptySpaceItem6.AllowHotTrack = false;
-			this.emptySpaceItem6.Location = new System.Drawing.Point(0, 257);
-			this.emptySpaceItem6.Name = "emptySpaceItem6";
-			this.emptySpaceItem6.Size = new System.Drawing.Size(1132, 427);
-			this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem5.Control = this.flpMain;
+			this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
+			this.layoutControlItem5.Name = "layoutControlItem5";
+			this.layoutControlItem5.Size = new System.Drawing.Size(1132, 658);
+			this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem5.TextVisible = false;
 			// 
 			// frmCharMachine
 			// 
@@ -269,22 +220,15 @@ namespace DProS.DeviceManagement
 			this.Text = "BIỂU ĐỒ";
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -293,7 +237,6 @@ namespace DProS.DeviceManagement
 
 		private DevExpress.XtraLayout.LayoutControl layoutControl1;
 		private DevExpress.XtraLayout.LayoutControlGroup Root;
-		private DevExpress.XtraCharts.ChartControl chartControl1;
 		private DevExpress.XtraEditors.SimpleButton btnHMChartMainten;
 		private DevExpress.XtraEditors.SimpleButton btnHMChartEveryday;
 		private System.Windows.Forms.DateTimePicker dtpMonthYear;
@@ -302,12 +245,10 @@ namespace DProS.DeviceManagement
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
-		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
-		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+		private System.Windows.Forms.FlowLayoutPanel flpMain;
+		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
 	}
 }
