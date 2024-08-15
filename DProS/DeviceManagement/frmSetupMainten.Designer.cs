@@ -98,6 +98,8 @@ namespace DProS.DeviceManagement
 			// 
 			// gvListCategory
 			// 
+			this.gvListCategory.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Black;
+			this.gvListCategory.Appearance.ViewCaption.Options.UseForeColor = true;
 			this.gvListCategory.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gvcNameCategory,
             this.gvcMethod,
@@ -183,6 +185,8 @@ namespace DProS.DeviceManagement
 			// 
 			// gvListMachine
 			// 
+			this.gvListMachine.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Black;
+			this.gvListMachine.Appearance.ViewCaption.Options.UseForeColor = true;
 			this.gvListMachine.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gvcMachineCode,
             this.gvcMachineName});

@@ -66,7 +66,6 @@
 			this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -92,7 +91,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
@@ -157,10 +155,10 @@
 			// 
 			// gcDeviceList
 			// 
-			this.gcDeviceList.Location = new System.Drawing.Point(12, 108);
+			this.gcDeviceList.Location = new System.Drawing.Point(12, 88);
 			this.gcDeviceList.MainView = this.tvDeviceList;
 			this.gcDeviceList.Name = "gcDeviceList";
-			this.gcDeviceList.Size = new System.Drawing.Size(1128, 584);
+			this.gcDeviceList.Size = new System.Drawing.Size(1128, 604);
 			this.gcDeviceList.TabIndex = 15;
 			this.gcDeviceList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tvDeviceList});
@@ -325,7 +323,6 @@
             this.emptySpaceItem5,
             this.emptySpaceItem6,
             this.emptySpaceItem11,
-            this.emptySpaceItem1,
             this.layoutControlItem12,
             this.emptySpaceItem13,
             this.emptySpaceItem7,
@@ -464,20 +461,12 @@
 			this.emptySpaceItem11.Size = new System.Drawing.Size(10, 26);
 			this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
 			// 
-			// emptySpaceItem1
-			// 
-			this.emptySpaceItem1.AllowHotTrack = false;
-			this.emptySpaceItem1.Location = new System.Drawing.Point(0, 76);
-			this.emptySpaceItem1.Name = "emptySpaceItem1";
-			this.emptySpaceItem1.Size = new System.Drawing.Size(1132, 20);
-			this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-			// 
 			// layoutControlItem12
 			// 
 			this.layoutControlItem12.Control = this.gcDeviceList;
-			this.layoutControlItem12.Location = new System.Drawing.Point(0, 96);
+			this.layoutControlItem12.Location = new System.Drawing.Point(0, 76);
 			this.layoutControlItem12.Name = "layoutControlItem12";
-			this.layoutControlItem12.Size = new System.Drawing.Size(1132, 588);
+			this.layoutControlItem12.Size = new System.Drawing.Size(1132, 608);
 			this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem12.TextVisible = false;
 			// 
@@ -551,7 +540,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
@@ -588,7 +576,6 @@
 		private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
-		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;

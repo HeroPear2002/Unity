@@ -19,6 +19,7 @@ namespace DProS.DeviceManagement
 		bool Isinsert = false;
 		List<HistoryEditMachineDTO> listMachineDetail = new List<HistoryEditMachineDTO>();
 		MachineDTO machine = null;
+		public EventHandler LamMoi;
 		public frmHistoryEditMachine()
 		{
 			InitializeComponent();
@@ -142,29 +143,40 @@ namespace DProS.DeviceManagement
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			DateTime DateMachine = dtpkDate.Value;
-			DateTime DateError = dtpkDateError.Value;
-			int TimeMachine = 0;
-			if (nudtime.Value != 0) TimeMachine = (int)nudtime.Value;
-			else MessageBox.Show("BẠN PHẢI NHẬP THỜI GIAN XỬ LÝ.");
-			string ErrorName = txtErrorName.Text;
-			string Reason = txtReason.Text;
-			string Detail = txtDetail.Text;
-			string Employess = txtEmployess.Text;
-			string Note = txtnote.Text;
-			string timeStart = txtTimeStart.Text;
-			string timeMain = txtTimeMain.Text;
-			if (Isinsert == true)
-			{
-				HistoryEditMachineDAO.Instance.Insert( idMachine, DateMachine, TimeMachine, ErrorName, Reason, Detail, Employess, Note, DateError, timeStart, timeMain);
-				MessageBox.Show("thêm thông tin thành công !".ToUpper());
-				LoadControl();
-			}
-			else
-			{
-				long Id =long.Parse(gvHistoryEditMachine.GetRowCellValue(gvHistoryEditMachine.FocusedRowHandle, gvHistoryEditMachine.Columns["Id"]).ToString());
-				HistoryEditMachineDAO.Instance.Update(Id,idMachine, DateMachine, TimeMachine, ErrorName, Reason, Detail, Employess, Note, DateError, timeStart, timeMain);
-				MessageBox.Show("sửa thông tin thành công !".ToUpper());
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{ 
+				DateTime DateMachine = dtpkDate.Value;
+				DateTime DateError = dtpkDateError.Value;
+				int TimeMachine = 0;
+				if (nudtime.Value != 0) TimeMachine = (int)nudtime.Value;
+				else
+				{
+					MessageBox.Show("BẠN PHẢI NHẬP THỜI GIAN XỬ LÝ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
+				string ErrorName = txtErrorName.Text;
+				string Reason = txtReason.Text;
+				string Detail = txtDetail.Text;
+				string Employess = txtEmployess.Text;
+				string Note = txtnote.Text;
+				string timeStart = txtTimeStart.Text;
+				string timeMain = txtTimeMain.Text;
+				if (Isinsert == true)
+				{
+					bool insert = HistoryEditMachineDAO.Instance.Insert( idMachine, DateMachine, TimeMachine, ErrorName, Reason, Detail, Employess, Note, DateError, timeStart, timeMain);
+					if(insert) MessageBox.Show("thêm thông tin thành công !".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					else MessageBox.Show("THÊM THÔNG TIN THẤT BẠI!".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				
+				}
+				else
+				{
+					long Id =long.Parse(gvHistoryEditMachine.GetRowCellValue(gvHistoryEditMachine.FocusedRowHandle, gvHistoryEditMachine.Columns["Id"]).ToString());
+					bool update = HistoryEditMachineDAO.Instance.Update(Id,idMachine, DateMachine, TimeMachine, ErrorName, Reason, Detail, Employess, Note, DateError, timeStart, timeMain);
+					if(update) MessageBox.Show("sửa thông tin thành công !".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					else MessageBox.Show("SỬA THÔNG TIN THẤT BẠI!".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 				LoadControl();
 			}
 		}
@@ -191,6 +203,11 @@ namespace DProS.DeviceManagement
 		private void gvHistoryEditMachine_Click(object sender, EventArgs e)
 		{
 			AddText();
+		}
+
+		private void frmHistoryEditMachine_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			LamMoi?.Invoke(sender, e);
 		}
 	}
 }

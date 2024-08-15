@@ -60,6 +60,7 @@ namespace DProS.DeviceManagement
 				cbStatus.Enabled = false;
 				btnEdit.Enabled = true;
 				btnSave.Enabled = false;
+				btnImport.Enabled = false;
 			}
 			else
 			{
@@ -69,6 +70,7 @@ namespace DProS.DeviceManagement
 				cbStatus.Enabled = true;
 				btnEdit.Enabled = false;
 				btnSave.Enabled = true;
+				btnImport.Enabled = true;
 			}
 		}
 		void Save()
@@ -89,10 +91,10 @@ namespace DProS.DeviceManagement
 			bool updated = HistoryDeviceDAO.Instance.Update(id, result, datacount, status, dateCheck, note);
 			if (updated)
 			{
-				MessageBox.Show("Bạn đã sửa thành công".ToUpper());
+				MessageBox.Show("Bạn đã sửa thành công".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return;
 			}
-			MessageBox.Show("Bạn sửa bị thất bại".ToUpper());
+			MessageBox.Show("Bạn sửa bị thất bại".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
 		private void btnEdit_Click(object sender, EventArgs e)
@@ -102,8 +104,13 @@ namespace DProS.DeviceManagement
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
@@ -137,7 +144,7 @@ namespace DProS.DeviceManagement
 		{
 			if(dtpFromTime.Value>dtpToTime.Value || dtpFromTime.Value > DateTime.Now)
 			{
-				MessageBox.Show("BẠN CHỌN NGÀY XEM KHÔNG HỢP LÝ.");
+				MessageBox.Show("BẠN CHỌN NGÀY XEM KHÔNG HỢP LÝ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			if (Common.CommonConstant.checkHistoryDevice == 0) listHistoryDevice = HistoryDeviceDAO.Instance.GetList().Where(x => x.DateCheck >= dtpFromTime.Value && x.DateCheck <= dtpToTime.Value && x.Timer == 24 && x.Result != "").ToList();
@@ -166,6 +173,14 @@ namespace DProS.DeviceManagement
 				}
 			}
 		}
-		
+
+		private void btnImport_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog ofd = new OpenFileDialog();
+			if (ofd.ShowDialog() == DialogResult.OK)
+			{
+				txtNote.Text = ofd.FileName;
+			}
+		}
 	}
 }

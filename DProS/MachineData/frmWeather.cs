@@ -84,17 +84,17 @@ namespace DProS.MachineData
 			float humidity = 0;
 			if (cbLocation.Text == "")
 			{
-				MessageBox.Show("BẠN PHẢI CHỌN VỊ TRÍ.");
+				MessageBox.Show("BẠN PHẢI CHỌN VỊ TRÍ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else if(txtTemperature.Text == "")
 			{
-				MessageBox.Show("BẠN PHẢI ĐIỀN NHIỆT ĐỘ");
+				MessageBox.Show("BẠN PHẢI ĐIỀN NHIỆT ĐỘ", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else if (txtHumidity.Text == "" && (float.Parse(txtHumidity.Text) < 0 || float.Parse(txtHumidity.Text) >100))
 			{
-				MessageBox.Show("BẠN PHẢI ĐIỀN ĐỘ ẨM");
+				MessageBox.Show("BẠN PHẢI ĐIỀN ĐỘ ẨM", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else
@@ -108,10 +108,10 @@ namespace DProS.MachineData
 				bool insert = WeatherDAO.Instance.Insert(idLocation, temperature, humidity, DateTime.Now, 1);
 				if (insert)
 				{
-					MessageBox.Show("Bạn đã thêm thành công.".ToUpper());
+					MessageBox.Show("Bạn đã thêm thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					return;
 				}
-				MessageBox.Show("Bạn thêm bị thất bại.".ToUpper());
+				MessageBox.Show("Bạn thêm bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else
 			{
@@ -119,10 +119,10 @@ namespace DProS.MachineData
 				bool update = WeatherDAO.Instance.Update(id, idLocation, temperature, humidity);
 				if (update)
 				{
-					MessageBox.Show("Bạn đã sửa thành công.".ToUpper());
+					MessageBox.Show("Bạn đã sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					return;
 				}
-				MessageBox.Show("Bạn sửa bị thất bại.".ToUpper());
+				MessageBox.Show("Bạn sửa bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		private void btnInsert_Click(object sender, EventArgs e)
@@ -150,16 +150,21 @@ namespace DProS.MachineData
 					bool delete = WeatherDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)

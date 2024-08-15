@@ -41,7 +41,7 @@ namespace DProS.DeviceManagement
 		private void LoadData()
 		{
 			listMachine = MachineDAO.Instance.GetList();
-			gridControl1.DataSource = listMachine;
+			gcDevice.DataSource = listMachine;
 		}
 
 		private void CleanText()
@@ -72,14 +72,14 @@ namespace DProS.DeviceManagement
 			if (cbDeviceType.Text.Length > 0) idDevice = int.Parse(cbDeviceType.SelectedValue.ToString());
 			if (!insert)
 			{
-				int id = int.Parse(gridView1.GetFocusedRowCellValue("Id").ToString());
+				int id = int.Parse(gvDevice.GetFocusedRowCellValue("Id").ToString());
 				bool updateMachine = MachineDAO.Instance.Update(id, idDevice);
 				if (updateMachine)
 				{
-					MessageBox.Show("Bạn đã sửa thành công.".ToUpper());
+					MessageBox.Show("Bạn đã sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					return;
 				}
-				MessageBox.Show("Bạn sửa bị thất bại.".ToUpper());
+				MessageBox.Show("Bạn sửa bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 			}
 		}
@@ -97,22 +97,27 @@ namespace DProS.DeviceManagement
 			if (result == DialogResult.Yes)
 			{
 				int countid = 0 ;
-				foreach (var item in gridView1.GetSelectedRows())
+				foreach (var item in gvDevice.GetSelectedRows())
 				{
-					int id = int.Parse(gridView1.GetRowCellValue(item, "Id").ToString());
+					int id = int.Parse(gvDevice.GetRowCellValue(item, "Id").ToString());
 					bool delete = MachineDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA"); 
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error); 
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
@@ -123,10 +128,10 @@ namespace DProS.DeviceManagement
 		private void btnCodeLarge_Click(object sender, EventArgs e)
 		{
 			List<MachineDTO> listQr = new List<MachineDTO>();
-			foreach (var item in gridView1.GetSelectedRows())
+			foreach (var item in gvDevice.GetSelectedRows())
 			{
 				MachineDTO machineDTO = null;
-				int idMachine = int.Parse(gridView1.GetRowCellValue(item, "Id").ToString());
+				int idMachine = int.Parse(gvDevice.GetRowCellValue(item, "Id").ToString());
 				machineDTO = MachineDAO.Instance.GetItem(idMachine);
 				listQr.Add(machineDTO);
 			}
@@ -138,10 +143,10 @@ namespace DProS.DeviceManagement
 		private void btnCodeSmall_Click(object sender, EventArgs e)
 		{
 			List<MachineDTO> listQr = new List<MachineDTO>();
-			foreach (var item in gridView1.GetSelectedRows())
+			foreach (var item in gvDevice.GetSelectedRows())
 			{
 				MachineDTO machineDTO = null;
-				int idMachine = int.Parse(gridView1.GetRowCellValue(item, "Id").ToString());
+				int idMachine = int.Parse(gvDevice.GetRowCellValue(item, "Id").ToString());
 				machineDTO = MachineDAO.Instance.GetItem(idMachine);
 				listQr.Add(machineDTO);
 			}
@@ -153,10 +158,10 @@ namespace DProS.DeviceManagement
 		private void btnCodeMedium_Click(object sender, EventArgs e)
 		{
 			List<MachineDTO> listQr = new List<MachineDTO>();
-			foreach (var item in gridView1.GetSelectedRows())
+			foreach (var item in gvDevice.GetSelectedRows())
 			{
 				MachineDTO machineDTO = null;
-				int idMachine = int.Parse(gridView1.GetRowCellValue(item, "Id").ToString());
+				int idMachine = int.Parse(gvDevice.GetRowCellValue(item, "Id").ToString());
 				machineDTO = MachineDAO.Instance.GetItem(idMachine);
 				listQr.Add(machineDTO);
 			}
@@ -169,6 +174,19 @@ namespace DProS.DeviceManagement
 		{
 			frmListDeviceEditMachineCode form = new frmListDeviceEditMachineCode();
 			form.ShowDialog();
+			LoadControl();
+		}
+
+		private void gvDevice_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				cbDeviceType.SelectedValue = gvDevice.GetFocusedRowCellValue("IdDevice");
+			}
+			catch (Exception)
+			{
+			}
+			
 		}
 	}
 }

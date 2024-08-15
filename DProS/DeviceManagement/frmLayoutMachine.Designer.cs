@@ -31,8 +31,16 @@ namespace DProS.DeviceManagement
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLayoutMachine));
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
 			this.flpLayout = new System.Windows.Forms.FlowLayoutPanel();
+			this.label14 = new System.Windows.Forms.Label();
 			this.btnHistoryEdit = new DevExpress.XtraEditors.SimpleButton();
+			this.label15 = new System.Windows.Forms.Label();
 			this.btnInforMachine = new DevExpress.XtraEditors.SimpleButton();
 			this.btnCheckMainten = new DevExpress.XtraEditors.SimpleButton();
 			this.btnCheckEveryday = new DevExpress.XtraEditors.SimpleButton();
@@ -49,23 +57,15 @@ namespace DProS.DeviceManagement
 			this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
 			this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -81,14 +81,14 @@ namespace DProS.DeviceManagement
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// layoutControl1
@@ -112,16 +112,103 @@ namespace DProS.DeviceManagement
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1102, 321, 650, 400);
 			this.layoutControl1.Root = this.Root;
-			this.layoutControl1.Size = new System.Drawing.Size(1152, 704);
+			this.layoutControl1.Size = new System.Drawing.Size(1152, 705);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
+			// 
+			// label8
+			// 
+			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label8.BackColor = System.Drawing.Color.Purple;
+			this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.ForeColor = System.Drawing.Color.Black;
+			this.label8.Location = new System.Drawing.Point(744, 673);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(134, 20);
+			this.label8.TabIndex = 34;
+			this.label8.Text = "Quá TG KT định kỳ";
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label9
+			// 
+			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label9.BackColor = System.Drawing.Color.GreenYellow;
+			this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.ForeColor = System.Drawing.Color.Black;
+			this.label9.Location = new System.Drawing.Point(624, 673);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(116, 20);
+			this.label9.TabIndex = 35;
+			this.label9.Text = "Chưa KT định kỳ";
+			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label10
+			// 
+			this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label10.BackColor = System.Drawing.Color.Black;
+			this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.ForeColor = System.Drawing.Color.White;
+			this.label10.Location = new System.Drawing.Point(519, 673);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(101, 20);
+			this.label10.TabIndex = 36;
+			this.label10.Text = "Không sử dụng";
+			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label11
+			// 
+			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label11.BackColor = System.Drawing.Color.Red;
+			this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label11.Location = new System.Drawing.Point(369, 673);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(34, 20);
+			this.label11.TabIndex = 37;
+			this.label11.Text = "NG";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label12
+			// 
+			this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label12.Location = new System.Drawing.Point(146, 673);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(181, 20);
+			this.label12.TabIndex = 38;
+			this.label12.Text = "Quá thời gian KT hàng ngày";
+			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label13
+			// 
+			this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label13.BackColor = System.Drawing.Color.Gray;
+			this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.Location = new System.Drawing.Point(407, 673);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(108, 20);
+			this.label13.TabIndex = 39;
+			this.label13.Text = "OK có điều kiện";
+			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// flpLayout
 			// 
 			this.flpLayout.Location = new System.Drawing.Point(12, 38);
 			this.flpLayout.Name = "flpLayout";
-			this.flpLayout.Size = new System.Drawing.Size(1128, 630);
+			this.flpLayout.Size = new System.Drawing.Size(1128, 631);
 			this.flpLayout.TabIndex = 9;
+			// 
+			// label14
+			// 
+			this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label14.BackColor = System.Drawing.Color.Transparent;
+			this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.Location = new System.Drawing.Point(331, 673);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(34, 20);
+			this.label14.TabIndex = 40;
+			this.label14.Text = "OK";
+			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btnHistoryEdit
 			// 
@@ -133,6 +220,18 @@ namespace DProS.DeviceManagement
 			this.btnHistoryEdit.TabIndex = 8;
 			this.btnHistoryEdit.Text = "Lý lịch sửa chữa";
 			this.btnHistoryEdit.Click += new System.EventHandler(this.btnHistoryEdit_Click);
+			// 
+			// label15
+			// 
+			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label15.BackColor = System.Drawing.Color.Yellow;
+			this.label15.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label15.Location = new System.Drawing.Point(12, 673);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(130, 20);
+			this.label15.TabIndex = 41;
+			this.label15.Text = "Chưa KT hàng ngày";
+			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btnInforMachine
 			// 
@@ -204,7 +303,7 @@ namespace DProS.DeviceManagement
             this.layoutControlItem10,
             this.layoutControlItem9});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(1152, 704);
+			this.Root.Size = new System.Drawing.Size(1152, 705);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlItem1
@@ -297,157 +396,31 @@ namespace DProS.DeviceManagement
 			this.layoutControlItem6.Control = this.flpLayout;
 			this.layoutControlItem6.Location = new System.Drawing.Point(0, 26);
 			this.layoutControlItem6.Name = "layoutControlItem6";
-			this.layoutControlItem6.Size = new System.Drawing.Size(1132, 634);
+			this.layoutControlItem6.Size = new System.Drawing.Size(1132, 635);
 			this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem6.TextVisible = false;
-			// 
-			// label8
-			// 
-			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label8.BackColor = System.Drawing.Color.Purple;
-			this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.ForeColor = System.Drawing.Color.Black;
-			this.label8.Location = new System.Drawing.Point(744, 672);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(134, 20);
-			this.label8.TabIndex = 34;
-			this.label8.Text = "Quá TG KT định kỳ";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label9
-			// 
-			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label9.BackColor = System.Drawing.Color.GreenYellow;
-			this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label9.ForeColor = System.Drawing.Color.Black;
-			this.label9.Location = new System.Drawing.Point(624, 672);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(116, 20);
-			this.label9.TabIndex = 35;
-			this.label9.Text = "Chưa KT định kỳ";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label10
-			// 
-			this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label10.BackColor = System.Drawing.Color.Black;
-			this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label10.ForeColor = System.Drawing.Color.White;
-			this.label10.Location = new System.Drawing.Point(519, 672);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(101, 20);
-			this.label10.TabIndex = 36;
-			this.label10.Text = "Không sử dụng";
-			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label11
-			// 
-			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label11.BackColor = System.Drawing.Color.Red;
-			this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(369, 672);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(34, 20);
-			this.label11.TabIndex = 37;
-			this.label11.Text = "NG";
-			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label12
-			// 
-			this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label12.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label12.Location = new System.Drawing.Point(146, 672);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(181, 20);
-			this.label12.TabIndex = 38;
-			this.label12.Text = "Quá thời gian KT hàng ngày";
-			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label13
-			// 
-			this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label13.BackColor = System.Drawing.Color.Gray;
-			this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.Location = new System.Drawing.Point(407, 672);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(108, 20);
-			this.label13.TabIndex = 39;
-			this.label13.Text = "OK có điều kiện";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label14
-			// 
-			this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label14.BackColor = System.Drawing.Color.Transparent;
-			this.label14.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(331, 672);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(34, 20);
-			this.label14.TabIndex = 40;
-			this.label14.Text = "OK";
-			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label15
-			// 
-			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label15.BackColor = System.Drawing.Color.Yellow;
-			this.label15.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label15.Location = new System.Drawing.Point(12, 672);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(130, 20);
-			this.label15.TabIndex = 41;
-			this.label15.Text = "Chưa KT hàng ngày";
-			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// emptySpaceItem1
 			// 
 			this.emptySpaceItem1.AllowHotTrack = false;
-			this.emptySpaceItem1.Location = new System.Drawing.Point(870, 660);
+			this.emptySpaceItem1.Location = new System.Drawing.Point(870, 661);
 			this.emptySpaceItem1.Name = "emptySpaceItem1";
 			this.emptySpaceItem1.Size = new System.Drawing.Size(262, 24);
 			this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
 			// 
-			// layoutControlItem7
-			// 
-			this.layoutControlItem7.Control = this.label8;
-			this.layoutControlItem7.Location = new System.Drawing.Point(732, 660);
-			this.layoutControlItem7.Name = "layoutControlItem7";
-			this.layoutControlItem7.Size = new System.Drawing.Size(138, 24);
-			this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem7.TextVisible = false;
-			// 
 			// layoutControlItem8
 			// 
 			this.layoutControlItem8.Control = this.label15;
-			this.layoutControlItem8.Location = new System.Drawing.Point(0, 660);
+			this.layoutControlItem8.Location = new System.Drawing.Point(0, 661);
 			this.layoutControlItem8.Name = "layoutControlItem8";
 			this.layoutControlItem8.Size = new System.Drawing.Size(134, 24);
 			this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem8.TextVisible = false;
 			// 
-			// layoutControlItem9
-			// 
-			this.layoutControlItem9.Control = this.label14;
-			this.layoutControlItem9.Location = new System.Drawing.Point(319, 660);
-			this.layoutControlItem9.Name = "layoutControlItem9";
-			this.layoutControlItem9.Size = new System.Drawing.Size(38, 24);
-			this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem9.TextVisible = false;
-			// 
-			// layoutControlItem10
-			// 
-			this.layoutControlItem10.Control = this.label13;
-			this.layoutControlItem10.Location = new System.Drawing.Point(395, 660);
-			this.layoutControlItem10.Name = "layoutControlItem10";
-			this.layoutControlItem10.Size = new System.Drawing.Size(112, 24);
-			this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-			this.layoutControlItem10.TextVisible = false;
-			// 
 			// layoutControlItem11
 			// 
 			this.layoutControlItem11.Control = this.label12;
-			this.layoutControlItem11.Location = new System.Drawing.Point(134, 660);
+			this.layoutControlItem11.Location = new System.Drawing.Point(134, 661);
 			this.layoutControlItem11.Name = "layoutControlItem11";
 			this.layoutControlItem11.Size = new System.Drawing.Size(185, 24);
 			this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -456,7 +429,7 @@ namespace DProS.DeviceManagement
 			// layoutControlItem12
 			// 
 			this.layoutControlItem12.Control = this.label11;
-			this.layoutControlItem12.Location = new System.Drawing.Point(357, 660);
+			this.layoutControlItem12.Location = new System.Drawing.Point(357, 661);
 			this.layoutControlItem12.Name = "layoutControlItem12";
 			this.layoutControlItem12.Size = new System.Drawing.Size(38, 24);
 			this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
@@ -465,7 +438,7 @@ namespace DProS.DeviceManagement
 			// layoutControlItem13
 			// 
 			this.layoutControlItem13.Control = this.label10;
-			this.layoutControlItem13.Location = new System.Drawing.Point(507, 660);
+			this.layoutControlItem13.Location = new System.Drawing.Point(507, 661);
 			this.layoutControlItem13.Name = "layoutControlItem13";
 			this.layoutControlItem13.Size = new System.Drawing.Size(105, 24);
 			this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
@@ -474,17 +447,44 @@ namespace DProS.DeviceManagement
 			// layoutControlItem14
 			// 
 			this.layoutControlItem14.Control = this.label9;
-			this.layoutControlItem14.Location = new System.Drawing.Point(612, 660);
+			this.layoutControlItem14.Location = new System.Drawing.Point(612, 661);
 			this.layoutControlItem14.Name = "layoutControlItem14";
 			this.layoutControlItem14.Size = new System.Drawing.Size(120, 24);
 			this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem14.TextVisible = false;
 			// 
+			// layoutControlItem7
+			// 
+			this.layoutControlItem7.Control = this.label8;
+			this.layoutControlItem7.Location = new System.Drawing.Point(732, 661);
+			this.layoutControlItem7.Name = "layoutControlItem7";
+			this.layoutControlItem7.Size = new System.Drawing.Size(138, 24);
+			this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem7.TextVisible = false;
+			// 
+			// layoutControlItem10
+			// 
+			this.layoutControlItem10.Control = this.label13;
+			this.layoutControlItem10.Location = new System.Drawing.Point(395, 661);
+			this.layoutControlItem10.Name = "layoutControlItem10";
+			this.layoutControlItem10.Size = new System.Drawing.Size(112, 24);
+			this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem10.TextVisible = false;
+			// 
+			// layoutControlItem9
+			// 
+			this.layoutControlItem9.Control = this.label14;
+			this.layoutControlItem9.Location = new System.Drawing.Point(319, 661);
+			this.layoutControlItem9.Name = "layoutControlItem9";
+			this.layoutControlItem9.Size = new System.Drawing.Size(38, 24);
+			this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+			this.layoutControlItem9.TextVisible = false;
+			// 
 			// frmLayoutMachine
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1152, 704);
+			this.ClientSize = new System.Drawing.Size(1152, 705);
 			this.Controls.Add(this.layoutControl1);
 			this.Name = "frmLayoutMachine";
 			this.Text = "LAYOUT THIẾT BỊ";
@@ -503,14 +503,14 @@ namespace DProS.DeviceManagement
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
 			this.ResumeLayout(false);
 
 		}

@@ -31,11 +31,11 @@ namespace DProS.DeviceManagement
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListDevice));
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-			this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-			this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-			this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gcDevice = new DevExpress.XtraGrid.GridControl();
+			this.gvDevice = new DevExpress.XtraGrid.Views.Grid.GridView();
+			this.gvcMachineCode = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcMachineName = new DevExpress.XtraGrid.Columns.GridColumn();
+			this.gvcId = new DevExpress.XtraGrid.Columns.GridColumn();
 			this.btnCodeSmall = new DevExpress.XtraEditors.SimpleButton();
 			this.btnCodeMedium = new DevExpress.XtraEditors.SimpleButton();
 			this.btnCodeLarge = new DevExpress.XtraEditors.SimpleButton();
@@ -64,10 +64,11 @@ namespace DProS.DeviceManagement
 			this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
 			this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
+			this.gvcIdDevice = new DevExpress.XtraGrid.Columns.GridColumn();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gcDevice)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gvDevice)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -91,7 +92,7 @@ namespace DProS.DeviceManagement
 			// 
 			// layoutControl1
 			// 
-			this.layoutControl1.Controls.Add(this.gridControl1);
+			this.layoutControl1.Controls.Add(this.gcDevice);
 			this.layoutControl1.Controls.Add(this.btnCodeSmall);
 			this.layoutControl1.Controls.Add(this.btnCodeMedium);
 			this.layoutControl1.Controls.Add(this.btnCodeLarge);
@@ -110,64 +111,66 @@ namespace DProS.DeviceManagement
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
-			// gridControl1
+			// gcDevice
 			// 
-			this.gridControl1.Location = new System.Drawing.Point(12, 63);
-			this.gridControl1.MainView = this.gridView1;
-			this.gridControl1.Name = "gridControl1";
-			this.gridControl1.Size = new System.Drawing.Size(1128, 629);
-			this.gridControl1.TabIndex = 13;
-			this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+			this.gcDevice.Location = new System.Drawing.Point(12, 63);
+			this.gcDevice.MainView = this.gvDevice;
+			this.gcDevice.Name = "gcDevice";
+			this.gcDevice.Size = new System.Drawing.Size(1128, 629);
+			this.gcDevice.TabIndex = 13;
+			this.gcDevice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDevice});
 			// 
-			// gridView1
+			// gvDevice
 			// 
-			this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
-			this.gridView1.DetailHeight = 404;
-			this.gridView1.GridControl = this.gridControl1;
-			this.gridView1.Name = "gridView1";
-			this.gridView1.OptionsCustomization.AllowGroup = false;
-			this.gridView1.OptionsSelection.MultiSelect = true;
-			this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-			this.gridView1.OptionsView.ShowAutoFilterRow = true;
-			this.gridView1.OptionsView.ShowGroupPanel = false;
+			this.gvDevice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvcMachineCode,
+            this.gvcMachineName,
+            this.gvcId,
+            this.gvcIdDevice});
+			this.gvDevice.DetailHeight = 404;
+			this.gvDevice.GridControl = this.gcDevice;
+			this.gvDevice.Name = "gvDevice";
+			this.gvDevice.OptionsCustomization.AllowGroup = false;
+			this.gvDevice.OptionsSelection.MultiSelect = true;
+			this.gvDevice.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+			this.gvDevice.OptionsView.ShowAutoFilterRow = true;
+			this.gvDevice.OptionsView.ShowGroupPanel = false;
+			this.gvDevice.Click += new System.EventHandler(this.gvDevice_Click);
 			// 
-			// gridColumn1
+			// gvcMachineCode
 			// 
-			this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn1.AppearanceCell.Options.UseFont = true;
-			this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn1.Caption = "Mã thiết bị";
-			this.gridColumn1.FieldName = "MachineCode";
-			this.gridColumn1.Name = "gridColumn1";
-			this.gridColumn1.Visible = true;
-			this.gridColumn1.VisibleIndex = 1;
+			this.gvcMachineCode.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcMachineCode.AppearanceCell.Options.UseFont = true;
+			this.gvcMachineCode.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcMachineCode.AppearanceHeader.Options.UseFont = true;
+			this.gvcMachineCode.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcMachineCode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcMachineCode.Caption = "Mã thiết bị";
+			this.gvcMachineCode.FieldName = "MachineCode";
+			this.gvcMachineCode.Name = "gvcMachineCode";
+			this.gvcMachineCode.Visible = true;
+			this.gvcMachineCode.VisibleIndex = 1;
 			// 
-			// gridColumn2
+			// gvcMachineName
 			// 
-			this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn2.AppearanceCell.Options.UseFont = true;
-			this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-			this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-			this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn2.Caption = "Tên thiết bị";
-			this.gridColumn2.FieldName = "MachineName";
-			this.gridColumn2.Name = "gridColumn2";
-			this.gridColumn2.Visible = true;
-			this.gridColumn2.VisibleIndex = 2;
+			this.gvcMachineName.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcMachineName.AppearanceCell.Options.UseFont = true;
+			this.gvcMachineName.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.gvcMachineName.AppearanceHeader.Options.UseFont = true;
+			this.gvcMachineName.AppearanceHeader.Options.UseTextOptions = true;
+			this.gvcMachineName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+			this.gvcMachineName.Caption = "Tên thiết bị";
+			this.gvcMachineName.FieldName = "MachineName";
+			this.gvcMachineName.Name = "gvcMachineName";
+			this.gvcMachineName.Visible = true;
+			this.gvcMachineName.VisibleIndex = 2;
 			// 
-			// gridColumn3
+			// gvcId
 			// 
-			this.gridColumn3.Caption = "ID thiết bị";
-			this.gridColumn3.FieldName = "Id";
-			this.gridColumn3.Name = "gridColumn3";
+			this.gvcId.Caption = "ID thiết bị";
+			this.gvcId.FieldName = "Id";
+			this.gvcId.Name = "gvcId";
 			// 
 			// btnCodeSmall
 			// 
@@ -377,7 +380,7 @@ namespace DProS.DeviceManagement
 			// 
 			// layoutControlItem10
 			// 
-			this.layoutControlItem10.Control = this.gridControl1;
+			this.layoutControlItem10.Control = this.gcDevice;
 			this.layoutControlItem10.Location = new System.Drawing.Point(0, 51);
 			this.layoutControlItem10.Name = "layoutControlItem10";
 			this.layoutControlItem10.Size = new System.Drawing.Size(1132, 633);
@@ -448,6 +451,12 @@ namespace DProS.DeviceManagement
 			this.emptySpaceItem12.Size = new System.Drawing.Size(202, 26);
 			this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
 			// 
+			// gvcIdDevice
+			// 
+			this.gvcIdDevice.Caption = "IdDevice";
+			this.gvcIdDevice.FieldName = "IdDevice";
+			this.gvcIdDevice.Name = "gvcIdDevice";
+			// 
 			// frmListDevice
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -458,8 +467,8 @@ namespace DProS.DeviceManagement
 			this.Text = "DANH SÁCH THIẾT BỊ";
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gcDevice)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gvDevice)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -487,8 +496,8 @@ namespace DProS.DeviceManagement
 
 		private DevExpress.XtraLayout.LayoutControl layoutControl1;
 		private DevExpress.XtraLayout.LayoutControlGroup Root;
-		private DevExpress.XtraGrid.GridControl gridControl1;
-		private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+		private DevExpress.XtraGrid.GridControl gcDevice;
+		private DevExpress.XtraGrid.Views.Grid.GridView gvDevice;
 		private DevExpress.XtraEditors.SimpleButton btnCodeSmall;
 		private DevExpress.XtraEditors.SimpleButton btnCodeMedium;
 		private DevExpress.XtraEditors.SimpleButton btnCodeLarge;
@@ -516,8 +525,9 @@ namespace DProS.DeviceManagement
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
 		private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-		private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcMachineCode;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcMachineName;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcId;
+		private DevExpress.XtraGrid.Columns.GridColumn gvcIdDevice;
 	}
 }

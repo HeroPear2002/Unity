@@ -25,7 +25,7 @@ namespace DProS.DeviceManagement
 			LoadData();
 			LoadCombobox();
 		}
-
+		public EventHandler LamMoi;
 		int idMachine = 0;
 		public frmCheckMaintenDevice(bool ismainten, int idmachine)
 		{
@@ -128,12 +128,12 @@ namespace DProS.DeviceManagement
 
 						}
 					}
-					if (countdata > 0) MessageBox.Show("BẠN ĐÃ LƯU THÀNH CÔNG.");
+					if (countdata > 0) MessageBox.Show("BẠN ĐÃ LƯU THÀNH CÔNG.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					LoadData();
 				}
 				else
 				{
-					MessageBox.Show("bạn chưa điền đúng thông tin !".ToUpper(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("bạn chưa điền đúng thông tin !".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}
 		}
@@ -269,6 +269,11 @@ namespace DProS.DeviceManagement
 				if (gvCheckDevice.GetRowCellDisplayText(e.RowHandle, "Result") == "NG") e.Appearance.BackColor = Color.Red;
 				else if (gvCheckDevice.GetRowCellDisplayText(e.RowHandle, "Result") == "OK CÓ ĐK") e.Appearance.BackColor = Color.Gray;
 			}
+		}
+
+		private void frmCheckMaintenDevice_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			LamMoi?.Invoke(sender, e);
 		}
 	}
 }

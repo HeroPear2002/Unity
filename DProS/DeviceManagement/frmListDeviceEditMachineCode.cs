@@ -30,10 +30,7 @@ namespace DProS.DeviceManagement
 			glMachineCode.Properties.ValueMember = "Id";
 			glMachineCode.Properties.Popup += (sender, e) =>
 			{
-				// Truy cập vào View của GridLookUpEdit để tùy chỉnh các cột
 				var view = glMachineCode.Properties.View;
-
-				// Lặp qua các cột và ẩn các cột không mong muốn
 				foreach (GridColumn column in view.Columns)
 				{
 					if (column.FieldName == "MachineCode" || column.FieldName == "MachineName")
@@ -57,7 +54,8 @@ namespace DProS.DeviceManagement
 				if (lisMachine.Find(x => x.MachineCode == machineCode) == null)
 				{
 					bool updateMachineCode = MachineDAO.Instance.Update(id, machineCode);
-					if (0 == 0) MessageBox.Show("BẠN ĐÃ LƯU THÀNH CÔNG.");
+					if (updateMachineCode) MessageBox.Show("BẠN ĐÃ LƯU THÀNH CÔNG.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					else MessageBox.Show("BẠN LƯU THẤT BẠI.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					LoadGridLookUp();
 				}
 			}

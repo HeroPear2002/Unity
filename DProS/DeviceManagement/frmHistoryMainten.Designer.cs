@@ -210,6 +210,7 @@ namespace DProS.DeviceManagement
 			this.btnImport.StyleController = this.layoutControl1;
 			this.btnImport.TabIndex = 16;
 			this.btnImport.Text = "...";
+			this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
 			// 
 			// dtpTestDate
 			// 

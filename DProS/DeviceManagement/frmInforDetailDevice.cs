@@ -23,6 +23,7 @@ namespace DProS.DeviceManagement
 			InitializeComponent();
 			LoadData();
 		}
+		public EventHandler LamMoi;
 		public frmInforDetailDevice(int idmachine)
 		{
 			InitializeComponent();
@@ -134,7 +135,9 @@ namespace DProS.DeviceManagement
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("bạn muốn lưu thông tin này ?".ToUpper(), "Thông Báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
 			{
 				for (int i = 0; i < gridView1.RowCount; i++)
 				{
@@ -166,10 +169,15 @@ namespace DProS.DeviceManagement
 					bool delete = MachineDetailDAO.Instance.DeleteMachineDetail(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadData();
+		}
+
+		private void frmInforDetailDevice_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			LamMoi?.Invoke(sender, e);
 		}
 	}
 }

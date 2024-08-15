@@ -69,19 +69,19 @@ namespace DProS.MachineData
 			string name = txtNameCategory.Text;
 			if (name.Trim() == "")
 			{
-				MessageBox.Show("Bạn phải nhập tên hạng mục cần kiểm tra.".ToUpper());
+				MessageBox.Show("Bạn phải nhập tên hạng mục cần kiểm tra.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			float upperLimit = 0;
 			float lowerLimit = 0;
 			if (txtUpperLimit.Text == "" || txtLowerLimit.Text == "")
 			{
-				MessageBox.Show("Bạn không được để trống giới hạn trên và giới hạn dưới.".ToUpper());
+				MessageBox.Show("Bạn không được để trống giới hạn trên và giới hạn dưới.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else if(float.Parse(txtUpperLimit.Text)< float.Parse(txtLowerLimit.Text))
 			{
-				MessageBox.Show("Giới hạn trên phải lớn hơn hoặc bằng giới hạn dưới.".ToUpper());
+				MessageBox.Show("Giới hạn trên phải lớn hơn hoặc bằng giới hạn dưới.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else
@@ -96,12 +96,12 @@ namespace DProS.MachineData
 					bool insertCateData = CateDataDefaultDAO.Instance.Insert(name , upperLimit, lowerLimit);
 					if (insertCateData)
 					{
-						MessageBox.Show("Bạn đã thêm thành công.".ToUpper());
+						MessageBox.Show("Bạn đã thêm thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper());
+					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper());
+				else MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 			}
 			else
@@ -112,12 +112,12 @@ namespace DProS.MachineData
 					bool updateCateData = CateDataDefaultDAO.Instance.Update(id, name, upperLimit, lowerLimit);
 					if (updateCateData)
 					{
-						MessageBox.Show("Bạn đã sửa thành công.".ToUpper());
+						MessageBox.Show("Bạn đã sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper());
+					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper());
+				else MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
@@ -146,16 +146,21 @@ namespace DProS.MachineData
 					bool delete = CateDataDefaultDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)

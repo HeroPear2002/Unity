@@ -69,9 +69,9 @@ namespace DProS.DeviceManagement
 				if (countid > 0)
 				{
 					LoadData();
-					MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
+					MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			this.Close();
 		}

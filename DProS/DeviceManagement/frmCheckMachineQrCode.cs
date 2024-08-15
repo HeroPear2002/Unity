@@ -16,6 +16,7 @@ namespace DProS.DeviceManagement
 	public partial class frmCheckMachineQrCode : DevExpress.XtraEditors.XtraForm
 	{
 		bool mainten = true;
+		public EventHandler LamMoi;
 		public frmCheckMachineQrCode()
 		{
 			InitializeComponent();
@@ -76,9 +77,14 @@ namespace DProS.DeviceManagement
 
 		private void btnCamera_Click(object sender, EventArgs e)
 		{
-			//frmScanCamera f = new frmScanCamera();
-			//f.ShowDialog();
+			frmCheckMachineQrCodeCamera f = new frmCheckMachineQrCodeCamera();
+			f.ShowDialog();
 			txtMachineCode.Text = string.Empty;
+		}
+
+		private void frmCheckMachineQrCode_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			LamMoi?.Invoke(sender, e);
 		}
 	}
 }

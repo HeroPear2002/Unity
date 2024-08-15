@@ -96,7 +96,7 @@ namespace DProS.DeviceManagement
 			string machineCode = txtMachineCode.Text;
 			if (machineCode.Trim() == "")
 			{
-				MessageBox.Show("Bạn phải nhập mã thiết bị.".ToUpper());
+				MessageBox.Show("Bạn phải nhập mã thiết bị.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			string machineName = txtMachineName.Text;
@@ -109,12 +109,12 @@ namespace DProS.DeviceManagement
 			DateTime dateProduct = dtpDateProduct.Value;
 			if(dateMaker > dateInput)
 			{
-				MessageBox.Show("Ngày chế tạo TB phải trước hoặc bằng ngày nhập.".ToUpper());
+				MessageBox.Show("Ngày chế tạo TB phải trước hoặc bằng ngày nhập.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else if (dateInput > dateProduct)
 			{
-				MessageBox.Show("Ngày nhập phải trước hoặc bằng ngày bắt đầu sản xuất.".ToUpper());
+				MessageBox.Show("Ngày nhập phải trước hoặc bằng ngày bắt đầu sản xuất.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			if (insert)
@@ -124,12 +124,12 @@ namespace DProS.DeviceManagement
 					bool insertMachine = MachineDAO.Instance.Insert(machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, dateProduct, iddevice, dateMaker);
 					if (insertMachine)
 					{
-						MessageBox.Show("Bạn đã thêm thành công.".ToUpper());
+						MessageBox.Show("Bạn đã thêm thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper());
+					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy máy khác.".ToUpper());
+				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy máy khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 			}
 			else
@@ -140,12 +140,12 @@ namespace DProS.DeviceManagement
 					bool updateMachine = MachineDAO.Instance.Update(id, machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, dateProduct, dateMaker);
 					if (updateMachine)
 					{
-						MessageBox.Show("Bạn đã sửa thành công.".ToUpper());
+						MessageBox.Show("Bạn đã sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper());
+					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy máy khác.".ToUpper());
+				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy máy khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
@@ -174,16 +174,21 @@ namespace DProS.DeviceManagement
 					bool delete = MachineDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA"); 
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error); 
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 		
 		private void btnExportExcel_Click(object sender, EventArgs e)
@@ -216,7 +221,7 @@ namespace DProS.DeviceManagement
 						view.OptionsPrint.PrintFilterInfo = false;
 					}
 					view.ExportToXlsx(filePath, options);
-					MessageBox.Show("Export successful!".ToUpper());
+					MessageBox.Show("Export successful!".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			}
 		}

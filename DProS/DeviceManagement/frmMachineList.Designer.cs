@@ -181,7 +181,7 @@
 			this.layoutControl1.Name = "layoutControl1";
 			this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(689, 508, 650, 400);
 			this.layoutControl1.Root = this.Root;
-			this.layoutControl1.Size = new System.Drawing.Size(1364, 736);
+			this.layoutControl1.Size = new System.Drawing.Size(1364, 737);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
 			// 
@@ -190,7 +190,7 @@
 			this.gcMachineList.Location = new System.Drawing.Point(12, 152);
 			this.gcMachineList.MainView = this.gvMachineList;
 			this.gcMachineList.Name = "gcMachineList";
-			this.gcMachineList.Size = new System.Drawing.Size(1340, 572);
+			this.gcMachineList.Size = new System.Drawing.Size(1340, 573);
 			this.gcMachineList.TabIndex = 23;
 			this.gcMachineList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMachineList});
@@ -486,65 +486,65 @@
 			this.dtpDateMaker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtpDateMaker.Location = new System.Drawing.Point(114, 101);
 			this.dtpDateMaker.Name = "dtpDateMaker";
-			this.dtpDateMaker.Size = new System.Drawing.Size(328, 22);
+			this.dtpDateMaker.Size = new System.Drawing.Size(349, 22);
 			this.dtpDateMaker.TabIndex = 12;
 			// 
 			// dtpDateInput
 			// 
 			this.dtpDateInput.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpDateInput.Location = new System.Drawing.Point(551, 101);
+			this.dtpDateInput.Location = new System.Drawing.Point(572, 101);
 			this.dtpDateInput.Name = "dtpDateInput";
-			this.dtpDateInput.Size = new System.Drawing.Size(344, 22);
+			this.dtpDateInput.Size = new System.Drawing.Size(365, 22);
 			this.dtpDateInput.TabIndex = 11;
 			// 
 			// dtpDateProduct
 			// 
 			this.dtpDateProduct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpDateProduct.Location = new System.Drawing.Point(1040, 101);
+			this.dtpDateProduct.Location = new System.Drawing.Point(1081, 101);
 			this.dtpDateProduct.Name = "dtpDateProduct";
-			this.dtpDateProduct.Size = new System.Drawing.Size(311, 22);
+			this.dtpDateProduct.Size = new System.Drawing.Size(270, 22);
 			this.dtpDateProduct.TabIndex = 10;
 			// 
 			// txtMachineCode
 			// 
-			this.txtMachineCode.Location = new System.Drawing.Point(94, 32);
+			this.txtMachineCode.Location = new System.Drawing.Point(115, 32);
 			this.txtMachineCode.Name = "txtMachineCode";
-			this.txtMachineCode.Size = new System.Drawing.Size(369, 20);
+			this.txtMachineCode.Size = new System.Drawing.Size(348, 20);
 			this.txtMachineCode.TabIndex = 9;
 			// 
 			// txtVender
 			// 
-			this.txtVender.Location = new System.Drawing.Point(562, 56);
+			this.txtVender.Location = new System.Drawing.Point(571, 56);
 			this.txtVender.Name = "txtVender";
-			this.txtVender.Size = new System.Drawing.Size(375, 20);
+			this.txtVender.Size = new System.Drawing.Size(366, 20);
 			this.txtVender.TabIndex = 8;
 			// 
 			// txtMachineName
 			// 
-			this.txtMachineName.Location = new System.Drawing.Point(561, 32);
+			this.txtMachineName.Location = new System.Drawing.Point(570, 32);
 			this.txtMachineName.Name = "txtMachineName";
-			this.txtMachineName.Size = new System.Drawing.Size(376, 20);
+			this.txtMachineName.Size = new System.Drawing.Size(367, 20);
 			this.txtMachineName.TabIndex = 7;
 			// 
 			// txtManufacturer
 			// 
-			this.txtManufacturer.Location = new System.Drawing.Point(93, 56);
+			this.txtManufacturer.Location = new System.Drawing.Point(114, 56);
 			this.txtManufacturer.Name = "txtManufacturer";
-			this.txtManufacturer.Size = new System.Drawing.Size(370, 20);
+			this.txtManufacturer.Size = new System.Drawing.Size(349, 20);
 			this.txtManufacturer.TabIndex = 6;
 			// 
 			// txtCodeAsset
 			// 
-			this.txtCodeAsset.Location = new System.Drawing.Point(1018, 56);
+			this.txtCodeAsset.Location = new System.Drawing.Point(1081, 56);
 			this.txtCodeAsset.Name = "txtCodeAsset";
-			this.txtCodeAsset.Size = new System.Drawing.Size(333, 20);
+			this.txtCodeAsset.Size = new System.Drawing.Size(270, 20);
 			this.txtCodeAsset.TabIndex = 5;
 			// 
 			// txtSerialNumber
 			// 
-			this.txtSerialNumber.Location = new System.Drawing.Point(1015, 32);
+			this.txtSerialNumber.Location = new System.Drawing.Point(1081, 32);
 			this.txtSerialNumber.Name = "txtSerialNumber";
-			this.txtSerialNumber.Size = new System.Drawing.Size(336, 20);
+			this.txtSerialNumber.Size = new System.Drawing.Size(270, 20);
 			this.txtSerialNumber.TabIndex = 4;
 			// 
 			// Root
@@ -596,7 +596,7 @@
             this.emptySpaceItem30,
             this.layoutControlItem20});
 			this.Root.Name = "Root";
-			this.Root.Size = new System.Drawing.Size(1364, 736);
+			this.Root.Size = new System.Drawing.Size(1364, 737);
 			this.Root.TextVisible = false;
 			// 
 			// layoutControlItem1
@@ -605,9 +605,9 @@
 			this.layoutControlItem1.Location = new System.Drawing.Point(939, 20);
 			this.layoutControlItem1.Name = "layoutControlItem1";
 			this.layoutControlItem1.Size = new System.Drawing.Size(404, 24);
-			this.layoutControlItem1.Text = "Thông tin: ";
+			this.layoutControlItem1.Text = "Thông tin:                       ";
 			this.layoutControlItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-			this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 15);
+			this.layoutControlItem1.TextSize = new System.Drawing.Size(125, 15);
 			this.layoutControlItem1.TextToControlDistance = 5;
 			// 
 			// layoutControlItem2
@@ -616,9 +616,9 @@
 			this.layoutControlItem2.Location = new System.Drawing.Point(939, 44);
 			this.layoutControlItem2.Name = "layoutControlItem2";
 			this.layoutControlItem2.Size = new System.Drawing.Size(404, 24);
-			this.layoutControlItem2.Text = "Mã TSCD:  ";
+			this.layoutControlItem2.Text = "Mã TSCD:                       ";
 			this.layoutControlItem2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-			this.layoutControlItem2.TextSize = new System.Drawing.Size(62, 15);
+			this.layoutControlItem2.TextSize = new System.Drawing.Size(125, 15);
 			this.layoutControlItem2.TextToControlDistance = 5;
 			// 
 			// lab4
@@ -627,9 +627,9 @@
 			this.lab4.Location = new System.Drawing.Point(465, 20);
 			this.lab4.Name = "lab4";
 			this.lab4.Size = new System.Drawing.Size(464, 24);
-			this.lab4.Text = "Tên thiết bị:     ";
+			this.lab4.Text = "Tên thiết bị:        ";
 			this.lab4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-			this.lab4.TextSize = new System.Drawing.Size(79, 15);
+			this.lab4.TextSize = new System.Drawing.Size(88, 15);
 			this.lab4.TextToControlDistance = 5;
 			// 
 			// layoutControlItem5
@@ -638,17 +638,17 @@
 			this.layoutControlItem5.Location = new System.Drawing.Point(465, 44);
 			this.layoutControlItem5.Name = "layoutControlItem5";
 			this.layoutControlItem5.Size = new System.Drawing.Size(464, 24);
-			this.layoutControlItem5.Text = "Nhà cung cấp: ";
+			this.layoutControlItem5.Text = "Nhà cung cấp:    ";
 			this.layoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-			this.layoutControlItem5.TextSize = new System.Drawing.Size(80, 15);
+			this.layoutControlItem5.TextSize = new System.Drawing.Size(89, 15);
 			this.layoutControlItem5.TextToControlDistance = 5;
 			// 
 			// layoutControlItem7
 			// 
 			this.layoutControlItem7.Control = this.dtpDateProduct;
-			this.layoutControlItem7.Location = new System.Drawing.Point(898, 89);
+			this.layoutControlItem7.Location = new System.Drawing.Point(939, 89);
 			this.layoutControlItem7.Name = "layoutControlItem7";
-			this.layoutControlItem7.Size = new System.Drawing.Size(445, 24);
+			this.layoutControlItem7.Size = new System.Drawing.Size(404, 24);
 			this.layoutControlItem7.Text = "Ngày bắt đầu sản xuất: ";
 			this.layoutControlItem7.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
 			this.layoutControlItem7.TextSize = new System.Drawing.Size(125, 15);
@@ -657,9 +657,9 @@
 			// layoutControlItem8
 			// 
 			this.layoutControlItem8.Control = this.dtpDateInput;
-			this.layoutControlItem8.Location = new System.Drawing.Point(444, 89);
+			this.layoutControlItem8.Location = new System.Drawing.Point(465, 89);
 			this.layoutControlItem8.Name = "layoutControlItem8";
-			this.layoutControlItem8.Size = new System.Drawing.Size(443, 24);
+			this.layoutControlItem8.Size = new System.Drawing.Size(464, 24);
 			this.layoutControlItem8.Text = "Ngày nhập máy: ";
 			this.layoutControlItem8.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
 			this.layoutControlItem8.TextSize = new System.Drawing.Size(90, 15);
@@ -670,7 +670,7 @@
 			this.layoutControlItem9.Control = this.dtpDateMaker;
 			this.layoutControlItem9.Location = new System.Drawing.Point(1, 89);
 			this.layoutControlItem9.Name = "layoutControlItem9";
-			this.layoutControlItem9.Size = new System.Drawing.Size(433, 24);
+			this.layoutControlItem9.Size = new System.Drawing.Size(454, 24);
 			this.layoutControlItem9.Text = "Ngày chế tạo TB: ";
 			this.layoutControlItem9.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
 			this.layoutControlItem9.TextSize = new System.Drawing.Size(96, 15);
@@ -763,9 +763,9 @@
 			this.layoutControlItem6.Location = new System.Drawing.Point(1, 20);
 			this.layoutControlItem6.Name = "layoutControlItem6";
 			this.layoutControlItem6.Size = new System.Drawing.Size(454, 24);
-			this.layoutControlItem6.Text = "Mã thiết bị:     ";
+			this.layoutControlItem6.Text = "Mã thiết bị:            ";
 			this.layoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-			this.layoutControlItem6.TextSize = new System.Drawing.Size(76, 15);
+			this.layoutControlItem6.TextSize = new System.Drawing.Size(97, 15);
 			this.layoutControlItem6.TextToControlDistance = 5;
 			// 
 			// layoutControlItem3
@@ -774,9 +774,9 @@
 			this.layoutControlItem3.Location = new System.Drawing.Point(1, 44);
 			this.layoutControlItem3.Name = "layoutControlItem3";
 			this.layoutControlItem3.Size = new System.Drawing.Size(454, 24);
-			this.layoutControlItem3.Text = "Nhà sản xuất: ";
+			this.layoutControlItem3.Text = "Nhà sản xuất:        ";
 			this.layoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-			this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 15);
+			this.layoutControlItem3.TextSize = new System.Drawing.Size(96, 15);
 			this.layoutControlItem3.TextToControlDistance = 5;
 			// 
 			// emptySpaceItem10
@@ -952,7 +952,7 @@
 			// emptySpaceItem29
 			// 
 			this.emptySpaceItem29.AllowHotTrack = false;
-			this.emptySpaceItem29.Location = new System.Drawing.Point(434, 89);
+			this.emptySpaceItem29.Location = new System.Drawing.Point(455, 89);
 			this.emptySpaceItem29.Name = "emptySpaceItem29";
 			this.emptySpaceItem29.Size = new System.Drawing.Size(10, 24);
 			this.emptySpaceItem29.TextSize = new System.Drawing.Size(0, 0);
@@ -960,9 +960,9 @@
 			// emptySpaceItem30
 			// 
 			this.emptySpaceItem30.AllowHotTrack = false;
-			this.emptySpaceItem30.Location = new System.Drawing.Point(887, 89);
+			this.emptySpaceItem30.Location = new System.Drawing.Point(929, 89);
 			this.emptySpaceItem30.Name = "emptySpaceItem30";
-			this.emptySpaceItem30.Size = new System.Drawing.Size(11, 24);
+			this.emptySpaceItem30.Size = new System.Drawing.Size(10, 24);
 			this.emptySpaceItem30.TextSize = new System.Drawing.Size(0, 0);
 			// 
 			// layoutControlItem20
@@ -970,7 +970,7 @@
 			this.layoutControlItem20.Control = this.gcMachineList;
 			this.layoutControlItem20.Location = new System.Drawing.Point(0, 140);
 			this.layoutControlItem20.Name = "layoutControlItem20";
-			this.layoutControlItem20.Size = new System.Drawing.Size(1344, 576);
+			this.layoutControlItem20.Size = new System.Drawing.Size(1344, 577);
 			this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem20.TextVisible = false;
 			// 
@@ -978,7 +978,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1364, 736);
+			this.ClientSize = new System.Drawing.Size(1364, 737);
 			this.Controls.Add(this.layoutControl1);
 			this.Name = "frmMachineList";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

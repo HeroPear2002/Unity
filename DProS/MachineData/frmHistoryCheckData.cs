@@ -50,12 +50,12 @@ namespace DProS.MachineData
 			DateTime dateTo = dtpToDate.Value;
 			if (machineCode == "")
 			{
-				MessageBox.Show("BẠN PHẢI CHỌN MÃ KHUÔN VÀ MÃ MÁY.");
+				MessageBox.Show("BẠN PHẢI CHỌN MÃ KHUÔN VÀ MÃ MÁY.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else if (dateFrom > dateTo || dateFrom > DateTime.Now)
 			{
-				MessageBox.Show("BẠN CHỌN NGÀY XEM KHÔNG HỢP LÝ.");
+				MessageBox.Show("BẠN CHỌN NGÀY XEM KHÔNG HỢP LÝ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			listHistory = DataCheckDAO.Instance.GetListHistory(moldCode, machineCode, dateFrom, dateTo);
@@ -83,8 +83,8 @@ namespace DProS.MachineData
 					bool update = DataCheckDAO.Instance.Update(id, valueReal, note);
 					if (update) count++;
 				}
-				if (count > 0) MessageBox.Show("Bạn đã Sửa thành công.".ToUpper());
-				else MessageBox.Show("SỬA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI SỬA.");
+				if (count > 0) MessageBox.Show("Bạn đã Sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("SỬA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI SỬA.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
@@ -93,7 +93,7 @@ namespace DProS.MachineData
 		{
 			if(gcHistoryCheckData.DataSource == null)
 			{
-				MessageBox.Show("BẠN CẦN TÌM TRƯỚC KHI IN FILE EXCEL");
+				MessageBox.Show("BẠN CẦN TÌM TRƯỚC KHI IN FILE EXCEL", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			GridView view = gcHistoryCheckData.FocusedView as GridView;
@@ -117,8 +117,8 @@ namespace DProS.MachineData
 					bool delete = DataCheckDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
@@ -156,7 +156,7 @@ namespace DProS.MachineData
 						view.OptionsPrint.PrintFilterInfo = false;
 					}
 					view.ExportToXlsx(filePath, options);
-					MessageBox.Show("Export successful!".ToUpper());
+					MessageBox.Show("Export successful!".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			}
 		}

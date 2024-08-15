@@ -84,8 +84,8 @@ namespace DProS.MachineData
 					bool delete = SetupDefaultDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
@@ -109,7 +109,7 @@ namespace DProS.MachineData
 					int idmold = 0;
 					if(name == "" || machineCode == "" || moldCode == "")
 					{
-						MessageBox.Show("BẠN PHẢI NHẬP ĐỦ MÃ KHUÔN, MÃ MÁY, TÊN HẠNG MỤC KIỂM TRA.");
+						MessageBox.Show("BẠN PHẢI NHẬP ĐỦ MÃ KHUÔN, MÃ MÁY, TÊN HẠNG MỤC KIỂM TRA.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
 					else
@@ -121,15 +121,15 @@ namespace DProS.MachineData
 					float value = 0;
 					if (valueDefault == "")
 					{
-						MessageBox.Show("BẠN PHẢI NHẬP GIÁ TRỊ ĐÃ.");
+						MessageBox.Show("BẠN PHẢI NHẬP GIÁ TRỊ ĐÃ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
 					else value = float.Parse(valueDefault);
 					bool update = SetupDefaultDAO.Instance.Update(id,idcate,idmold,idmachine,value);
 					if (update) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã sửa thành công.".ToUpper());
-				else MessageBox.Show("SỬA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI SỬA");
+				if (countid > 0) MessageBox.Show("Bạn đã sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("SỬA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI SỬA", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
@@ -156,24 +156,24 @@ namespace DProS.MachineData
 					float value = 0;
 					if (txtValue.Text == "")
 					{
-						MessageBox.Show("BẠN PHẢI NHẬP GIÁ TRỊ ĐÃ.");
+						MessageBox.Show("BẠN PHẢI NHẬP GIÁ TRỊ ĐÃ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
 					else if (float.Parse(txtValue.Text) < CateDTO.LowerLimit || CateDTO.UpperLimit < float.Parse(txtValue.Text))
 					{
-						MessageBox.Show("Giá trị của bạn phải nằm trong khoảng giới hạn trên và giới hạn dưới".ToUpper());
+						MessageBox.Show("Giá trị của bạn phải nằm trong khoảng giới hạn trên và giới hạn dưới".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
 					else value = float.Parse(txtValue.Text);
 					if (!SetupDefaultDAO.Instance.GetItem(idcate, idmold, idmachine))
 					{
 						bool insert = SetupDefaultDAO.Instance.Insert(idcate, idmold, idmachine, value);
-						if (insert) MessageBox.Show("Bạn đã lưu thành công.".ToUpper());
-						else MessageBox.Show("LƯU KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI LƯU");
+						if (insert) MessageBox.Show("Bạn đã lưu thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						else MessageBox.Show("LƯU KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI LƯU", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
-					else MessageBox.Show("HẠNG MỤC KIỂM TRA MÁY VÀ KHUÔN NÀY ĐÃ ĐƯỢC THIẾT LẬP.");
+					else MessageBox.Show("HẠNG MỤC KIỂM TRA MÁY VÀ KHUÔN NÀY ĐÃ ĐƯỢC THIẾT LẬP.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
-				else MessageBox.Show("MỖI BẢNG BẠN PHẢI CHỌN 1 HÀNG");
+				else MessageBox.Show("MỖI BẢNG BẠN PHẢI CHỌN 1 HÀNG", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			LoadControl();
 		}

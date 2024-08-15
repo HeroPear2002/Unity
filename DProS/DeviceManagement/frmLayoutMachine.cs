@@ -142,20 +142,26 @@ namespace DProS.DeviceManagement
 			if (statusform == 1)
 			{
 				frmCheckMaintenDevice form = new frmCheckMaintenDevice(mainten, idMachine);
+				form.LamMoi += new EventHandler(btnUpdate_Click);
 				form.ShowDialog();
+				LoadControl();
 			}
 			else if (statusform == 2)
 			{
 				frmInforDetailDevice form = new frmInforDetailDevice(idMachine);
+				form.LamMoi += new EventHandler(btnUpdate_Click);
 				form.ShowDialog();
+				LoadControl();
 			}
 			else if (statusform == 3)
 			{
 				frmHistoryEditMachine form = new frmHistoryEditMachine(idMachine);
+				form.LamMoi += new EventHandler(btnUpdate_Click);
 				form.ShowDialog();
+				LoadControl();
 			}
 
-			else MessageBox.Show("MỜI BẠN CHỌN LẠI.");
+			else MessageBox.Show("MỜI BẠN CHỌN HẠNG MỤC KIỂM TRA.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 		}
 
 		private static async Task UpdateTimeReality()
@@ -179,14 +185,14 @@ namespace DProS.DeviceManagement
 						foreach (var item in listRe)
 						{
 							List<HistoryDeviceDTO> listdto = HistoryDeviceDAO.Instance.GetItemRelation(item.Id);
-							if (listdto.Count != 0)
+							if (listdto.Count != 0 /*&& item1.IdDevice!=1*/)
 							{
 								DateTime dateCheck = listdto[0].DateCheck.Date;
 								TimeSpan elapsed = now - dateCheck;
 								int timeReality = (int)elapsed.TotalHours;
 								RelationMachineCateDAO.Instance.UpdateTimeReality(item.Id, timeReality);
 							}
-							else
+							else if(item1.IdDevice != 1)
 							{
 								if (MachineDAO.Instance.GetItem(item.IdMachine) != null)
 								{
@@ -252,6 +258,7 @@ namespace DProS.DeviceManagement
 			mainten = true;
 			statusform = 1;
 			frmCheckMachineQrCode form = new frmCheckMachineQrCode(mainten);
+			form.LamMoi += new EventHandler(btnUpdate_Click);
 			form.ShowDialog();
 			LockControl(statusform, mainten);
 		}
@@ -260,6 +267,7 @@ namespace DProS.DeviceManagement
 			mainten = false;
 			statusform = 1;
 			frmCheckMachineQrCode form = new frmCheckMachineQrCode(mainten);
+			form.LamMoi += new EventHandler(btnUpdate_Click);
 			form.ShowDialog();
 			LockControl(statusform, mainten);
 		}

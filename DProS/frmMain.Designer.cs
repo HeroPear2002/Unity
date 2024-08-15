@@ -253,10 +253,10 @@
             this.accordionControlElement30,
             this.accordionControlElement39,
             this.accordionControlElement40});
-			this.accordionControl1.Location = new System.Drawing.Point(0, 32);
+			this.accordionControl1.Location = new System.Drawing.Point(0, 31);
 			this.accordionControl1.Name = "accordionControl1";
 			this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-			this.accordionControl1.Size = new System.Drawing.Size(210, 735);
+			this.accordionControl1.Size = new System.Drawing.Size(210, 736);
 			this.accordionControl1.TabIndex = 1;
 			this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
 			// 
@@ -1607,7 +1607,7 @@
             this.barStaticItem2});
 			this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
 			this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-			this.fluentDesignFormControl1.Size = new System.Drawing.Size(1364, 32);
+			this.fluentDesignFormControl1.Size = new System.Drawing.Size(1364, 31);
 			this.fluentDesignFormControl1.TabIndex = 2;
 			this.fluentDesignFormControl1.TabStop = false;
 			this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);

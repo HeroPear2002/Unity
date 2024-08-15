@@ -46,6 +46,11 @@ namespace DProS.MachineData
 			DateTime date1 = dtpkDate.Value.Date.AddSeconds(5);
 			DateTime date2 = date1.AddDays(1).AddSeconds(-5);
 			string moldcode = cbMoldCode.Text;
+			if (cbMachineCode.Text == "")
+			{
+				MessageBox.Show("BẠN PHẢI CHỌN MÃ KHUÔN VÀ MÃ MÁY TRƯỚC.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
 			string machinecode = cbMachineCode.Text;
 			int idmold = int.Parse(cbMoldCode.SelectedValue.ToString());
 			int idmachine = MachineDAO.Instance.GetItem(machinecode).Id;
@@ -174,6 +179,11 @@ namespace DProS.MachineData
 			DateTime date1 = today.AddDays(-today.Day - 1);
 			DateTime date2 = date1.AddMonths(1).AddSeconds(-5);
 			string moldcode = cbMoldCode.Text;
+			if (cbMachineCode.Text == "")
+			{
+				MessageBox.Show("BẠN PHẢI CHỌN MÃ KHUÔN VÀ MÃ MÁY TRƯỚC.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
 			string machinecode = cbMachineCode.Text;
 			int idmold = int.Parse(cbMoldCode.SelectedValue.ToString());
 			int idmachine = MachineDAO.Instance.GetItem(machinecode).Id;

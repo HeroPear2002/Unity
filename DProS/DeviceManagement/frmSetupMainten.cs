@@ -94,8 +94,8 @@ namespace DProS.DeviceManagement
 						}
 					}
 				}
-				if (countInsert > 0) MessageBox.Show("THÊM THÀNH CÔNG.");
-				else MessageBox.Show("BẠN CẦN CHỌN LẠI MÁY VÀ HẠNG MỤC BẢO DƯỠNG.");
+				if (countInsert > 0) MessageBox.Show("THÊM THÀNH CÔNG.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("BẠN CẦN CHỌN LẠI MÁY VÀ HẠNG MỤC BẢO DƯỠNG.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 			LoadData();
 		}

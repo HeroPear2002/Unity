@@ -41,12 +41,12 @@ namespace DProS.DeviceManagement
 		{
 			if(txtPathFile.Text == "")
 			{
-				MessageBox.Show("Bạn hãy chọn file trước.".ToUpper(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Bạn hãy chọn file trước.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			else if(cbSheet.Text.Length <= 0 )
 			{
-				MessageBox.Show("Bạn hãy chọn sheet trước.".ToUpper(), "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				MessageBox.Show("Bạn hãy chọn sheet trước.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 
@@ -98,11 +98,11 @@ namespace DProS.DeviceManagement
 			{
 				txtError.Text = "Bạn có " + countError.ToString() + " bản ghi lỗi";
 				btnListError.Enabled = true;
-				MessageBox.Show("Bạn có lỗi khi nhập.".ToUpper());
+				MessageBox.Show("Bạn có lỗi khi nhập.".ToUpper(), "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else
 			{
-				MessageBox.Show("Bạn đã nhập thành công.".ToUpper());
+				MessageBox.Show("Bạn đã nhập thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				this.Close();
 			}
 		}

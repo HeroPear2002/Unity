@@ -71,7 +71,7 @@ namespace DProS.DeviceManagement
 			string name = txtDeviceName.Text;
 			if (name.Trim() == "")
 			{
-				MessageBox.Show("Bạn phải nhập loại thiết bị.".ToUpper());
+				MessageBox.Show("Bạn phải nhập loại thiết bị.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			string urlEveryday = txtMethodEveryday.Text;
@@ -83,14 +83,14 @@ namespace DProS.DeviceManagement
 					bool inserted = DeviceDAO.Instance.Insert(name, urlEveryday, urlMainten);
 					if (inserted)
 					{
-						MessageBox.Show("Bạn đã thêm thành công".ToUpper());
+						MessageBox.Show("Bạn đã thêm thành công".ToUpper(),"THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn thêm bị thất bại".ToUpper());
+					MessageBox.Show("Bạn thêm bị thất bại".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
-					MessageBox.Show("Tên thiết bị này đã tồn tại hãy nhập tên thiết bị khác.".ToUpper());
+					MessageBox.Show("Tên thiết bị này đã tồn tại hãy nhập tên thiết bị khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}
 			else
@@ -101,14 +101,14 @@ namespace DProS.DeviceManagement
 					bool updated = DeviceDAO.Instance.Update(id, name, urlEveryday, urlMainten);
 					if (updated)
 					{
-						MessageBox.Show("Bạn đã sửa thành công".ToUpper());
+						MessageBox.Show("Bạn đã sửa thành công".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn sửa bị thất bại".ToUpper());
+					MessageBox.Show("Bạn sửa bị thất bại".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
-					MessageBox.Show("Tên thiết bị này đã tồn tại hãy nhập tên thiết bị khác.".ToUpper());
+					MessageBox.Show("Tên thiết bị này đã tồn tại hãy nhập tên thiết bị khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 
 			}
@@ -158,16 +158,21 @@ namespace DProS.DeviceManagement
 			{
 				int id = int.Parse(tvDeviceList.GetFocusedRowCellValue("Id").ToString());
 				bool delete = DeviceDAO.Instance.Delete(id);
-				if (delete)  MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (delete)  MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)

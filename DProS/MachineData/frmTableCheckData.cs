@@ -74,14 +74,14 @@ namespace DProS.MachineData
 					DateTime dateCheck = dtpCheck.Value;
 					if(dateCheck > DateTime.Now)
 					{
-						MessageBox.Show("BẠN CHỌN NGÀY KIỂM TRA KHÔNG HỢP LÝ.");
+						MessageBox.Show("BẠN CHỌN NGÀY KIỂM TRA KHÔNG HỢP LÝ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 						return;
 					}
 					bool insert = DataCheckDAO.Instance.Insert(idSetup, dateCheck, valueReal, 1);
 					if (insert) count++;
 				}
-				if (count > 0) MessageBox.Show("Bạn đã lưu thành công.".ToUpper());
-				else MessageBox.Show("LƯU KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI LƯU");
+				if (count > 0) MessageBox.Show("Bạn đã lưu thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("LƯU KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI LƯU", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadData();
 		}

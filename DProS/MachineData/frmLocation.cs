@@ -65,7 +65,7 @@ namespace DProS.MachineData
 			string name = txtNameLocation.Text;
 			if(name.Trim() == "")
 			{
-				MessageBox.Show("KHÔNG ĐƯỢC ĐỂ TRỐNG VỊ TRÍ.");
+				MessageBox.Show("KHÔNG ĐƯỢC ĐỂ TRỐNG VỊ TRÍ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			if (Insert)
@@ -75,12 +75,12 @@ namespace DProS.MachineData
 					bool insert = LocationDAO.Instance.Insert(name);
 					if (insert)
 					{
-						MessageBox.Show("Bạn đã thêm thành công.".ToUpper());
+						MessageBox.Show("Bạn đã thêm thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper());
+					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Vị trí này đã tồn tại hãy nhập Vị trí khác khác.".ToUpper());
+				else MessageBox.Show("Vị trí này đã tồn tại hãy nhập Vị trí khác khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 			}
 			else
@@ -91,12 +91,12 @@ namespace DProS.MachineData
 					bool update = LocationDAO.Instance.Update(id, name);
 					if (update)
 					{
-						MessageBox.Show("Bạn đã sửa thành công.".ToUpper());
+						MessageBox.Show("Bạn đã sửa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper());
+					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Vị trí này đã tồn tại hãy nhập vị trí khác.".ToUpper());
+				else MessageBox.Show("Vị trí này đã tồn tại hãy nhập vị trí khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 		private void btnInsert_Click(object sender, EventArgs e)
@@ -124,16 +124,21 @@ namespace DProS.MachineData
 					bool delete = LocationDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)

@@ -105,25 +105,25 @@ namespace DProS.DeviceManagement
 			string nameCategory = txtNameCategory.Text;
 			if (nameCategory.Trim() == "")
 			{
-				MessageBox.Show("Bạn phải nhập tên hạng mục.".ToUpper());
+				MessageBox.Show("Bạn phải nhập tên hạng mục.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			string method = txtMethodImplement.Text;
 			string detail = txtStandardVerdict.Text;
 			int timer = 24;
-			if (txtTimeRoutineMainten.Text != "" && timer > 24 && !everyday)
+			if (txtTimeRoutineMainten.Text != "" && !everyday)
 				timer = int.Parse(txtTimeRoutineMainten.Text);
 			else if(everyday) timer = 24;
 			else
 			{
-				MessageBox.Show("BẠN PHẢI NHẬP THỜI GIAN BẢO DƯỠNG ĐỊNH KỲ.");
+				MessageBox.Show("BẠN PHẢI NHẬP THỜI GIAN BẢO DƯỠNG ĐỊNH KỲ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			int idDevice = 0;
 			if(cbDeviceType.Text.Length > 0) idDevice= int.Parse(cbDeviceType.SelectedValue.ToString());
 			else
 			{
-				MessageBox.Show("BẠN PHẢI CHỌN LOẠI THIẾT BỊ.");
+				MessageBox.Show("BẠN PHẢI CHỌN LOẠI THIẾT BỊ.", "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
 			int statusCate = 0;
@@ -136,14 +136,14 @@ namespace DProS.DeviceManagement
 					bool insertCate = CateTestMachineDAO.Instance.Insert(nameCategory, detail, timer, method, statusCate, idDevice);
 					if (insertCate)
 					{
-						MessageBox.Show("Bạn đã thêm thành công".ToUpper());
+						MessageBox.Show("Bạn đã thêm thành công".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn thêm bị thất bại".ToUpper());
+					MessageBox.Show("Bạn thêm bị thất bại".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
-					MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper());
+					MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 			}
 			else
@@ -154,14 +154,14 @@ namespace DProS.DeviceManagement
 					bool updateCate = CateTestMachineDAO.Instance.Update(id, nameCategory, detail, timer, method, statusCate, idDevice);
 					if (updateCate)
 					{
-						MessageBox.Show("Bạn đã sửa thành công".ToUpper());
+						MessageBox.Show("Bạn đã sửa thành công".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						return;
 					}
-					MessageBox.Show("Bạn sửa bị thất bại".ToUpper());
+					MessageBox.Show("Bạn sửa bị thất bại".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				else
 				{
-					MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper());
+					MessageBox.Show("Tên hạng mục này đã tồn tại hãy nhập tên hạng mục khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				}
 
 			}
@@ -191,16 +191,21 @@ namespace DProS.DeviceManagement
 					bool delete = CateTestMachineDAO.Instance.Delete(id);
 					if (delete) countid++;
 				}
-				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper());
-				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA");
+				if (countid > 0) MessageBox.Show("Bạn đã xóa thành công.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				else MessageBox.Show("XÓA KHÔNG THÀNH CÔNG, BẠN PHẢI CHỌN HÀNG TRƯỚC KHI XÓA", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			LoadControl();
 		}
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			Save();
-			LoadControl();
+			DialogResult result = MessageBox.Show("BẠN MUỐN LƯU BẢN GHI NÀY?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (result == DialogResult.Yes)
+			{
+				Save();
+				LoadControl();
+			}
 		}
 
 		private void btnExportExcel_Click(object sender, EventArgs e)
@@ -235,7 +240,7 @@ namespace DProS.DeviceManagement
 						view.OptionsPrint.PrintFilterInfo = false;
 					}
 					view.ExportToXlsx(filePath, options);
-					MessageBox.Show("Export successful!".ToUpper());
+					MessageBox.Show("Export successful!".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			}
 		}
