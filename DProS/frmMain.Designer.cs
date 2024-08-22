@@ -253,95 +253,101 @@
             this.accordionControlElement30,
             this.accordionControlElement39,
             this.accordionControlElement40});
-			this.accordionControl1.Location = new System.Drawing.Point(0, 31);
-			this.accordionControl1.Name = "accordionControl1";
-			this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-			this.accordionControl1.Size = new System.Drawing.Size(210, 736);
-			this.accordionControl1.TabIndex = 1;
-			this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
-			// 
-			// btnWarehouse
-			// 
-			this.btnWarehouse.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControl1.Location = new System.Drawing.Point(0, 27);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.Size = new System.Drawing.Size(210, 853);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            // 
+            // btnWarehouse
+            // 
+            this.btnWarehouse.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnWH,
             this.accordionControlSeparator1,
             this.btnPartjhgjhg,
             this.accordionControlSeparator2,
             this.btnLotDelivery,
             this.accordionControlSeparator3});
-			this.btnWarehouse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.ImageOptions.Image")));
-			this.btnWarehouse.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 0);
-			this.btnWarehouse.Name = "btnWarehouse";
-			this.btnWarehouse.Text = "QUẢN LÝ KHO";
-			// 
-			// btnWH
-			// 
-			this.btnWH.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btnWarehouse.Expanded = true;
+            this.btnWarehouse.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnWarehouse.ImageOptions.Image")));
+            this.btnWarehouse.ImageOptions.SvgImageSize = new System.Drawing.Size(32, 0);
+            this.btnWarehouse.Name = "btnWarehouse";
+            this.btnWarehouse.Text = "QUẢN LÝ KHO";
+            // 
+            // btnWH
+            // 
+            this.btnWH.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnLayoutMaterial,
             this.accordionControlSeparator7,
             this.btnInventoryMaterial,
             this.accordionControlSeparator8,
             this.accordionControlElement47,
             this.accordionControlElement48});
-			this.btnWH.Name = "btnWH";
-			this.btnWH.Text = "KHO NGUYÊN LIỆU";
-			// 
-			// btnLayoutMaterial
-			// 
-			this.btnLayoutMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLayoutMaterial.ImageOptions.Image")));
-			this.btnLayoutMaterial.Name = "btnLayoutMaterial";
-			this.btnLayoutMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnLayoutMaterial.Text = "LAYOUT KHO";
-			this.btnLayoutMaterial.Click += new System.EventHandler(this.btnLayoutMaterial_Click);
-			// 
-			// accordionControlSeparator7
-			// 
-			this.accordionControlSeparator7.Name = "accordionControlSeparator7";
-			// 
-			// btnInventoryMaterial
-			// 
-			this.btnInventoryMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryMaterial.ImageOptions.Image")));
-			this.btnInventoryMaterial.Name = "btnInventoryMaterial";
-			this.btnInventoryMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInventoryMaterial.Text = "TỒN KHO";
-			// 
-			// accordionControlSeparator8
-			// 
-			this.accordionControlSeparator8.Name = "accordionControlSeparator8";
-			// 
-			// accordionControlElement47
-			// 
-			this.accordionControlElement47.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btnWH.Name = "btnWH";
+            this.btnWH.Text = "KHO NGUYÊN LIỆU";
+            // 
+            // btnLayoutMaterial
+            // 
+            this.btnLayoutMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLayoutMaterial.ImageOptions.Image")));
+            this.btnLayoutMaterial.Name = "btnLayoutMaterial";
+            this.btnLayoutMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnLayoutMaterial.Text = "LAYOUT KHO";
+            this.btnLayoutMaterial.Click += new System.EventHandler(this.btnLayoutMaterial_Click);
+            // 
+            // accordionControlSeparator7
+            // 
+            this.accordionControlSeparator7.Name = "accordionControlSeparator7";
+            // 
+            // btnInventoryMaterial
+            // 
+            this.btnInventoryMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryMaterial.ImageOptions.Image")));
+            this.btnInventoryMaterial.Name = "btnInventoryMaterial";
+            this.btnInventoryMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInventoryMaterial.Text = "TỒN KHO";
+            this.btnInventoryMaterial.Click += new System.EventHandler(this.btnInventoryMaterial_Click);
+            // 
+            // accordionControlSeparator8
+            // 
+            this.accordionControlSeparator8.Name = "accordionControlSeparator8";
+            // 
+            // accordionControlElement47
+            // 
+            this.accordionControlElement47.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnInputMat,
             this.btnInputMixMat,
             this.btnInputRecycleMat});
-			this.accordionControlElement47.Name = "accordionControlElement47";
-			this.accordionControlElement47.Text = "THỐNG KÊ NHẬP";
-			// 
-			// btnInputMat
-			// 
-			this.btnInputMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputMat.ImageOptions.Image")));
-			this.btnInputMat.Name = "btnInputMat";
-			this.btnInputMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInputMat.Text = "NHỰA TINH";
-			// 
-			// btnInputMixMat
-			// 
-			this.btnInputMixMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputMixMat.ImageOptions.Image")));
-			this.btnInputMixMat.Name = "btnInputMixMat";
-			this.btnInputMixMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInputMixMat.Text = "NHỰA HỖN HỢP";
-			// 
-			// btnInputRecycleMat
-			// 
-			this.btnInputRecycleMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputRecycleMat.ImageOptions.Image")));
-			this.btnInputRecycleMat.Name = "btnInputRecycleMat";
-			this.btnInputRecycleMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInputRecycleMat.Text = "NHỰA TÁI CHẾ";
-			// 
-			// accordionControlElement48
-			// 
-			this.accordionControlElement48.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement47.Expanded = true;
+            this.accordionControlElement47.Name = "accordionControlElement47";
+            this.accordionControlElement47.Text = "THỐNG KÊ NHẬP";
+            // 
+            // btnInputMat
+            // 
+            this.btnInputMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputMat.ImageOptions.Image")));
+            this.btnInputMat.Name = "btnInputMat";
+            this.btnInputMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInputMat.Text = "NHỰA TINH";
+            this.btnInputMat.Click += new System.EventHandler(this.btnInputMat_Click);
+            // 
+            // btnInputMixMat
+            // 
+            this.btnInputMixMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputMixMat.ImageOptions.Image")));
+            this.btnInputMixMat.Name = "btnInputMixMat";
+            this.btnInputMixMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInputMixMat.Text = "NHỰA HỖN HỢP";
+            this.btnInputMixMat.Click += new System.EventHandler(this.btnInputMixMat_Click);
+            // 
+            // btnInputRecycleMat
+            // 
+            this.btnInputRecycleMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputRecycleMat.ImageOptions.Image")));
+            this.btnInputRecycleMat.Name = "btnInputRecycleMat";
+            this.btnInputRecycleMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInputRecycleMat.Text = "NHỰA TÁI CHẾ";
+            this.btnInputRecycleMat.Click += new System.EventHandler(this.btnInputRecycleMat_Click);
+            // 
+            // accordionControlElement48
+            // 
+            this.accordionControlElement48.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnOutputMat,
             this.btnOutputMixMat,
             this.btnOutputRecycleMat,
@@ -393,98 +399,100 @@
             this.btnOutputPart,
             this.accordionControlSeparator12,
             this.btnInventoryDate});
-			this.btnPartjhgjhg.Name = "btnPartjhgjhg";
-			this.btnPartjhgjhg.Text = "KHO THÀNH PHẨM";
-			// 
-			// btnLayoutPart
-			// 
-			this.btnLayoutPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLayoutPart.ImageOptions.Image")));
-			this.btnLayoutPart.Name = "btnLayoutPart";
-			this.btnLayoutPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnLayoutPart.Text = "LAYOUT KHO";
-			// 
-			// accordionControlSeparator9
-			// 
-			this.accordionControlSeparator9.Name = "accordionControlSeparator9";
-			// 
-			// btnInventoryPart
-			// 
-			this.btnInventoryPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryPart.ImageOptions.Image")));
-			this.btnInventoryPart.Name = "btnInventoryPart";
-			this.btnInventoryPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInventoryPart.Text = "TỒN KHO";
-			// 
-			// accordionControlSeparator10
-			// 
-			this.accordionControlSeparator10.Name = "accordionControlSeparator10";
-			// 
-			// btnInputPart
-			// 
-			this.btnInputPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputPart.ImageOptions.Image")));
-			this.btnInputPart.Name = "btnInputPart";
-			this.btnInputPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInputPart.Text = "THỐNG KẾ NHẬP";
-			// 
-			// accordionControlSeparator11
-			// 
-			this.accordionControlSeparator11.Name = "accordionControlSeparator11";
-			// 
-			// btnOutputPart
-			// 
-			this.btnOutputPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOutputPart.ImageOptions.Image")));
-			this.btnOutputPart.Name = "btnOutputPart";
-			this.btnOutputPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnOutputPart.Text = "THỐNG KÊ XUẤT";
-			// 
-			// accordionControlSeparator12
-			// 
-			this.accordionControlSeparator12.Name = "accordionControlSeparator12";
-			// 
-			// btnInventoryDate
-			// 
-			this.btnInventoryDate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryDate.ImageOptions.Image")));
-			this.btnInventoryDate.Name = "btnInventoryDate";
-			this.btnInventoryDate.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnInventoryDate.Text = "TỒN KHO THEO KỲ";
-			// 
-			// accordionControlSeparator2
-			// 
-			this.accordionControlSeparator2.Name = "accordionControlSeparator2";
-			// 
-			// btnLotDelivery
-			// 
-			this.btnLotDelivery.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btnPartjhgjhg.Expanded = true;
+            this.btnPartjhgjhg.Name = "btnPartjhgjhg";
+            this.btnPartjhgjhg.Text = "KHO THÀNH PHẨM";
+            // 
+            // btnLayoutPart
+            // 
+            this.btnLayoutPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLayoutPart.ImageOptions.Image")));
+            this.btnLayoutPart.Name = "btnLayoutPart";
+            this.btnLayoutPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnLayoutPart.Text = "LAYOUT KHO";
+            // 
+            // accordionControlSeparator9
+            // 
+            this.accordionControlSeparator9.Name = "accordionControlSeparator9";
+            // 
+            // btnInventoryPart
+            // 
+            this.btnInventoryPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryPart.ImageOptions.Image")));
+            this.btnInventoryPart.Name = "btnInventoryPart";
+            this.btnInventoryPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInventoryPart.Text = "TỒN KHO";
+            // 
+            // accordionControlSeparator10
+            // 
+            this.accordionControlSeparator10.Name = "accordionControlSeparator10";
+            // 
+            // btnInputPart
+            // 
+            this.btnInputPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInputPart.ImageOptions.Image")));
+            this.btnInputPart.Name = "btnInputPart";
+            this.btnInputPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInputPart.Text = "THỐNG KẾ NHẬP";
+            // 
+            // accordionControlSeparator11
+            // 
+            this.accordionControlSeparator11.Name = "accordionControlSeparator11";
+            // 
+            // btnOutputPart
+            // 
+            this.btnOutputPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOutputPart.ImageOptions.Image")));
+            this.btnOutputPart.Name = "btnOutputPart";
+            this.btnOutputPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnOutputPart.Text = "THỐNG KÊ XUẤT";
+            // 
+            // accordionControlSeparator12
+            // 
+            this.accordionControlSeparator12.Name = "accordionControlSeparator12";
+            // 
+            // btnInventoryDate
+            // 
+            this.btnInventoryDate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInventoryDate.ImageOptions.Image")));
+            this.btnInventoryDate.Name = "btnInventoryDate";
+            this.btnInventoryDate.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnInventoryDate.Text = "TỒN KHO THEO KỲ";
+            // 
+            // accordionControlSeparator2
+            // 
+            this.accordionControlSeparator2.Name = "accordionControlSeparator2";
+            // 
+            // btnLotDelivery
+            // 
+            this.btnLotDelivery.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnCheckDelivery,
             this.accordionControlSeparator13,
             this.btnTemCheck});
-			this.btnLotDelivery.Name = "btnLotDelivery";
-			this.btnLotDelivery.Text = "LOT XUẤT HÀNG";
-			// 
-			// btnCheckDelivery
-			// 
-			this.btnCheckDelivery.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckDelivery.ImageOptions.Image")));
-			this.btnCheckDelivery.Name = "btnCheckDelivery";
-			this.btnCheckDelivery.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnCheckDelivery.Text = "DANH SÁCH LOT XUẤT";
-			// 
-			// accordionControlSeparator13
-			// 
-			this.accordionControlSeparator13.Name = "accordionControlSeparator13";
-			// 
-			// btnTemCheck
-			// 
-			this.btnTemCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemCheck.ImageOptions.Image")));
-			this.btnTemCheck.Name = "btnTemCheck";
-			this.btnTemCheck.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnTemCheck.Text = "MAC ĐÃ CHECK";
-			// 
-			// accordionControlSeparator3
-			// 
-			this.accordionControlSeparator3.Name = "accordionControlSeparator3";
-			// 
-			// accordionControlElement1
-			// 
-			this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btnLotDelivery.Expanded = true;
+            this.btnLotDelivery.Name = "btnLotDelivery";
+            this.btnLotDelivery.Text = "LOT XUẤT HÀNG";
+            // 
+            // btnCheckDelivery
+            // 
+            this.btnCheckDelivery.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckDelivery.ImageOptions.Image")));
+            this.btnCheckDelivery.Name = "btnCheckDelivery";
+            this.btnCheckDelivery.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnCheckDelivery.Text = "DANH SÁCH LOT XUẤT";
+            // 
+            // accordionControlSeparator13
+            // 
+            this.accordionControlSeparator13.Name = "accordionControlSeparator13";
+            // 
+            // btnTemCheck
+            // 
+            this.btnTemCheck.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemCheck.ImageOptions.Image")));
+            this.btnTemCheck.Name = "btnTemCheck";
+            this.btnTemCheck.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnTemCheck.Text = "MAC ĐÃ CHECK";
+            // 
+            // accordionControlSeparator3
+            // 
+            this.accordionControlSeparator3.Name = "accordionControlSeparator3";
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnPartQC,
             this.accordionControlSeparator5,
             this.btnMaterialQC,
@@ -573,6 +581,7 @@
             this.accordionControlSeparator20,
             this.accordionControlElement27,
             this.accordionControlSeparator21});
+			this.accordionControlElement2.Expanded = true;
 			this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
 			this.accordionControlElement2.Name = "accordionControlElement2";
 			this.accordionControlElement2.Text = "QUẢN LÝ SẢN XUẤT";
@@ -589,6 +598,7 @@
             this.btnDelivery,
             this.accordionControlSeparator25,
             this.btnDirectiveParoduct});
+			this.accordionControlElement3.Expanded = true;
 			this.accordionControlElement3.Name = "accordionControlElement3";
 			this.accordionControlElement3.Text = "QUẢN LÝ PO";
 			// 
@@ -598,6 +608,7 @@
 			this.btnPOInput.Name = "btnPOInput";
 			this.btnPOInput.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnPOInput.Text = "PO NHẬN";
+			this.btnPOInput.Click += new System.EventHandler(this.btnPOInput_Click);
 			// 
 			// accordionControlSeparator22
 			// 
@@ -609,6 +620,7 @@
 			this.btnPOOutput.Name = "btnPOOutput";
 			this.btnPOOutput.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnPOOutput.Text = "PO ĐÃ GIAO";
+			this.btnPOOutput.Click += new System.EventHandler(this.btnPOOutput_Click);
 			// 
 			// accordionControlSeparator23
 			// 
@@ -620,6 +632,7 @@
 			this.btnPOFix.Name = "btnPOFix";
 			this.btnPOFix.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnPOFix.Text = "PO FIX";
+			this.btnPOFix.Click += new System.EventHandler(this.btnPOFix_Click);
 			// 
 			// accordionControlSeparator24
 			// 
@@ -631,6 +644,7 @@
 			this.btnDelivery.Name = "btnDelivery";
 			this.btnDelivery.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnDelivery.Text = "BB GIAO HÀNG";
+			this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
 			// 
 			// accordionControlSeparator25
 			// 
@@ -642,6 +656,7 @@
 			this.btnDirectiveParoduct.Name = "btnDirectiveParoduct";
 			this.btnDirectiveParoduct.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnDirectiveParoduct.Text = "CHỈ THỊ SẢN XUẤT";
+			this.btnDirectiveParoduct.Click += new System.EventHandler(this.btnDirectiveParoduct_Click);
 			// 
 			// accordionControlSeparator18
 			// 
@@ -655,7 +670,6 @@
             this.btnBoxInf,
             this.accordionControlSeparator28,
             this.btnResidualBox});
-			this.accordionControlElement4.Expanded = true;
 			this.accordionControlElement4.Name = "accordionControlElement4";
 			this.accordionControlElement4.Text = "QUẢN LÝ HỘP";
 			// 
@@ -665,6 +679,7 @@
 			this.btnBox.Name = "btnBox";
 			this.btnBox.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnBox.Text = "HỘP TRỐNG";
+			this.btnBox.Click += new System.EventHandler(this.btnBox_Click);
 			// 
 			// accordionControlSeparator27
 			// 
@@ -676,6 +691,7 @@
 			this.btnBoxInf.Name = "btnBoxInf";
 			this.btnBoxInf.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnBoxInf.Text = "SETUP HỘP";
+			this.btnBoxInf.Click += new System.EventHandler(this.btnBoxInf_Click);
 			// 
 			// accordionControlSeparator28
 			// 
@@ -687,6 +703,7 @@
 			this.btnResidualBox.Name = "btnResidualBox";
 			this.btnResidualBox.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnResidualBox.Text = "HỘP DƯ";
+			this.btnResidualBox.Click += new System.EventHandler(this.btnResidualBox_Click);
 			// 
 			// accordionControlSeparator19
 			// 
@@ -721,6 +738,7 @@
 			this.btnPriceMat.Name = "btnPriceMat";
 			this.btnPriceMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnPriceMat.Text = "GIÁ NGUYÊN LIỆU";
+			this.btnPriceMat.Click += new System.EventHandler(this.btnPriceMat_Click);
 			// 
 			// accordionControlSeparator30
 			// 
@@ -732,6 +750,7 @@
 			this.btnInventoryMatDate.Name = "btnInventoryMatDate";
 			this.btnInventoryMatDate.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnInventoryMatDate.Text = "TÔNG KHO CUỐI KỲ";
+			this.btnInventoryMatDate.Click += new System.EventHandler(this.btnInventoryMatDate_Click);
 			// 
 			// accordionControlSeparator31
 			// 
@@ -743,6 +762,7 @@
 			this.btnPriceChar.Name = "btnPriceChar";
 			this.btnPriceChar.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnPriceChar.Text = "BIỂU ĐỒ";
+			this.btnPriceChar.Click += new System.EventHandler(this.btnPriceChar_Click);
 			// 
 			// accordionControlSeparator32
 			// 
@@ -754,6 +774,7 @@
 			this.btnCoupontMat.Name = "btnCoupontMat";
 			this.btnCoupontMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnCoupontMat.Text = "PHIẾU NHẬN NL";
+			this.btnCoupontMat.Click += new System.EventHandler(this.btnCoupontMat_Click);
 			// 
 			// accordionControlSeparator29
 			// 
@@ -782,7 +803,8 @@
 			this.btnDeliveryMat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeliveryMat.ImageOptions.Image")));
 			this.btnDeliveryMat.Name = "btnDeliveryMat";
 			this.btnDeliveryMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnDeliveryMat.Text = "DS ĐƠN HÀNG";
+			this.btnDeliveryMat.Text = "DANH SÁCH PO NGUYÊN LIỆU";
+			this.btnDeliveryMat.Click += new System.EventHandler(this.btnDeliveryMat_Click);
 			// 
 			// accordionControlSeparator33
 			// 
@@ -794,6 +816,7 @@
 			this.btnMatBy.Name = "btnMatBy";
 			this.btnMatBy.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnMatBy.Text = "DS NGUYÊN LIỆU CẦN MUA";
+			this.btnMatBy.Click += new System.EventHandler(this.btnMatBy_Click);
 			// 
 			// accordionControlSeparator34
 			// 
@@ -805,6 +828,7 @@
 			this.btnMatSupplier.Name = "btnMatSupplier";
 			this.btnMatSupplier.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnMatSupplier.Text = "DS NGUYÊN LIỆU NCC";
+			this.btnMatSupplier.Click += new System.EventHandler(this.btnMatSupplier_Click);
 			// 
 			// accordionControlSeparator35
 			// 
@@ -816,6 +840,7 @@
 			this.btnUpdateFC.Name = "btnUpdateFC";
 			this.btnUpdateFC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnUpdateFC.Text = "CẬP NHẬT FC";
+			this.btnUpdateFC.Click += new System.EventHandler(this.btnUpdateFC_Click);
 			// 
 			// accordionControlSeparator36
 			// 
@@ -827,6 +852,7 @@
 			this.btnMatUsing.Name = "btnMatUsing";
 			this.btnMatUsing.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnMatUsing.Text = "DS NGUYÊN LIỆU CẦN DÙNG";
+			this.btnMatUsing.Click += new System.EventHandler(this.btnMatUsing_Click);
 			// 
 			// accordionControlSeparator37
 			// 
@@ -838,6 +864,7 @@
 			this.btnTotalMat.Name = "btnTotalMat";
 			this.btnTotalMat.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnTotalMat.Text = "TÍNH NHỰA CẦN MUA";
+			this.btnTotalMat.Click += new System.EventHandler(this.btnTotalMat_Click);
 			// 
 			// accordionControlSeparator20
 			// 
@@ -961,6 +988,7 @@
 			this.btnMoldInfor.Name = "btnMoldInfor";
 			this.btnMoldInfor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnMoldInfor.Text = "THÔNG TIN KHUÔN";
+			this.btnMoldInfor.Click += new System.EventHandler(this.btnMoldInfor_Click);
 			// 
 			// accordionControlSeparator43
 			// 
@@ -971,7 +999,8 @@
 			this.btnMoldUsing.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMoldUsing.ImageOptions.Image")));
 			this.btnMoldUsing.Name = "btnMoldUsing";
 			this.btnMoldUsing.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnMoldUsing.Text = "DANH SÁCH KHUÔN";
+			this.btnMoldUsing.Text = "Trạng Thái Khuôn";
+			this.btnMoldUsing.Click += new System.EventHandler(this.btnMoldUsing_Click);
 			// 
 			// accordionControlSeparator44
 			// 
@@ -983,6 +1012,7 @@
 			this.btnHistoryMold.Name = "btnHistoryMold";
 			this.btnHistoryMold.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnHistoryMold.Text = "BẢO DƯỠNG/ SỬA CHỮA";
+			this.btnHistoryMold.Click += new System.EventHandler(this.btnHistoryMold_Click);
 			// 
 			// accordionControlSeparator45
 			// 
@@ -994,6 +1024,7 @@
 			this.btnMold1M.Name = "btnMold1M";
 			this.btnMold1M.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnMold1M.Text = "KHUÔN TRÊN 1M";
+			this.btnMold1M.Click += new System.EventHandler(this.btnMold1M_Click);
 			// 
 			// accordionControlSeparator46
 			// 
@@ -1005,6 +1036,7 @@
 			this.btnErrorMold.Name = "btnErrorMold";
 			this.btnErrorMold.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnErrorMold.Text = "LỖI PHÁT SINH";
+			this.btnErrorMold.Click += new System.EventHandler(this.btnErrorMold_Click);
 			// 
 			// accordionControlSeparator47
 			// 
@@ -1016,6 +1048,7 @@
 			this.btnRoomMold.Name = "btnRoomMold";
 			this.btnRoomMold.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnRoomMold.Text = "BỘ PHẬN KIỂM TRA";
+			this.btnRoomMold.Click += new System.EventHandler(this.btnRoomMold_Click);
 			// 
 			// accordionControlSeparator48
 			// 
@@ -1027,6 +1060,7 @@
 			this.btnCategoryMold.Name = "btnCategoryMold";
 			this.btnCategoryMold.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnCategoryMold.Text = "HM BẢO DƯỠNG";
+			this.btnCategoryMold.Click += new System.EventHandler(this.btnCategoryMold_Click);
 			// 
 			// accordionControlSeparator49
 			// 
@@ -1321,13 +1355,14 @@
             this.accordionControlElement108,
             this.accordionControlSeparator68,
             this.accordionControlElement107});
-			this.accordionControlElement40.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement40.ImageOptions.Image")));
-			this.accordionControlElement40.Name = "accordionControlElement40";
-			this.accordionControlElement40.Text = "DỮ LIỆU NGUỒN";
-			// 
-			// accordionControlElement108
-			// 
-			this.accordionControlElement108.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement40.Expanded = true;
+            this.accordionControlElement40.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement40.ImageOptions.Image")));
+            this.accordionControlElement40.Name = "accordionControlElement40";
+            this.accordionControlElement40.Text = "DỮ LIỆU NGUỒN";
+            // 
+            // accordionControlElement108
+            // 
+            this.accordionControlElement108.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnSupplier,
             this.accordionControlSeparator72,
             this.btnCustomer,
@@ -1361,199 +1396,211 @@
             this.btnLockPart,
             this.accordionControlSeparator87,
             this.btnBoxPart});
-			this.accordionControlElement108.Name = "accordionControlElement108";
-			this.accordionControlElement108.Text = "DỮ LIỆU NGUỒN";
-			// 
-			// btnSupplier
-			// 
-			this.btnSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.ImageOptions.Image")));
-			this.btnSupplier.Name = "btnSupplier";
-			this.btnSupplier.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnSupplier.Text = "NCC";
-			// 
-			// accordionControlSeparator72
-			// 
-			this.accordionControlSeparator72.Name = "accordionControlSeparator72";
-			// 
-			// btnCustomer
-			// 
-			this.btnCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.Image")));
-			this.btnCustomer.Name = "btnCustomer";
-			this.btnCustomer.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnCustomer.Text = "KHÁCH HÀNG";
-			// 
-			// accordionControlSeparator73
-			// 
-			this.accordionControlSeparator73.Name = "accordionControlSeparator73";
-			// 
-			// btnMaterial
-			// 
-			this.btnMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterial.ImageOptions.Image")));
-			this.btnMaterial.Name = "btnMaterial";
-			this.btnMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnMaterial.Text = "NGUYÊN LIỆU";
-			// 
-			// accordionControlSeparator74
-			// 
-			this.accordionControlSeparator74.Name = "accordionControlSeparator74";
-			// 
-			// btnDryMachine
-			// 
-			this.btnDryMachine.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDryMachine.ImageOptions.Image")));
-			this.btnDryMachine.Name = "btnDryMachine";
-			this.btnDryMachine.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnDryMachine.Text = "MÁY SẤY KHAY";
-			// 
-			// accordionControlSeparator75
-			// 
-			this.accordionControlSeparator75.Name = "accordionControlSeparator75";
-			// 
-			// btnReason
-			// 
-			this.btnReason.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReason.ImageOptions.Image")));
-			this.btnReason.Name = "btnReason";
-			this.btnReason.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnReason.Text = "DS LÝ DO";
-			// 
-			// accordionControlSeparator76
-			// 
-			this.accordionControlSeparator76.Name = "accordionControlSeparator76";
-			// 
-			// btnMixMaterial
-			// 
-			this.btnMixMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMixMaterial.ImageOptions.Image")));
-			this.btnMixMaterial.Name = "btnMixMaterial";
-			this.btnMixMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnMixMaterial.Text = "NGUYÊN LIỆU HH";
-			// 
-			// accordionControlSeparator77
-			// 
-			this.accordionControlSeparator77.Name = "accordionControlSeparator77";
-			// 
-			// btnRatioMaterial
-			// 
-			this.btnRatioMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRatioMaterial.ImageOptions.Image")));
-			this.btnRatioMaterial.Name = "btnRatioMaterial";
-			this.btnRatioMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnRatioMaterial.Text = "TỶ LỆ TÁI CHẾ";
-			// 
-			// accordionControlSeparator78
-			// 
-			this.accordionControlSeparator78.Name = "accordionControlSeparator78";
-			// 
-			// btnMaterialBegin
-			// 
-			this.btnMaterialBegin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterialBegin.ImageOptions.Image")));
-			this.btnMaterialBegin.Name = "btnMaterialBegin";
-			this.btnMaterialBegin.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnMaterialBegin.Text = "CHUẨN BỊ NL TRƯỚC SX";
-			// 
-			// accordionControlSeparator79
-			// 
-			this.accordionControlSeparator79.Name = "accordionControlSeparator79";
-			// 
-			// btnPart
-			// 
-			this.btnPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPart.ImageOptions.Image")));
-			this.btnPart.Name = "btnPart";
-			this.btnPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnPart.Text = "LINH KIỆN";
-			// 
-			// accordionControlSeparator80
-			// 
-			this.accordionControlSeparator80.Name = "accordionControlSeparator80";
-			// 
-			// btnPartInfor
-			// 
-			this.btnPartInfor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPartInfor.ImageOptions.Image")));
-			this.btnPartInfor.Name = "btnPartInfor";
-			this.btnPartInfor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnPartInfor.Text = "TỶ LỆ HAO HỤT";
-			// 
-			// accordionControlSeparator81
-			// 
-			this.accordionControlSeparator81.Name = "accordionControlSeparator81";
-			// 
-			// btnFactory
-			// 
-			this.btnFactory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFactory.ImageOptions.Image")));
-			this.btnFactory.Name = "btnFactory";
-			this.btnFactory.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnFactory.Text = "NHÀ MÁY";
-			// 
-			// accordionControlSeparator82
-			// 
-			this.accordionControlSeparator82.Name = "accordionControlSeparator82";
-			// 
-			// btnTemPart
-			// 
-			this.btnTemPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemPart.ImageOptions.Image")));
-			this.btnTemPart.Name = "btnTemPart";
-			this.btnTemPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnTemPart.Text = "MÁC CÀI SẢN PHẨM";
-			// 
-			// accordionControlSeparator83
-			// 
-			this.accordionControlSeparator83.Name = "accordionControlSeparator83";
-			// 
-			// btnHistoryTem
-			// 
-			this.btnHistoryTem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistoryTem.ImageOptions.Image")));
-			this.btnHistoryTem.Name = "btnHistoryTem";
-			this.btnHistoryTem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnHistoryTem.Text = "LL IN MÁC";
-			// 
-			// accordionControlSeparator84
-			// 
-			this.accordionControlSeparator84.Name = "accordionControlSeparator84";
-			// 
-			// btnTem4M
-			// 
-			this.btnTem4M.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTem4M.ImageOptions.Image")));
-			this.btnTem4M.Name = "btnTem4M";
-			this.btnTem4M.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnTem4M.Text = "QUẢN LÝ 4M";
-			// 
-			// accordionControlSeparator85
-			// 
-			this.accordionControlSeparator85.Name = "accordionControlSeparator85";
-			// 
-			// btnFormQC
-			// 
-			this.btnFormQC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFormQC.ImageOptions.Image")));
-			this.btnFormQC.Name = "btnFormQC";
-			this.btnFormQC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnFormQC.Text = "FORM QC";
-			// 
-			// accordionControlSeparator86
-			// 
-			this.accordionControlSeparator86.Name = "accordionControlSeparator86";
-			// 
-			// btnLockPart
-			// 
-			this.btnLockPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLockPart.ImageOptions.Image")));
-			this.btnLockPart.Name = "btnLockPart";
-			this.btnLockPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnLockPart.Text = "KHÓA LINH KIỆN";
-			// 
-			// accordionControlSeparator87
-			// 
-			this.accordionControlSeparator87.Name = "accordionControlSeparator87";
-			// 
-			// btnBoxPart
-			// 
-			this.btnBoxPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoxPart.ImageOptions.Image")));
-			this.btnBoxPart.Name = "btnBoxPart";
-			this.btnBoxPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-			this.btnBoxPart.Text = "HỘP ĐỰNG HÀNG";
-			// 
-			// accordionControlSeparator68
-			// 
-			this.accordionControlSeparator68.Name = "accordionControlSeparator68";
-			// 
-			// accordionControlElement107
-			// 
-			this.accordionControlElement107.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement108.Expanded = true;
+            this.accordionControlElement108.Name = "accordionControlElement108";
+            this.accordionControlElement108.Text = "DỮ LIỆU NGUỒN";
+            // 
+            // btnSupplier
+            // 
+            this.btnSupplier.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplier.ImageOptions.Image")));
+            this.btnSupplier.Name = "btnSupplier";
+            this.btnSupplier.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnSupplier.Text = "NCC";
+            this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
+            // 
+            // accordionControlSeparator72
+            // 
+            this.accordionControlSeparator72.Name = "accordionControlSeparator72";
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.Image")));
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnCustomer.Text = "KHÁCH HÀNG";
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
+            // accordionControlSeparator73
+            // 
+            this.accordionControlSeparator73.Name = "accordionControlSeparator73";
+            // 
+            // btnMaterial
+            // 
+            this.btnMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterial.ImageOptions.Image")));
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnMaterial.Text = "NGUYÊN LIỆU";
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+            // 
+            // accordionControlSeparator74
+            // 
+            this.accordionControlSeparator74.Name = "accordionControlSeparator74";
+            // 
+            // btnDryMachine
+            // 
+            this.btnDryMachine.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDryMachine.ImageOptions.Image")));
+            this.btnDryMachine.Name = "btnDryMachine";
+            this.btnDryMachine.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnDryMachine.Text = "MÁY SẤY KHAY";
+            this.btnDryMachine.Click += new System.EventHandler(this.btnDryMachine_Click);
+            // 
+            // accordionControlSeparator75
+            // 
+            this.accordionControlSeparator75.Name = "accordionControlSeparator75";
+            // 
+            // btnReason
+            // 
+            this.btnReason.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReason.ImageOptions.Image")));
+            this.btnReason.Name = "btnReason";
+            this.btnReason.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnReason.Text = "DS LÝ DO";
+            this.btnReason.Click += new System.EventHandler(this.btnReason_Click);
+            // 
+            // accordionControlSeparator76
+            // 
+            this.accordionControlSeparator76.Name = "accordionControlSeparator76";
+            // 
+            // btnMixMaterial
+            // 
+            this.btnMixMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMixMaterial.ImageOptions.Image")));
+            this.btnMixMaterial.Name = "btnMixMaterial";
+            this.btnMixMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnMixMaterial.Text = "NGUYÊN LIỆU HH";
+            this.btnMixMaterial.Click += new System.EventHandler(this.btnMixMaterial_Click);
+            // 
+            // accordionControlSeparator77
+            // 
+            this.accordionControlSeparator77.Name = "accordionControlSeparator77";
+            // 
+            // btnRatioMaterial
+            // 
+            this.btnRatioMaterial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRatioMaterial.ImageOptions.Image")));
+            this.btnRatioMaterial.Name = "btnRatioMaterial";
+            this.btnRatioMaterial.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRatioMaterial.Text = "TỶ LỆ TÁI CHẾ";
+            this.btnRatioMaterial.Click += new System.EventHandler(this.btnRatioMaterial_Click);
+            // 
+            // accordionControlSeparator78
+            // 
+            this.accordionControlSeparator78.Name = "accordionControlSeparator78";
+            // 
+            // btnMaterialBegin
+            // 
+            this.btnMaterialBegin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterialBegin.ImageOptions.Image")));
+            this.btnMaterialBegin.Name = "btnMaterialBegin";
+            this.btnMaterialBegin.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnMaterialBegin.Text = "CHUẨN BỊ NL TRƯỚC SX";
+            this.btnMaterialBegin.Click += new System.EventHandler(this.btnMaterialBegin_Click);
+            // 
+            // accordionControlSeparator79
+            // 
+            this.accordionControlSeparator79.Name = "accordionControlSeparator79";
+            // 
+            // btnPart
+            // 
+            this.btnPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPart.ImageOptions.Image")));
+            this.btnPart.Name = "btnPart";
+            this.btnPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnPart.Text = "LINH KIỆN";
+            this.btnPart.Click += new System.EventHandler(this.btnPart_Click);
+            // 
+            // accordionControlSeparator80
+            // 
+            this.accordionControlSeparator80.Name = "accordionControlSeparator80";
+            // 
+            // btnPartInfor
+            // 
+            this.btnPartInfor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPartInfor.ImageOptions.Image")));
+            this.btnPartInfor.Name = "btnPartInfor";
+            this.btnPartInfor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnPartInfor.Text = "TỶ LỆ HAO HỤT";
+            // 
+            // accordionControlSeparator81
+            // 
+            this.accordionControlSeparator81.Name = "accordionControlSeparator81";
+            // 
+            // btnFactory
+            // 
+            this.btnFactory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFactory.ImageOptions.Image")));
+            this.btnFactory.Name = "btnFactory";
+            this.btnFactory.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnFactory.Text = "NHÀ MÁY";
+            this.btnFactory.Click += new System.EventHandler(this.btnFactory_Click);
+            // 
+            // accordionControlSeparator82
+            // 
+            this.accordionControlSeparator82.Name = "accordionControlSeparator82";
+            // 
+            // btnTemPart
+            // 
+            this.btnTemPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemPart.ImageOptions.Image")));
+            this.btnTemPart.Name = "btnTemPart";
+            this.btnTemPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnTemPart.Text = "MÁC CÀI SẢN PHẨM";
+            this.btnTemPart.Click += new System.EventHandler(this.btnTemPart_Click);
+            // 
+            // accordionControlSeparator83
+            // 
+            this.accordionControlSeparator83.Name = "accordionControlSeparator83";
+            // 
+            // btnHistoryTem
+            // 
+            this.btnHistoryTem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistoryTem.ImageOptions.Image")));
+            this.btnHistoryTem.Name = "btnHistoryTem";
+            this.btnHistoryTem.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnHistoryTem.Text = "LL IN MÁC";
+            // 
+            // accordionControlSeparator84
+            // 
+            this.accordionControlSeparator84.Name = "accordionControlSeparator84";
+            // 
+            // btnTem4M
+            // 
+            this.btnTem4M.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTem4M.ImageOptions.Image")));
+            this.btnTem4M.Name = "btnTem4M";
+            this.btnTem4M.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnTem4M.Text = "QUẢN LÝ 4M";
+            // 
+            // accordionControlSeparator85
+            // 
+            this.accordionControlSeparator85.Name = "accordionControlSeparator85";
+            // 
+            // btnFormQC
+            // 
+            this.btnFormQC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFormQC.ImageOptions.Image")));
+            this.btnFormQC.Name = "btnFormQC";
+            this.btnFormQC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnFormQC.Text = "FORM QC";
+            // 
+            // accordionControlSeparator86
+            // 
+            this.accordionControlSeparator86.Name = "accordionControlSeparator86";
+            // 
+            // btnLockPart
+            // 
+            this.btnLockPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLockPart.ImageOptions.Image")));
+            this.btnLockPart.Name = "btnLockPart";
+            this.btnLockPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnLockPart.Text = "KHÓA LINH KIỆN";
+            // 
+            // accordionControlSeparator87
+            // 
+            this.accordionControlSeparator87.Name = "accordionControlSeparator87";
+            // 
+            // btnBoxPart
+            // 
+            this.btnBoxPart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoxPart.ImageOptions.Image")));
+            this.btnBoxPart.Name = "btnBoxPart";
+            this.btnBoxPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnBoxPart.Text = "HỘP ĐỰNG HÀNG";
+            // 
+            // accordionControlSeparator68
+            // 
+            this.accordionControlSeparator68.Name = "accordionControlSeparator68";
+            // 
+            // accordionControlElement107
+            // 
+            this.accordionControlElement107.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.btnUserInfor,
             this.accordionControlSeparator69,
             this.btnUser,
@@ -1605,82 +1652,82 @@
             this.barStaticItem1,
             this.btnLogOut,
             this.barStaticItem2});
-			this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-			this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-			this.fluentDesignFormControl1.Size = new System.Drawing.Size(1364, 31);
-			this.fluentDesignFormControl1.TabIndex = 2;
-			this.fluentDesignFormControl1.TabStop = false;
-			this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);
-			this.fluentDesignFormControl1.TitleItemLinks.Add(this.btnLogOut);
-			// 
-			// barHeaderItem1
-			// 
-			this.barHeaderItem1.Caption = "User";
-			this.barHeaderItem1.Id = 1;
-			this.barHeaderItem1.Name = "barHeaderItem1";
-			// 
-			// barStaticItem1
-			// 
-			this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-			this.barStaticItem1.Caption = "DPRO";
-			this.barStaticItem1.Id = 0;
-			this.barStaticItem1.Name = "barStaticItem1";
-			// 
-			// btnLogOut
-			// 
-			this.btnLogOut.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-			this.btnLogOut.Border = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-			this.btnLogOut.Caption = "Đăng Xuất";
-			this.btnLogOut.Id = 0;
-			this.btnLogOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.Image")));
-			this.btnLogOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.LargeImage")));
-			this.btnLogOut.Name = "btnLogOut";
-			this.btnLogOut.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-			this.btnLogOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogOut_ItemClick);
-			// 
-			// barStaticItem2
-			// 
-			this.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-			this.barStaticItem2.Caption = "Xin chào : Administrator";
-			this.barStaticItem2.Id = 1;
-			this.barStaticItem2.Name = "barStaticItem2";
-			// 
-			// accordionControlElement6
-			// 
-			this.accordionControlElement6.Expanded = true;
-			this.accordionControlElement6.Name = "accordionControlElement6";
-			this.accordionControlElement6.Text = "TIẾN ĐỘ SẢN XUẤT";
-			// 
-			// accordionControlSeparator15
-			// 
-			this.accordionControlSeparator15.Name = "accordionControlSeparator15";
-			// 
-			// accordionControlSeparator16
-			// 
-			this.accordionControlSeparator16.Name = "accordionControlSeparator16";
-			// 
-			// xtraTabbedMdiManager
-			// 
-			this.xtraTabbedMdiManager.MdiParent = this;
-			// 
-			// frmMain
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1364, 767);
-			this.Controls.Add(this.accordionControl1);
-			this.Controls.Add(this.fluentDesignFormControl1);
-			this.FluentDesignFormControl = this.fluentDesignFormControl1;
-			this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmMain.IconOptions.Icon")));
-			this.Name = "frmMain";
-			this.NavigationControl = this.accordionControl1;
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "D ProS";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).EndInit();
-			this.ResumeLayout(false);
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1582, 27);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem2);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.btnLogOut);
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "User";
+            this.barHeaderItem1.Id = 1;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem1.Caption = "DPRO";
+            this.barStaticItem1.Id = 0;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btnLogOut.Border = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnLogOut.Caption = "Đăng Xuất";
+            this.btnLogOut.Id = 0;
+            this.btnLogOut.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.Image")));
+            this.btnLogOut.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.ImageOptions.LargeImage")));
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnLogOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogOut_ItemClick);
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem2.Caption = "Xin chào : Administrator";
+            this.barStaticItem2.Id = 1;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.Expanded = true;
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Text = "TIẾN ĐỘ SẢN XUẤT";
+            // 
+            // accordionControlSeparator15
+            // 
+            this.accordionControlSeparator15.Name = "accordionControlSeparator15";
+            // 
+            // accordionControlSeparator16
+            // 
+            this.accordionControlSeparator16.Name = "accordionControlSeparator16";
+            // 
+            // xtraTabbedMdiManager
+            // 
+            this.xtraTabbedMdiManager.MdiParent = this;
+            // 
+            // frmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1582, 880);
+            this.Controls.Add(this.accordionControl1);
+            this.Controls.Add(this.fluentDesignFormControl1);
+            this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmMain";
+            this.NavigationControl = this.accordionControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "D ProS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).EndInit();
+            this.ResumeLayout(false);
 
         }
 

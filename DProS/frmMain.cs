@@ -1,7 +1,13 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.FluentDesignSystem;
+using DProS.WareHouseMat;
+using DProS.Mold_Manager;
+using DProS.Production_Manager.Box_Manager;
+using DProS.Production_Manager.Oder_Manager;
+using DProS.Production_Manager.PO_Manager;
 using DProS.DeviceManagement;
 using DProS.MachineData;
+using DProS.WareHouseMat;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +16,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DProS.Datasource;
 
 namespace DProS
 {
@@ -18,7 +25,8 @@ namespace DProS
         public frmMain()
         {
             InitializeComponent();
-		}
+        }
+        
     
         public void OpenForm(Type typeform)
         {
@@ -31,7 +39,7 @@ namespace DProS
             var form = (Form)(Activator.CreateInstance(typeform));
             BeginInvoke(new Action(() =>
             {
-                form.MdiParent = this;
+                form.MdiParent = this;               
                 form.Show();
             }));
         }
@@ -50,7 +58,10 @@ namespace DProS
 
         private void btnLayoutMaterial_Click(object sender, EventArgs e)
         {
-            
+            // OpenForm(typeof(frmLayoutWHMat));
+            OpenForm(typeof(frmWareHouseMat));
+
+
         }
         private void btnProgress_Click(object sender, EventArgs e)
         {
@@ -66,6 +77,216 @@ namespace DProS
             //{
             //    _uCProgress.BringToFront();
             //}
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmSuplier));
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmCustomer));
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmMaterialInf));
+        }
+
+        private void btnDryMachine_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmDryerList));
+        }
+
+        private void btnReason_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmListReason));
+        }
+
+        private void btnMixMaterial_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmMixMaterial));
+        }
+
+        private void btnRatioMaterial_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmRecycleRate));
+        }
+
+        private void btnMaterialBegin_Click(object sender, EventArgs e)
+        {
+            OpenForm(typeof(frmMaterialBegin));
+        }
+
+        private void btnInventoryMaterial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInputMat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInputMixMat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInputRecycleMat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPOInput_Click(object sender, EventArgs e)
+        {
+			CloseForm(typeof(frmPOInput));
+            OpenForm(typeof(frmPOInput));
+        }
+
+        private void btnPOOutput_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmPOOutput));
+			OpenForm(typeof(frmPOOutput));
+        }
+
+        private void btnPOFix_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmPOFix));
+			OpenForm(typeof(frmPOFix));
+        }
+
+        private void btnDelivery_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmDeliveryRecord));
+			OpenForm(typeof(frmDeliveryRecord));
+        }
+
+        private void btnDirectiveParoduct_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmDirectiveParoduct));
+			OpenForm(typeof(frmDirectiveParoduct));
+        }
+
+        private void btnBox_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmBox));
+			OpenForm(typeof(frmBox));
+        }
+
+        private void btnBoxInf_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmBoxInf));
+			OpenForm(typeof(frmBoxInf));
+        }
+
+        private void btnResidualBox_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmResidualBox));
+			OpenForm(typeof(frmResidualBox));
+        }
+
+        private void btnPriceMat_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmPriceMat));
+			OpenForm(typeof(frmPriceMat));
+        }
+
+        private void btnInventoryMatDate_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmInventoryMatDate));
+			OpenForm(typeof(frmInventoryMatDate));
+        }
+
+        private void btnPriceChar_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmPriceChar));
+			OpenForm(typeof(frmPriceChar));
+        }
+
+        private void btnCoupontMat_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmCoupontMat));
+			OpenForm(typeof(frmCoupontMat));
+        }
+
+        private void btnDeliveryMat_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmDeliveryMat));
+			OpenForm(typeof(frmDeliveryMat));
+        }
+
+        private void btnMatBy_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmMatBy));
+			OpenForm(typeof(frmMatBy));
+        }
+
+        private void btnMatSupplier_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmMatSupplier));
+			OpenForm(typeof(frmMatSupplier));
+        }
+
+        private void btnUpdateFC_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmUpdateFC));
+			OpenForm(typeof(frmUpdateFC));
+        }
+
+        private void btnMatUsing_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmMatUsing));
+			OpenForm(typeof(frmMatUsing));
+        }
+
+        private void btnTotalMat_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmTotalMat));
+			OpenForm(typeof(frmTotalMat));
+        }
+
+        private void btnMoldInfor_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmMoldInfor));
+			OpenForm(typeof(frmMoldInfor));
+        }
+
+        private void btnMoldUsing_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmMoldUsing));
+			OpenForm(typeof(frmMoldUsing));
+        }
+
+        private void btnHistoryMold_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmHistoryMold));
+			OpenForm(typeof(frmHistoryMold));
+        }
+
+        private void btnMold1M_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmMold1M));
+			OpenForm(typeof(frmMold1M));
+        }
+
+        private void btnErrorMold_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmErrorMold));
+			OpenForm(typeof(frmErrorMold));
+        }
+
+        private void btnRoomMold_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmRoomCheckMold));
+			OpenForm(typeof(frmRoomCheckMold));
+        }
+
+        private void btnCategoryMold_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmCategoryMold));
+			OpenForm(typeof(frmCategoryMold));
         }
 
 		private void btnCategoryDevice_Click(object sender, EventArgs e)
@@ -181,6 +402,20 @@ namespace DProS
 			OpenForm(typeof(frmCharWeather));
 		}
 
-		
+		private void btnFactory_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmFactory));
+			OpenForm(typeof(frmFactory));
+		}
+		private void btnPart_Click(object sender, EventArgs e)
+		{
+
+			CloseForm(typeof(frmParts));
+			OpenForm(typeof(frmParts));
+		}
+		private void btnTemPart_Click(object sender, EventArgs e)
+		{
+			OpenForm(typeof(frmTemPart));
+		}
 	}
 }

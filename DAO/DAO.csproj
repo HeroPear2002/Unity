@@ -43,21 +43,45 @@
   <ItemGroup>
     <Compile Include="CateDataDefaultDAO.cs" />
     <Compile Include="CateTestMachineDAO.cs" />
+    <Compile Include="CustomerDAO.cs" />
     <Compile Include="DataCheckDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DeliveryNoteDAO.cs" />
+    <Compile Include="DeliveryDetailDAO.cs" />
     <Compile Include="DeviceDAO.cs" />
+    <Compile Include="EmployessDAO.cs" />
+    <Compile Include="FactoryDAO.cs" />
     <Compile Include="HistoryDeviceDAO.cs" />
     <Compile Include="HistoryEditMachineDAO.cs" />
     <Compile Include="LocationDAO.cs" />
-    <Compile Include="MachineDAO.cs" />
     <Compile Include="EMailDetailDAO.cs" />
+    <Compile Include="MachineDAO.cs" />
     <Compile Include="MachineDetailDAO.cs" />
     <Compile Include="MoldDAO.cs" />
+    <Compile Include="PartDAO.cs" />
+    <Compile Include="POFixDAO.cs" />
+    <Compile Include="POInputDAO.cs" />
+    <Compile Include="POOutputDAO.cs" />
+    <Compile Include="MachineDryDAO.cs" />
+    <Compile Include="MaterialBeginDAO.cs" />
+    <Compile Include="MaterialDAO.cs" />
+    <Compile Include="MaterialMixDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelationMachineCateDAO.cs" />
+    <Compile Include="RatioMaterialDAO.cs" />
+    <Compile Include="ReasonDAO.cs" />
     <Compile Include="ResoucesDAO.cs" />
+    <Compile Include="SupplierDAO.cs" />
+    <Compile Include="WareHouseMatDAO.cs" />
     <Compile Include="SetupDefaultDAO.cs" />
     <Compile Include="WeatherDAO.cs" />
+	<Compile Include="InputMatDAO.cs" />
+    <Compile Include="InputMatMixDAO.cs" />
+    <Compile Include="InputMatRecycleDAO.cs" />
+	<Compile Include="OutputMatDAO.cs" />
+    <Compile Include="OutputMatMixDAO.cs" />
+    <Compile Include="OutputMatRecycleDAO.cs" />
+	<Compile Include="TemInforDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

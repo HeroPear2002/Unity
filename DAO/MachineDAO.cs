@@ -51,14 +51,30 @@ namespace DAO
 		{
 			return GetList().Find(x => x.MachineCode == code);
 		}
-		public bool Insert(string machineCode , string machineName, string manufacturer, string serialNumber, DateTime dateInput, string codeAsset, string vender, DateTime dateProduct, int idDevice, DateTime dateMaker)
+		public bool Insert(string machineCode, string machineName, string manufacturer, string serialNumber, DateTime dateInput, string codeAsset, string vender, DateTime dateProduct, int idDevice, DateTime dateMaker)
 		{
 			string query;
-			if (dateMaker == DateTime.MaxValue && dateProduct == DateTime.MaxValue) query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , NULL , @10 , NULL , NULL , NULL )";
-			else if (dateMaker == DateTime.MaxValue) query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , @9 , @10 , NULL , NULL , NULL )";
-			else if (dateProduct == DateTime.MaxValue) query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , NULL , @10 , NULL , NULL , @13 )";
-			else query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , @9 , @10 , NULL , NULL , @13 )";
-			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, dateProduct, idDevice, dateMaker });
+			int data;
+			if (dateMaker == DateTime.MaxValue && dateProduct == DateTime.MaxValue)
+			{
+				query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , NULL , @10 , NULL , NULL , NULL )";
+				data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, idDevice });
+			}
+			else if (dateMaker == DateTime.MaxValue)
+			{
+				query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , @9 , @10 , NULL , NULL , NULL )";
+				data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, dateProduct, idDevice });
+			}
+			else if (dateProduct == DateTime.MaxValue)
+			{
+				query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , NULL , @10 , NULL , NULL , @13 )";
+				data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, idDevice, dateMaker });
+			}
+			else
+			{
+				query = "INSERT Machine (MachineCode ,MachineName, MachineInfor, Manufacturer, SerialNumber, DateInput, CodeAsset, Vender, DateProduct, IdDevice, StatusMachine, Note, DateMaker) VALUES ( @1 , @2 , NULL , @4 , @5 , @6 , @7 , @8 , @9 , @10 , NULL , NULL , @13 )";
+				data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { machineCode, machineName, manufacturer, serialNumber, dateInput, codeAsset, vender, dateProduct, idDevice, dateMaker });
+			}
 			return data > 0;
 		}
 		public bool Update(int id, string machineCode, string machineName, string manufacturer, string serialNumber, DateTime dateInput, string codeAsset, string vender, DateTime dateProduct, DateTime dateMaker)

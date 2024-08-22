@@ -62,12 +62,12 @@ namespace DProS.DeviceManagement
 					i++;
 					if (i < count)
 					{
-						nameCategory = row.Cells[0].Value.ToString().TrimStart();
-						method = row.Cells[1].Value.ToString().TrimStart();
-						detail = row.Cells[2].Value.ToString().TrimStart();
-						timer = int.Parse(row.Cells[3].Value.ToString());
-						deviceType = row.Cells[5].Value.ToString().TrimStart().TrimEnd();
-						statusCate = int.Parse(row.Cells[4].Value.ToString());
+						nameCategory = row.Cells["Tên hạng mục"].Value.ToString().TrimStart();
+						method = row.Cells["Phương pháp thực hiện"].Value.ToString().TrimStart();
+						detail = row.Cells["Tiêu chuẩn phán định"].Value.ToString().TrimStart();
+						timer = int.Parse(row.Cells["Thời gian"].Value.ToString());
+						deviceType = row.Cells["Loại thiết bị"].Value.ToString().TrimStart().TrimEnd();
+						statusCate = int.Parse(row.Cells["Trạng thái"].Value.ToString());
 						DeviceDTO DTO = null;
 						if (!string.IsNullOrEmpty(deviceType))
 						{
@@ -76,7 +76,7 @@ namespace DProS.DeviceManagement
 						}
 						int idDevice = 0;
 						if (DTO != null) idDevice = DTO.Id;
-						limit = row.Cells[6].Value.ToString();
+						limit = row.Cells["Giới hạn"].Value.ToString();
 						if (nameCategory.Trim().Length == 0)
 						{
 							countError++;

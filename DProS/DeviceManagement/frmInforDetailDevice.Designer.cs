@@ -106,6 +106,8 @@
 			// 
 			// gridView1
 			// 
+			this.gridView1.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Black;
+			this.gridView1.Appearance.ViewCaption.Options.UseForeColor = true;
 			this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gvcDetailName,
             this.gvcDetailInfor,

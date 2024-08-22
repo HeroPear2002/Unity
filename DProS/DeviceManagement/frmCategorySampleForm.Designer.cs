@@ -31,6 +31,8 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategorySampleForm));
 			this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.gridControl1 = new DevExpress.XtraGrid.GridControl();
 			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,11 +46,9 @@
 			this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
 			this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
 			this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
-			this.label1 = new System.Windows.Forms.Label();
 			this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-			this.label2 = new System.Windows.Forms.Label();
 			this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+			this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
 			this.layoutControl1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -74,6 +74,24 @@
 			this.layoutControl1.Size = new System.Drawing.Size(1129, 576);
 			this.layoutControl1.TabIndex = 0;
 			this.layoutControl1.Text = "layoutControl1";
+			// 
+			// label2
+			// 
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(515, 12);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(602, 22);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "Hạng mục có thông số đo sẽ để trạng thái là 1, không có thông số đo là 0.";
+			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(120, 12);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(391, 22);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "Các hạng bảo dưỡng hàng ngày sẽ để 24h.";
 			// 
 			// gridControl1
 			// 
@@ -154,7 +172,7 @@
 			this.gridColumn5.AppearanceHeader.Options.UseFont = true;
 			this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
 			this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-			this.gridColumn5.Caption = "Thời gian ";
+			this.gridColumn5.Caption = "Thời gian";
 			this.gridColumn5.Name = "gridColumn5";
 			this.gridColumn5.Visible = true;
 			this.gridColumn5.VisibleIndex = 3;
@@ -230,19 +248,6 @@
 			this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem2.TextVisible = false;
 			// 
-			// xtraSaveFileDialog1
-			// 
-			this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(120, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(391, 22);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Các hạng bảo dưỡng hàng ngày sẽ để 24h.";
-			// 
 			// layoutControlItem3
 			// 
 			this.layoutControlItem3.Control = this.label1;
@@ -252,15 +257,6 @@
 			this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem3.TextVisible = false;
 			// 
-			// label2
-			// 
-			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(515, 12);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(602, 22);
-			this.label2.TabIndex = 7;
-			this.label2.Text = "Hạng mục có thông số đo sẽ để trạng thái là 1, không có thông số đo là 0.";
-			// 
 			// layoutControlItem4
 			// 
 			this.layoutControlItem4.Control = this.label2;
@@ -269,6 +265,10 @@
 			this.layoutControlItem4.Size = new System.Drawing.Size(606, 26);
 			this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
 			this.layoutControlItem4.TextVisible = false;
+			// 
+			// xtraSaveFileDialog1
+			// 
+			this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
 			// 
 			// frmCategorySampleForm
 			// 

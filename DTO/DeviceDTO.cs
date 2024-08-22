@@ -31,7 +31,7 @@ namespace DTO
 		{
 			Id = int.Parse(row["Id"].ToString());
 			Name = row["Name"].ToString();
-			if(row["StatusDevice"].ToString() != "")
+			if (row["StatusDevice"].ToString() != "")
 				StatusDevice = int.Parse(row["StatusDevice"].ToString());
 			UrlEveryday = row["UrlEveryday"].ToString();
 			UrlMainten = row["UrlMainten"].ToString();

@@ -25,7 +25,7 @@ namespace DProS.Common
             {
                 client.Send(mess);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                // EditHistoryDAO.Instance.Insert(DateTime.Now, Kun_Static.accountDTO.UserName, ex.Message, "Lỗi Gửi Mail");
             }

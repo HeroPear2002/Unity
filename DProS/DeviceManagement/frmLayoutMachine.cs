@@ -30,8 +30,6 @@ namespace DProS.DeviceManagement
 		}
 		private void LoadControl()
 		{
-			statusform = 0;
-			mainten = false;
 			LoadRelationShipAsync();
 			LoadLayout();
 			LockControl(statusform, mainten);
@@ -185,7 +183,7 @@ namespace DProS.DeviceManagement
 						foreach (var item in listRe)
 						{
 							List<HistoryDeviceDTO> listdto = HistoryDeviceDAO.Instance.GetItemRelation(item.Id);
-							if (listdto.Count != 0 /*&& item1.IdDevice!=1*/)
+							if (listdto.Count != 0)
 							{
 								DateTime dateCheck = listdto[0].DateCheck.Date;
 								TimeSpan elapsed = now - dateCheck;

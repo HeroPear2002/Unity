@@ -95,8 +95,8 @@
 			// 
 			// gvCheckDevice
 			// 
-			this.gvCheckDevice.Appearance.ViewCaption.BackColor = System.Drawing.Color.Black;
-			this.gvCheckDevice.Appearance.ViewCaption.Options.UseBackColor = true;
+			this.gvCheckDevice.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Black;
+			this.gvCheckDevice.Appearance.ViewCaption.Options.UseForeColor = true;
 			this.gvCheckDevice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gvcIdRelationShip,
             this.gvcNameCategory,

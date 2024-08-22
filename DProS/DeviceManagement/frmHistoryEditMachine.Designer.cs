@@ -149,6 +149,8 @@
 			// 
 			// gvHistoryEditMachine
 			// 
+			this.gvHistoryEditMachine.Appearance.ViewCaption.ForeColor = System.Drawing.Color.Black;
+			this.gvHistoryEditMachine.Appearance.ViewCaption.Options.UseForeColor = true;
 			this.gvHistoryEditMachine.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gvcDateError,
             this.gvcNote,

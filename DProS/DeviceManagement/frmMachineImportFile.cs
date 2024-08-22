@@ -68,17 +68,17 @@ namespace DProS.DeviceManagement
 				i++;
 				if(i<count)
 				{
-					machineCode = row.Cells[0].Value.ToString().TrimStart().TrimEnd();
-					machineName = row.Cells[1].Value.ToString().TrimStart();
-					serialNumber = row.Cells[2].Value.ToString().TrimStart();
-					manufacturer = row.Cells[3].Value.ToString().TrimStart();
-					vender = row.Cells[4].Value.ToString().TrimStart();
-					if (row.Cells[6].Value.ToString() != "") dateMaker = DateTime.Parse(row.Cells[5].Value.ToString());
+					machineCode = row.Cells["Mã thiết bị"].Value.ToString().TrimStart().TrimEnd();
+					machineName = row.Cells["Tên thiết bị"].Value.ToString().TrimStart();
+					serialNumber = row.Cells["Số serial"].Value.ToString().TrimStart();
+					manufacturer = row.Cells["Nhà sản xuất"].Value.ToString().TrimStart();
+					vender = row.Cells["Nhà cung cấp"].Value.ToString().TrimStart();
+					if (row.Cells["Ngày chế tạo TB"].Value.ToString() != "") dateMaker = DateTime.Parse(row.Cells["Ngày chế tạo TB"].Value.ToString());
 					else dateMaker = DateTime.MaxValue;
-					dateInput = DateTime.Parse(row.Cells[6].Value.ToString());
-					if (row.Cells[8].Value.ToString() != "") dateProduct = DateTime.Parse(row.Cells[7].Value.ToString());
+					dateInput = DateTime.Parse(row.Cells["Ngày nhập"].Value.ToString());
+					if (row.Cells["Ngày bắt đầu SD"].Value.ToString() != "") dateProduct = DateTime.Parse(row.Cells["Ngày bắt đầu SD"].Value.ToString());
 					else dateProduct = DateTime.MaxValue;
-					codeAsset = row.Cells[8].Value.ToString().TrimStart();
+					codeAsset = row.Cells["Mã TSCD"].Value.ToString().TrimStart();
 					if (machineCode.Trim().Length == 0)
 					{
 						countError++;

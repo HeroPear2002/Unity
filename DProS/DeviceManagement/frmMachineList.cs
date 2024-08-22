@@ -107,12 +107,12 @@ namespace DProS.DeviceManagement
 			DateTime dateMaker = dtpDateMaker.Value;
 			DateTime dateInput = dtpDateInput.Value;
 			DateTime dateProduct = dtpDateProduct.Value;
-			if(dateMaker > dateInput)
+			if(dateMaker >= dateInput)
 			{
 				MessageBox.Show("Ngày chế tạo TB phải trước hoặc bằng ngày nhập.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
 			}
-			else if (dateInput > dateProduct)
+			else if (dateInput >= dateProduct)
 			{
 				MessageBox.Show("Ngày nhập phải trước hoặc bằng ngày bắt đầu sản xuất.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
@@ -129,7 +129,7 @@ namespace DProS.DeviceManagement
 					}
 					MessageBox.Show("Bạn thêm bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy máy khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mã máy khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 			}
 			else
@@ -145,7 +145,7 @@ namespace DProS.DeviceManagement
 					}
 					MessageBox.Show("Bạn sửa bị thất bại.".ToUpper(), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
-				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy máy khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				else MessageBox.Show("Mã máy này đã tồn tại hãy nhập mãy má khác.".ToUpper(), "CẢNH BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			}
 		}
 
