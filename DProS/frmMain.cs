@@ -417,5 +417,37 @@ namespace DProS
 		{
 			OpenForm(typeof(frmTemPart));
 		}
+
+		private void btnOutputMat_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnOutputMixMat_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnLayoutPart_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnInventoryPart_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnHistoryTem_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmHistoryTem));
+			OpenForm(typeof(frmHistoryTem));
+		}
+
+		private void btnTem4M_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmTem4M));
+			OpenForm(typeof(frmTem4M));
+		}
 	}
 }

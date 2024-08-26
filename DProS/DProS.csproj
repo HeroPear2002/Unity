@@ -130,6 +130,42 @@
     <Compile Include="Common\CustomEvent.cs" />
     <Compile Include="Common\ExcelReader.cs" />
     <Compile Include="Common\SendMail.cs" />
+    <Compile Include="Datasource\frmTemPartImportFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasource\frmTemPartImportFile.Designer.cs">
+      <DependentUpon>frmTemPartImportFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\frmTemPartSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasource\frmTemPartSampleForm.Designer.cs">
+      <DependentUpon>frmTemPartSampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\frmTemTemMaPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasource\frmTemTemMaPrint.Designer.cs">
+      <DependentUpon>frmTemTemMaPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\frmTemPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasource\frmTemPrint.Designer.cs">
+      <DependentUpon>frmTemPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\frmTemPrintNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasource\frmTemPrintNew.Designer.cs">
+      <DependentUpon>frmTemPrintNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\frmTemTKG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datasource\frmTemTKG.Designer.cs">
+      <DependentUpon>frmTemTKG.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeviceManagement\frmCategoryDevice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -417,6 +453,48 @@
     </Compile>
     <Compile Include="Datasource\Report\rpCreateMatRecCode.Designer.cs">
       <DependentUpon>rpCreateMatRecCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacInfor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacInfor.Designer.cs">
+      <DependentUpon>rpMacInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacInfor2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacInfor2.Designer.cs">
+      <DependentUpon>rpMacInfor2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacNew.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacNew.Designer.cs">
+      <DependentUpon>rpMacNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTemma.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTemma.Designer.cs">
+      <DependentUpon>rpMacTemma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTKG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTKG.Designer.cs">
+      <DependentUpon>rpMacTKG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTKGIN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTKGIN.Designer.cs">
+      <DependentUpon>rpMacTKGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTT.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasource\Report\rpMacTT.Designer.cs">
+      <DependentUpon>rpMacTT.cs</DependentUpon>
     </Compile>
     <Compile Include="frmErrorList.cs">
       <SubType>Form</SubType>
@@ -921,6 +999,12 @@
     <EmbeddedResource Include="Datasource\frmPartsInf.resx">
       <DependentUpon>frmPartsInf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\frmTemPartImportFile.resx">
+      <DependentUpon>frmTemPartImportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\frmTemPartSampleForm.resx">
+      <DependentUpon>frmTemPartSampleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Datasource\frmRecycleRate.resx">
       <DependentUpon>frmRecycleRate.cs</DependentUpon>
     </EmbeddedResource>
@@ -933,8 +1017,41 @@
     <EmbeddedResource Include="Datasource\frmTemPart.resx">
       <DependentUpon>frmTemPart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\frmTemTemMaPrint.resx">
+      <DependentUpon>frmTemTemMaPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\frmTemPrint.resx">
+      <DependentUpon>frmTemPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\frmTemPrintNew.resx">
+      <DependentUpon>frmTemPrintNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\frmTemTKG.resx">
+      <DependentUpon>frmTemTKG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Datasource\Report\rpCreateBarCodeMat.resx">
       <DependentUpon>rpCreateBarCodeMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacInfor.resx">
+      <DependentUpon>rpMacInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacInfor2.resx">
+      <DependentUpon>rpMacInfor2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacNew.resx">
+      <DependentUpon>rpMacNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacTemma.resx">
+      <DependentUpon>rpMacTemma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacTKG.resx">
+      <DependentUpon>rpMacTKG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacTKGIN.resx">
+      <DependentUpon>rpMacTKGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datasource\Report\rpMacTT.resx">
+      <DependentUpon>rpMacTT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeviceManagement\frmCategoryDevice.resx">
       <DependentUpon>frmCategoryDevice.cs</DependentUpon>

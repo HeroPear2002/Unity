@@ -48,7 +48,7 @@ namespace DProS.Production_Manager.PO_Manager
 			cbCustomerCode.DataSource = CustomerDAO.Instance.Getlist();
 			cbCustomerCode.DisplayMember = "CusCode";
 			cbCustomerCode.ValueMember = "Id";
-			cbFactoryCode.DataSource = FactoryDAO.Instance.GetList().Select(f => f.FacCode).Distinct().ToList(); ;
+			cbFactoryCode.DataSource = FactoryDAO.Instance.GetListFac();
 			cbFactoryCode.DisplayMember = "FacCode";
 			cbPartCode.DataSource = PartDAO.Instance.Getlist();
 			cbPartCode.DisplayMember = "PartCode";

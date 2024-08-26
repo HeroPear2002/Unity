@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxNatureDAO.cs" />
     <Compile Include="CateDataDefaultDAO.cs" />
     <Compile Include="CateTestMachineDAO.cs" />
     <Compile Include="CustomerDAO.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="FactoryDAO.cs" />
     <Compile Include="HistoryDeviceDAO.cs" />
     <Compile Include="HistoryEditMachineDAO.cs" />
+    <Compile Include="HistoryTemDAO.cs" />
     <Compile Include="LocationDAO.cs" />
     <Compile Include="EMailDetailDAO.cs" />
     <Compile Include="MachineDAO.cs" />
@@ -75,13 +77,13 @@
     <Compile Include="WareHouseMatDAO.cs" />
     <Compile Include="SetupDefaultDAO.cs" />
     <Compile Include="WeatherDAO.cs" />
-	<Compile Include="InputMatDAO.cs" />
+    <Compile Include="InputMatDAO.cs" />
     <Compile Include="InputMatMixDAO.cs" />
     <Compile Include="InputMatRecycleDAO.cs" />
-	<Compile Include="OutputMatDAO.cs" />
+    <Compile Include="OutputMatDAO.cs" />
     <Compile Include="OutputMatMixDAO.cs" />
     <Compile Include="OutputMatRecycleDAO.cs" />
-	<Compile Include="TemInforDAO.cs" />
+    <Compile Include="TemInforDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

@@ -674,7 +674,7 @@
 			this.ClientSize = new System.Drawing.Size(1129, 563);
 			this.Controls.Add(this.layoutControl1);
 			this.Name = "frmFactory";
-			this.Text = "frmFactory";
+			this.Text = "Nhà Máy";
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
 			this.layoutControl1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.glCusCode.Properties)).EndInit();

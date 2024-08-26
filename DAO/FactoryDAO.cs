@@ -18,7 +18,7 @@ namespace DAO
 			set => instance = value;
 		}
 		public FactoryDAO() { }
-		
+
 		public FactoryDTO GetItem(string code)
 		{
 			return GetList().Find(x => x.CodeCus == code);
@@ -38,6 +38,12 @@ namespace DAO
 				Lsv.Add(DTO);
 			}
 			return Lsv;
+		}
+		public object GetListFac()
+		{
+			string query = "SELECT FacCode, MIN(Id) as Id FROM dbo.Factory GROUP BY FacCode";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query);
+			return (object)data;
 		}
 		public FactoryDTO GetItem(int id)
 		{

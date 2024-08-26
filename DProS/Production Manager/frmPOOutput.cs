@@ -39,12 +39,12 @@ namespace DProS.Production_Manager.PO_Manager
 
 		private void btnSee_Click(object sender, EventArgs e)
 		{
-			frmImpEmCode from = new frmImpEmCode("new");
-			from.ShowDialog();
-			frmExportWareHousePart f = new frmExportWareHousePart();
-			f.ShowDialog();
+			//frmImpEmCode from = new frmImpEmCode("new");
+			//from.ShowDialog();
+			//frmExportWareHousePart f = new frmExportWareHousePart();
+			//f.ShowDialog();
 
-			//LoadData();
+			LoadData();
 		}
 
 		private void btnExportExcel_Click(object sender, EventArgs e)

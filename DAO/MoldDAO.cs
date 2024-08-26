@@ -298,7 +298,13 @@ namespace DAO
 			}
 		}
 
-
+		public MoldErrorDTO GetItem(string moldcode)
+		{
+			string query = "SELECT * FROM MoldError WHERE MoldCode = @id ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { moldcode });
+			MoldErrorDTO a = new MoldErrorDTO(data.Rows[0]);
+			return a;
+		}
 
 		public MoldErrorDTO GetItemMoldErrorDTO(int Id)
 		{

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoxNatureDTO.cs" />
     <Compile Include="CateDataDefaultDTO.cs" />
     <Compile Include="CateTestMachineDTO.cs" />
     <Compile Include="ChartMachineDataDTO.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="HistoryCheckDataDTO.cs" />
     <Compile Include="HistoryDeviceDTO.cs" />
     <Compile Include="HistoryEditMachineDTO.cs" />
+    <Compile Include="HistoryTemDTO.cs" />
     <Compile Include="LocationDTO.cs" />
     <Compile Include="MachineDetailDTO.cs" />
     <Compile Include="EMailDetail.cs" />
@@ -72,23 +74,24 @@
     <Compile Include="MaterialDTO.cs" />
     <Compile Include="MaterialMixDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-	<Compile Include="BarcodeMaterialDTO.cs" />
+    <Compile Include="BarcodeMaterialDTO.cs" />
     <Compile Include="RelationMachineCateDTO.cs" />
     <Compile Include="RatioMaterialDTO.cs" />
     <Compile Include="ReasonDTO.cs" />
+    <Compile Include="ReportMacPartDTO.cs" />
     <Compile Include="ResourcesDTO.cs" />
     <Compile Include="SetupDefaultDTO.cs" />
     <Compile Include="SupplierDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="WeatherDTO.cs" />
     <Compile Include="WareHouseMatDTO.cs" />
-	 <Compile Include="InputMatDTO.cs" />
+    <Compile Include="InputMatDTO.cs" />
     <Compile Include="InputMatMixDTO.cs" />
     <Compile Include="InputMatRecycleDTO.cs" />
-	<Compile Include="OutputMatDTO.cs" />
+    <Compile Include="OutputMatDTO.cs" />
     <Compile Include="OutputMatMixDTO.cs" />
     <Compile Include="OutputMatRecyleDTO.cs" />
-	<Compile Include="TemInforDTO.cs" />
+    <Compile Include="TemInforDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
