@@ -153,15 +153,15 @@ namespace DProS.Datasource
 			{
 				standard = "OK";
 			}
-			//string stylePart = PartDAO.Instance.GetItem(idPart).;
+			string stylePart = PartDAO.Instance.GetItem(idPart).StylePart;
 			if (IsInsert == true)
 			{
-				//if (stylePart.Length < 6)
-				//{
-				//	MessageBox.Show("linh kiện chưa được phê duyệt ! \n\nbạn hãy liên lạc với cấp trên".ToUpper(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				//}
-				//else
-				//{
+				if (stylePart.Length < 6)
+				{
+					MessageBox.Show("linh kiện chưa được phê duyệt ! \n\nbạn hãy liên lạc với cấp trên".ToUpper(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else
+				{
 					TemInforDTO test = TemInforDAO.Instance.GetItem(idPart, idMachine, idMold);
 					if (test == null)
 					{
@@ -169,7 +169,7 @@ namespace DProS.Datasource
 						MessageBox.Show("thêm thông tin thành công !".ToUpper());
 						LoadControl();
 					}
-				//}
+				}
 
 			}
 			else
@@ -215,7 +215,6 @@ namespace DProS.Datasource
 				foreach (var item in gvTemInfor.GetSelectedRows())
 				{
 					int id = int.Parse(gvTemInfor.GetRowCellValue(item, "Id").ToString());
-					POFixDAO.Instance.DeleteWherePOInput(id);
 					int delete = TemInforDAO.Instance.Delete(id);
 					if (delete > 0) countid++;
 				}

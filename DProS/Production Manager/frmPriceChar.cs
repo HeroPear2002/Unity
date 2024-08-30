@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraCharts;
+using DTO;
+using DAO;
 
 namespace DProS.Production_Manager.Oder_Manager
 {
@@ -16,6 +19,90 @@ namespace DProS.Production_Manager.Oder_Manager
         public frmPriceChar()
         {
             InitializeComponent();
-        }
-    }
+			LoadControl();
+		}
+		void LoadControl()
+		{
+			LoadDate();
+			LoadMaterialCode();
+		}
+		void LoadDate()
+		{
+			DateTime today = DateTime.Now.Date;
+			dtpkFrom.Value = today.AddDays(1 - today.Day).AddMonths(1 - today.Month);
+			dtpkTo.Value = dtpkFrom.Value.AddYears(1).AddSeconds(-10);
+		}
+		void LoadMaterialCode()
+		{
+			glMaterialCode.Properties.DataSource = MaterialDAO.Instance.Getlist();
+			glMaterialCode.Properties.ValueMember = "Id";
+			glMaterialCode.Properties.DisplayMember = "MatCode";
+		}
+		private void btnView_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string MaterialCode = glMaterialCode.Text;
+				ccUSD.Series.Clear();
+				ccVND.Series.Clear();
+				DateTime date1 = dtpkFrom.Value;
+				DateTime date2 = dtpkTo.Value;
+				List<PriceMatDTO> listMP = new List<PriceMatDTO>();
+				ChartControl chartSaleHistory = new ChartControl();
+				chartSaleHistory = ccVND;
+				Series saleSeries = new Series("Giá VNĐ", ViewType.Line);
+				((LineSeriesView)saleSeries.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+				((LineSeriesView)saleSeries.View).LineMarkerOptions.Size = 3;
+				((LineSeriesView)saleSeries.View).Color = Color.DarkGreen;
+				ChartControl chartSaleHistory1 = new ChartControl();
+				chartSaleHistory1 = ccUSD;
+				Series saleSeries1 = new Series("Giá USD", ViewType.Line);
+				((LineSeriesView)saleSeries1.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+				((LineSeriesView)saleSeries1.View).LineMarkerOptions.Size = 3;
+				((LineSeriesView)saleSeries1.View).Color = Color.Blue;
+				listMP = PriceMatDAO.Instance.GetList().Where(x => x.DateInput >= date1 && x.DateInput <= date2 && x.MatCode == MaterialCode).ToList();
+				foreach (PriceMatDTO item in listMP.OrderBy(x => x.DateInput))
+				{
+					saleSeries.Points.Add(new SeriesPoint(item.DateInput, item.PriceVND));
+					saleSeries1.Points.Add(new SeriesPoint(item.DateInput, item.PriceUSD));
+				}
+				chartSaleHistory.Series.Add(saleSeries);
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.NumericScaleOptions.GridAlignment = NumericGridAlignment.Ones;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.Title.Text = "Thời Gian(tháng)";
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.DateTimeScaleOptions.ScaleMode = ScaleMode.Manual;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.DateTimeScaleOptions.AutoGrid = false;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.DateTimeScaleOptions.GridSpacing = 0.5;
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.Label.TextPattern = "{A:dd/MM}";
+				((XYDiagram)chartSaleHistory.Diagram).AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+				((XYDiagram)chartSaleHistory.Diagram).AxisY.Title.Text = "Giá VNĐ";
+				((XYDiagram)chartSaleHistory.Diagram).AxisX.Alignment = AxisAlignment.Zero;
+				((XYDiagram)chartSaleHistory.Diagram).EnableAxisXZooming = true;
+
+				chartSaleHistory1.Series.Add(saleSeries1);
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.NumericScaleOptions.GridAlignment = NumericGridAlignment.Ones;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.Title.Text = "Thời Gian(tháng)";
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.DateTimeScaleOptions.ScaleMode = ScaleMode.Manual;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Month;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.DateTimeScaleOptions.AutoGrid = false;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.DateTimeScaleOptions.GridSpacing = 0.5;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.Label.TextPattern = "{A:dd/MM}";
+				((XYDiagram)chartSaleHistory1.Diagram).AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisY.Title.Text = "Giá USD";
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.Alignment = AxisAlignment.Zero;
+				((XYDiagram)chartSaleHistory1.Diagram).AxisX.NumericScaleOptions.GridSpacing = 15;
+				((XYDiagram)chartSaleHistory1.Diagram).EnableAxisXZooming = true;
+			}
+			catch
+			{
+				MessageBox.Show("bạn chưa chọn nguyên liệu cần xem".ToUpper(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
+		}
+	}
 }

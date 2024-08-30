@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectiveProductDTO.cs" />
+    <Compile Include="BoxEfficDTO.cs" />
+    <Compile Include="BoxInforDTO.cs" />
+    <Compile Include="BoxListDTO.cs" />
     <Compile Include="BoxNatureDTO.cs" />
     <Compile Include="CateDataDefaultDTO.cs" />
     <Compile Include="CateTestMachineDTO.cs" />
@@ -66,9 +70,13 @@
     <Compile Include="MoldHistoryDTO.cs" />
     <Compile Include="MoldUsingDTO.cs" />
     <Compile Include="PartDTO.cs" />
+    <Compile Include="PartInforDTO.cs" />
     <Compile Include="POFixDTO.cs" />
     <Compile Include="POInputDTO.cs" />
     <Compile Include="POOutputDTO.cs" />
+    <Compile Include="MoldConFirmDTO.cs" />
+    <Compile Include="PriceMatDTO.cs" />
+    <Compile Include="QRCodeMoldDTO.cs" />
     <Compile Include="MachineDryDTO.cs" />
     <Compile Include="MaterialBeginDTO.cs" />
     <Compile Include="MaterialDTO.cs" />
@@ -84,6 +92,7 @@
     <Compile Include="SupplierDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="WeatherDTO.cs" />
+    <Compile Include="ReportCTSX.cs" />
     <Compile Include="WareHouseMatDTO.cs" />
     <Compile Include="InputMatDTO.cs" />
     <Compile Include="InputMatMixDTO.cs" />

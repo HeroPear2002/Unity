@@ -12,6 +12,8 @@ using DAO;
 using DTO;
 using System.IO;
 using DevExpress.XtraGrid.Views.Grid;
+using DProS.Report;
+using DevExpress.XtraReports.UI;
 
 namespace DProS.Mold_Manager
 {
@@ -25,6 +27,11 @@ namespace DProS.Mold_Manager
 
         public EventHandler LamMoi;
         public bool Insert;
+        public int IdMoldUsing;
+        int Warn=0;
+        public string MoldName;
+        string NumberMold;
+        string DateSX;
 
         public class MoldUsing
         {
@@ -207,9 +214,9 @@ namespace DProS.Mold_Manager
 
         void LoadMoldCode()
         {
-            sglMoldCode.Properties.DataSource = MoldDAO.Instance.GetListMold();
-            sglMoldCode.Properties.DisplayMember = "MoldCode";
-            sglMoldCode.Properties.ValueMember = "Id";
+            glMoldCode.Properties.DataSource = MoldDAO.Instance.GetListMold();
+            glMoldCode.Properties.DisplayMember = "MoldCode";
+            glMoldCode.Properties.ValueMember = "Id";
         }
 
         void LoadData()
@@ -220,11 +227,11 @@ namespace DProS.Mold_Manager
         {
             if(kt)
             {
-                sglMoldCode.Enabled = false;
+                glMoldCode.Enabled = false;
                 nudShotTC.Enabled = false;
                 nudShotTT.Enabled = false;
                 nudTotalShot.Enabled = false;
-                cbCategory.Enabled = false;
+                txtCategory.Enabled = false;
                 txtNote.Enabled = false;
                 txtStatusMold.Enabled = false;
                 txtPlan.Enabled = false;
@@ -238,11 +245,11 @@ namespace DProS.Mold_Manager
             }
             else
             {
-                sglMoldCode.Enabled = true;
+                glMoldCode.Enabled = true;
                 nudShotTC.Enabled = true;
                 nudShotTT.Enabled = true;
                 nudTotalShot.Enabled = true;
-                cbCategory.Enabled = true;
+                txtCategory.Enabled = false;
                 txtNote.Enabled = true;
                 txtStatusMold.Enabled = true;
                 txtPlan.Enabled = true;
@@ -259,27 +266,30 @@ namespace DProS.Mold_Manager
 
         void CleanText()
         {
-            sglMoldCode.Text = String.Empty;
-            nudShotTC.Text = String.Empty;
-            nudShotTT.Text = String.Empty;
-            nudTotalShot.Text = String.Empty;
-            cbCategory.Text = String.Empty;
+            glMoldCode.Text = String.Empty;
+            nudShotTC.Value = 0;
+            nudShotTT.Value = 0;
+            nudTotalShot.Value = 0;
+            txtCategory.Text = String.Empty;
             txtNote.Text = String.Empty;
             txtStatusMold.Text = String.Empty;
             txtPlan.Text = String.Empty;
-            nudCav.Text = String.Empty;
-            nudCavNG.Text = String.Empty;
+            nudCav.Value = 0;
+            nudCavNG.Value =0;
+            MoldName = "";
+            NumberMold = "";
+            DateSX = "";
         }
 
         void AddText()
         {
             try
             {
-                sglMoldCode.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["MoldCode"]).ToString();
+                glMoldCode.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["MoldCode"]).ToString();
                 nudShotTC.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["ShotTC"]).ToString();
                 nudShotTT.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["ShotTT"]).ToString();
                 nudTotalShot.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["TotalShot"]).ToString();
-                cbCategory.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["Category"]).ToString();
+                txtCategory.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["Category"]).ToString();
                 txtNote.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["Note"]).ToString();
                 txtStatusMold.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["StatusMold"]).ToString();
                 txtPlan.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns["PlanMold"]).ToString();
@@ -374,15 +384,15 @@ namespace DProS.Mold_Manager
      
         void Save()
         {
-            int IdMold = int.Parse(sglMoldCode.EditValue.ToString());
+           
             string StatusMold = txtStatusMold.Text;
             int Cav = int.Parse(nudCav.Value.ToString());
             int CavNG = int.Parse(nudCavNG.Value.ToString());
             int ShotTC = int.Parse(nudShotTC.Value.ToString());
             int ShotTT = int.Parse(nudShotTT.Value.ToString());  // Sau khi bảo dưỡng thì thực tế phải về =0
             int TotalShot = int.Parse(nudTotalShot.Value.ToString());
-            int Confirm = 0;
-            string Catagory = cbCategory.Text;
+            int Confirm = 0; // 1: Phòng PC đã xác nhận , 2: Phòng QC đã xác nhận , 3: Phòng Tooling đã xác nhận
+            string Catagory = txtCategory.Text;
             string DateCheck = DateTime.Now.ToString("dd/MM/yyyy"); // Ban đầu nhập liệu chưa có thì sẽ là ngày nhập thông tin khuôn.
             string PlanMold = txtPlan.Text.Trim();
             // Cảnh báo thì sẽ lấy theo tỷ lệ ( TotalShot/ShotPlan)
@@ -393,7 +403,8 @@ namespace DProS.Mold_Manager
             string Note = txtNote.Text.Trim();
 
             if (Insert)
-            {                         
+            {
+                int IdMold = int.Parse(glMoldCode.EditValue.ToString());
                 bool Check = MoldDAO.Instance.CheckMoldUsingExist(IdMold);
                 if (Check)
                 { 
@@ -409,6 +420,7 @@ namespace DProS.Mold_Manager
             }
             else
             {
+                int IdMold = IdMoldUsing;
                 MoldDAO.Instance.UpdateMoldUsing(IdMold, StatusMold, Cav, CavNG, ShotTC, ShotTT, TotalShot, Confirm, Catagory, DateCheck, PlanMold, Warn, Note);
                 MoldDTO moldDTO = MoldDAO.Instance.GetMoldDTO(IdMold);
                 MessageBox.Show($"Đã sửa thông tin mã khuôn: {moldDTO.MoldCode}.", "THÀNH CÔNG:", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -577,21 +589,31 @@ namespace DProS.Mold_Manager
         {
             try
             {
-                // MoldUsing(IdMold, StatusMold, Cav, CavNG, ShotPlan, ShotReality, TotalShot, ConfirmMold, Category, DateCheck, PlanMold, Warn, Note)               
-                sglMoldCode.Text = gridView1.GetFocusedRowCellValue("MoldCode").ToString();
-                nudShotTC.Value =int.Parse(gridView1.GetFocusedRowCellValue("ShotPlan").ToString());
-                nudShotTT.Value =int.Parse(gridView1.GetFocusedRowCellValue("ShotReality").ToString());
-                nudTotalShot.Value =int.Parse(gridView1.GetFocusedRowCellValue("TotalShot").ToString());
-                cbCategory.Text = gridView1.GetFocusedRowCellValue("Category").ToString();
+                // MoldUsing(IdMold, StatusMold, Cav, CavNG, ShotPlan, ShotReality, TotalShot, ConfirmMold, Category, DateCheck, PlanMold, Warn, Note)
+
+                IdMoldUsing = int.Parse(gridView1.GetFocusedRowCellValue("IdMold").ToString());
+                glMoldCode.Properties.DataSource = MoldDAO.Instance.GetListMold();
+               
+                glMoldCode.EditValue = gridView1.GetFocusedRowCellValue("IdMold").ToString();
+                MoldName= gridView1.GetFocusedRowCellValue("MoldName").ToString();
+                NumberMold= gridView1.GetFocusedRowCellValue("NumberMold").ToString();
+                DateSX= gridView1.GetFocusedRowCellValue("DateProduct").ToString();
+                nudShotTC.Value = int.Parse(gridView1.GetFocusedRowCellValue("ShotPlan").ToString());
+                nudShotTT.Value = int.Parse(gridView1.GetFocusedRowCellValue("ShotReality").ToString());
+                nudTotalShot.Value = int.Parse(gridView1.GetFocusedRowCellValue("TotalShot").ToString());
+                txtCategory.Text = gridView1.GetFocusedRowCellValue("Category").ToString();
                 txtNote.Text = gridView1.GetFocusedRowCellValue("Note").ToString();
+                Warn = (int)gridView1.GetFocusedRowCellValue("Warn");
                 txtStatusMold.Text = gridView1.GetFocusedRowCellValue("StatusMold").ToString();
-                nudCav.Value =int.Parse(gridView1.GetFocusedRowCellValue("Cav").ToString());
-                nudCavNG.Value =int.Parse( gridView1.GetFocusedRowCellValue("CavNG").ToString());
-                txtPlan.Text =gridView1.GetFocusedRowCellValue("PlanMold").ToString();             
+                nudCav.Value = int.Parse(gridView1.GetFocusedRowCellValue("Cav").ToString());
+                nudCavNG.Value = int.Parse(gridView1.GetFocusedRowCellValue("CavNG").ToString());
+                txtPlan.Text = gridView1.GetFocusedRowCellValue("PlanMold").ToString();
             }
             catch
             {
             }
+
+
         }
 
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -653,6 +675,8 @@ namespace DProS.Mold_Manager
             //    MessageBox.Show("bạn không có quyền truy cập!".ToUpper(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    return;
             //}
+
+
             int Count = 0;
 
             List<string> LsMoldSelected = new List<string>();
@@ -666,7 +690,7 @@ namespace DProS.Mold_Manager
             if (Count == 1)
             {
                 LockControl(false);
-                sglMoldCode.Enabled = false;
+                glMoldCode.Enabled = false;
             }
             else
             {
@@ -752,13 +776,140 @@ namespace DProS.Mold_Manager
             }
 
             MoldUsing.IdMold = int.Parse(IdMold);
-            MoldUsing.moldCode = sglMoldCode.Text;
+            MoldUsing.moldCode = glMoldCode.Text;
             MoldUsing.shotTT = (int)nudShotTT.Value;
             MoldUsing.shotTC = int.Parse(nudShotTC.Value.ToString());
             MoldUsing.totalShot = (int)nudTotalShot.Value;
             frmMoldDetailCategory f = new frmMoldDetailCategory();
             f.LamMoi += new EventHandler(btnUpdate_Click);
             f.ShowDialog();
+        }
+
+        private void btnInputMold_Click(object sender, EventArgs e)
+        {
+            //string user = Kun_Static.accountDTO.UserName;
+            //int check = AccountDAO.Instance.CheckAccount(5, Kun_Static.accountDTO.Type, user);
+            //if (check < 1)
+            //{
+            //    MessageBox.Show("bạn không có quyền truy cập!".ToUpper(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            frmInputMold f = new frmInputMold();
+            f.LamMoi += new EventHandler(btnUpdate_Click);
+            f.ShowDialog();
+        }
+
+        private void btnOutput_Click(object sender, EventArgs e)
+        {
+            //string user = Kun_Static.accountDTO.UserName;
+            //int check = AccountDAO.Instance.CheckAccount(5, Kun_Static.accountDTO.Type, user);
+            //if (check < 1)
+            //{
+            //    MessageBox.Show("bạn không có quyền truy cập!".ToUpper(), "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            int Count = 0;
+
+            List<string> LsMoldSelected = new List<string>();
+
+            foreach (var item in gridView1.GetSelectedRows())
+            {
+                string MoldCode = gridView1.GetRowCellValue(item, "MoldCode").ToString();
+                LsMoldSelected.Add(MoldCode);
+                Count++;
+            }
+            if (Count == 1)
+            {
+                List<QRCodeMoldDTO> listQ = new List<QRCodeMoldDTO>();
+
+                    string moldCode = glMoldCode.Text;
+                    string moldName = MoldName;
+                    string numberMold = NumberMold;
+                    string dateSX = DateSX;
+                    int shotTC = (int)nudShotTC.Value;
+                    int shotTT = (int)nudShotTT.Value;
+                    int totalShot = (int)nudTotalShot.Value;
+                    string category = txtCategory.Text;
+                    int IdCategory = 0;
+                    try
+                    {
+                        IdCategory = MoldDAO.Instance.GetMoldErrorDTObyCode(category).Id;
+                    }
+                    catch 
+                    {
+
+                       
+                    }
+                    string cav = nudCav.Value.ToString();
+                    string cavNG = nudCavNG.Value.ToString();
+                    string QrCode = "";
+
+                QrCode = moldCode + "&" + moldName + "&" + numberMold + "&" + dateSX + "&" + shotTC + "&" + shotTT + "&" + totalShot + "&" + cav + "&"+cavNG+"&"+ IdCategory.ToString();
+                listQ.Add(new QRCodeMoldDTO(moldCode, moldName, numberMold, dateSX, shotTC, shotTT, totalShot, cav, IdCategory.ToString(), QrCode));
+                rpQrCodeMold rp = new rpQrCodeMold();
+                rp.DataSource = listQ;
+                rp.ShowPreviewDialog();
+                rp.PrintDialog();
+
+                //// Chuyển khuôn xong thì update lại trạng thái
+
+                MoldDAO.Instance.UpdateConfirmMoldUsing(IdMoldUsing,-1);
+
+                //EditHistoryDAO.Instance.Insert(DateTime.Now, Kun_Static.accountDTO.UserName, "Đã chuyển khuôn : " + moldCode, "");
+
+                LoadControl();
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn khuôn để chuyển hoặc chọn quá 1 khuôn.", "LỖI:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoadControl();
+            }
+
+
+
+           
+        }
+
+        private void btnUpdate_Click_2(object sender, EventArgs e)
+        {
+            LoadControl();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            // Xác nhận của 3 phòng ban PC, QC, Tooling 
+
+            int Count = 0;
+
+            List<string> LsMoldSelected = new List<string>();
+
+            foreach (var item in gridView1.GetSelectedRows())
+            {
+                string MoldCode = gridView1.GetRowCellValue(item, "MoldCode").ToString();
+                LsMoldSelected.Add(MoldCode);
+                Count++;
+            }
+            if (Count == 1)
+            {
+               if(Warn<90)
+                {
+                    MessageBox.Show("Khuôn vẫn chạy bình thường, không cần xác nhận.", "THÔNG BÁO:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadControl();
+                }
+               else
+                {
+                    frmMoldConFirm f = new frmMoldConFirm(glMoldCode.Text);
+                    f.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn khuôn để xác nhận hoặc chọn quá 1 khuôn.", "LỖI:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoadControl();
+            }
+
         }
     }
 }

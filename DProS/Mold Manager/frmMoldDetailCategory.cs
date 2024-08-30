@@ -107,7 +107,7 @@ namespace DProS.Mold_Manager
             else
             {
                 int TotalTime = int.Parse(txtTime.Text);
-                if (MessageBox.Show("Xác nhận khuôn đã được Bảo Dưỡng ".ToUpper(), "Thông Báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("bạn muốn thêm lý lịch bảo dưỡng khuôn?".ToUpper(), "THÔNG BÁO:", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     // Thêm vào bảng lịch sử sửa chữa.
                     MoldDAO.Instance.InsertMoldHistory(IdMachine, IdMoldUsing, DateError, ShotTT, TotalShot, Category, Error, Tribe, Detail, DateStart, DateEnd,  TotalTime, Detail1, Detail2, Detail3, Detail4, Detail5, Detail6);
@@ -131,7 +131,13 @@ namespace DProS.Mold_Manager
                         // Cập nhật lại kế hoạch Khuôn ="";
                         MoldDAO.Instance.UpdatePlanMoldUsing(IdMoldUsing, "");
 
-                        // Cập nhật lại  xác nhận khuôn nếu có thì về =0;
+
+                        // Cập nhật lại hạng mục bảo dưỡng cuối cho  khuôn sử dụng
+                        MoldDAO.Instance.UpdateCategoryMoldUsing(IdMoldUsing, Category);
+
+
+
+                        // Cập nhật lại  xác nhận khuôn nếu có thì về = 0;
                         MoldDAO.Instance.UpdateConfirmMoldUsing(IdMoldUsing, 0);
 
                         //Xóa trong bảng xác nhận khuôn. ( Chưa có bảng xác nhận khuôn )

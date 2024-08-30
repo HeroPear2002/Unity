@@ -9,7 +9,7 @@ namespace DTO
 {
     public class MoldErrorDTO
     {
-        //  insert MoldError(Name, Status, Note)  
+        
         public MoldErrorDTO(DataRow row)
         {
             this.Id = int.Parse(row["Id"].ToString());
@@ -18,7 +18,13 @@ namespace DTO
             this.Note = row["Note"].ToString();
         }
 
-        //  insert MoldError(Id, Name, Status, Note)  
+        public MoldErrorDTO(int id, string name, int status, string note)
+        {
+            Id = id;
+            Name = name;
+            Status = status;
+            Note = note;
+        }
 
         private int id;
         private string name;

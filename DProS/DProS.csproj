@@ -595,6 +595,12 @@
     <Compile Include="Mold Manager\frmExCellMoldInfor.Designer.cs">
       <DependentUpon>frmExCellMoldInfor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mold Manager\frmMoldConFirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold Manager\frmMoldConFirm.Designer.cs">
+      <DependentUpon>frmMoldConFirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mold Manager\frmHistoryMold.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -606,6 +612,12 @@
     </Compile>
     <Compile Include="Mold Manager\frmMold1M.Designer.cs">
       <DependentUpon>frmMold1M.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mold Manager\frmInputMold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mold Manager\frmInputMold.Designer.cs">
+      <DependentUpon>frmInputMold.cs</DependentUpon>
     </Compile>
     <Compile Include="Mold Manager\frmMoldDetailCategory.cs">
       <SubType>Form</SubType>
@@ -649,6 +661,42 @@
     <Compile Include="Production Manager\frmBoxInf.Designer.cs">
       <DependentUpon>frmBoxInf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production Manager\frmPriceMatImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmPriceMatImport.Designer.cs">
+      <DependentUpon>frmPriceMatImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmPriceMatSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmPriceMatSample.Designer.cs">
+      <DependentUpon>frmPriceMatSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmResidualBoxImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmResidualBoxImport.Designer.cs">
+      <DependentUpon>frmResidualBoxImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxInforImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxInforImport.Designer.cs">
+      <DependentUpon>frmBoxInforImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmResidualBoxSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmResidualBoxSample.Designer.cs">
+      <DependentUpon>frmResidualBoxSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxInforSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxInforSample.Designer.cs">
+      <DependentUpon>frmBoxInforSample.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production Manager\frmDeliveryDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -661,11 +709,23 @@
     <Compile Include="Production Manager\frmExportWareHousePart.Designer.cs">
       <DependentUpon>frmExportWareHousePart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Production Manager\frmBoxListImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxListImport.Designer.cs">
+      <DependentUpon>frmBoxListImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Production Manager\frmPOFixImportFile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Production Manager\frmPOFixImportFile.Designer.cs">
       <DependentUpon>frmPOFixImportFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxListSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmBoxListSample.Designer.cs">
+      <DependentUpon>frmBoxListSample.cs</DependentUpon>
     </Compile>
     <Compile Include="Production Manager\frmPOInputImportFile.cs">
       <SubType>Form</SubType>
@@ -684,6 +744,12 @@
     </Compile>
     <Compile Include="Production Manager\frmPOInputSampleForm.Designer.cs">
       <DependentUpon>frmPOInputSampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\frmReBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production Manager\frmReBox.Designer.cs">
+      <DependentUpon>frmReBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Production Manager\frmResidualBox.cs">
       <SubType>Form</SubType>
@@ -757,11 +823,11 @@
     <Compile Include="Production Manager\frmDeliveryRecord.Designer.cs">
       <DependentUpon>frmDeliveryRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Production Manager\frmDirectiveParoduct.cs">
+    <Compile Include="Production Manager\frmDirectiveProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Production Manager\frmDirectiveParoduct.Designer.cs">
-      <DependentUpon>frmDirectiveParoduct.cs</DependentUpon>
+    <Compile Include="Production Manager\frmDirectiveProduct.Designer.cs">
+      <DependentUpon>frmDirectiveProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Production Manager\frmPOFix.cs">
       <SubType>Form</SubType>
@@ -780,6 +846,12 @@
     </Compile>
     <Compile Include="Production Manager\frmPOOutput.Designer.cs">
       <DependentUpon>frmPOOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Production Manager\rpBarCodeBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Production Manager\rpBarCodeBox.Designer.cs">
+      <DependentUpon>rpBarCodeBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Production Manager\rpDeliveryNote.cs">
       <SubType>Component</SubType>
@@ -950,6 +1022,18 @@
     </Compile>
     <Compile Include="WareHousePart\frmTemCheck.Designer.cs">
       <DependentUpon>frmTemCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rpDirectiveProduct.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rpDirectiveProduct.Designer.cs">
+      <DependentUpon>rpDirectiveProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rpQrCodeMold.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rpQrCodeMold.Designer.cs">
+      <DependentUpon>rpQrCodeMold.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Datasource\frmBoxPart.resx">
       <DependentUpon>frmBoxPart.cs</DependentUpon>
@@ -1152,6 +1236,9 @@
     <EmbeddedResource Include="Mold Manager\frmMoldInfor.resx">
       <DependentUpon>frmMoldInfor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mold Manager\frmMoldConFirm.resx">
+      <DependentUpon>frmMoldConFirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mold Manager\frmMoldUsing.resx">
       <DependentUpon>frmMoldUsing.cs</DependentUpon>
     </EmbeddedResource>
@@ -1167,14 +1254,38 @@
     <EmbeddedResource Include="Production Manager\frmBoxInf.resx">
       <DependentUpon>frmBoxInf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmPriceMatImport.resx">
+      <DependentUpon>frmPriceMatImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmBoxInforImport.resx">
+      <DependentUpon>frmBoxInforImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmPriceMatSample.resx">
+      <DependentUpon>frmPriceMatSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmResidualBoxImport.resx">
+      <DependentUpon>frmResidualBoxImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmResidualBoxSample.resx">
+      <DependentUpon>frmResidualBoxSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmBoxInforSample.resx">
+      <DependentUpon>frmBoxInforSample.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmDeliveryDetail.resx">
       <DependentUpon>frmDeliveryDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmExportWareHousePart.resx">
       <DependentUpon>frmExportWareHousePart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmBoxListImport.resx">
+      <DependentUpon>frmBoxListImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmPOFixImportFile.resx">
       <DependentUpon>frmPOFixImportFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmBoxListSample.resx">
+      <DependentUpon>frmBoxListSample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmPOInputImportFile.resx">
       <DependentUpon>frmPOInputImportFile.cs</DependentUpon>
@@ -1184,6 +1295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmPOInputSampleForm.resx">
       <DependentUpon>frmPOInputSampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\frmReBox.resx">
+      <DependentUpon>frmReBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmResidualBox.resx">
       <DependentUpon>frmResidualBox.cs</DependentUpon>
@@ -1221,8 +1335,8 @@
     <EmbeddedResource Include="Production Manager\frmDeliveryRecord.resx">
       <DependentUpon>frmDeliveryRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Production Manager\frmDirectiveParoduct.resx">
-      <DependentUpon>frmDirectiveParoduct.cs</DependentUpon>
+    <EmbeddedResource Include="Production Manager\frmDirectiveProduct.resx">
+      <DependentUpon>frmDirectiveProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\frmPOFix.resx">
       <DependentUpon>frmPOFix.cs</DependentUpon>
@@ -1256,6 +1370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MachineData\frmWeather.resx">
       <DependentUpon>frmWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production Manager\rpBarCodeBox.resx">
+      <DependentUpon>rpBarCodeBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Production Manager\rpDeliveryNote.resx">
       <DependentUpon>rpDeliveryNote.cs</DependentUpon>
@@ -1350,6 +1467,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WareHousePart\frmTemCheck.resx">
       <DependentUpon>frmTemCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpDirectiveProduct.resx">
+      <DependentUpon>rpDirectiveProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rpQrCodeMold.resx">
+      <DependentUpon>rpQrCodeMold.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

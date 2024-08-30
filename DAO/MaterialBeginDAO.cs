@@ -41,8 +41,19 @@ namespace DAO
             }
             return null;
         }
+		public MaterialBeginDTO GetItemMat(int idMat)
+		{
+			string query = "SELECT MaterialBegin.Id, IdMat , MatCode,MatName,WeightMin,TimeMin FROM dbo.Material, dbo.MaterialBegin WHERE Material.Id=IdMat and IdMat= @1 ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { idMat });
+			foreach (DataRow item in data.Rows)
+			{
+				MaterialBeginDTO DTO = new MaterialBeginDTO(item);
+				return DTO;
+			}
+			return null;
+		}
 
-        public int Insert(int idmat, string weight, string time)
+		public int Insert(int idmat, string weight, string time)
         {
             string query = " INSERT dbo.MaterialBegin ( IdMat,WeightMin, TimeMin) VALUES ( @1 , @2 , @3 )";
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idmat,weight,time });

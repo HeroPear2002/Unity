@@ -60,5 +60,23 @@ namespace DAO
 				return 0;
 			}
 		}
+		public int Insert(string boxName, int quantity, string note)
+		{
+			string query = "INSERT BoxNature(BoxName, Quantity,Note) VALUES ( @1 , @2 , @3 ) ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { boxName, quantity, note });
+			return data;
+		}
+		public int Update(int id, string boxName, int quantity, string note)
+		{
+			string query = "Update BoxNature set BoxName= @1  , Quantity= @2  , Note= @3 where Id= @4 ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { boxName, quantity, note, id });
+			return data;
+		}
+		public int Delete(int id)
+		{
+			string query = "Delete BoxNature where Id= @1  ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+			return data;
+		}
 	}
 }

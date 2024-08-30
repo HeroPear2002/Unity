@@ -40,6 +40,7 @@ namespace DProS
         private void btnLogin_Click(object sender, EventArgs e)
         {
             frmMain f = new frmMain();
+            // Chưa lưu lại User đăng nhập
             this.Hide();
             f.ShowDialog();
             this.Show();

@@ -41,6 +41,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -51,7 +52,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
@@ -214,6 +214,13 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Note";
+            this.gridColumn3.FieldName = "Note";
+            this.gridColumn3.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
+            this.gridColumn3.Name = "gridColumn3";
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -311,13 +318,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(238, 24);
             this.layoutControlItem7.Text = "ID:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(22, 13);
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Note";
-            this.gridColumn3.FieldName = "Note";
-            this.gridColumn3.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
-            this.gridColumn3.Name = "gridColumn3";
             // 
             // frmRoomCheckMold
             // 

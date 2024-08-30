@@ -127,7 +127,7 @@ namespace DProS.Production_Manager.PO_Manager
 				{
 					i++;
 					POFixDTO pOFixDTO = POFixDAO.Instance.GetItem(item.Id);
-					PartDTO DTO = PartDAO.Instance.GetItemByPartCode(item.PartCode);
+					PartDTO DTO = PartDAO.Instance.GetItem(item.PartCode);
 					string PartName = DTO.PartName;
 					int countPart = DTO.CountPart;
 					int countBox = (int)Math.Ceiling((Double)item.Quantity / countPart);
@@ -156,7 +156,7 @@ namespace DProS.Production_Manager.PO_Manager
 
 		private void btnApplyDeliverry_Click(object sender, EventArgs e)
 		{
-			frmImpEmCode form = new frmImpEmCode("new");
+			frmImpEmCode form = new frmImpEmCode("mix");
 			form.ShowDialog();
 			frmApproveDelivery f = new frmApproveDelivery();
 			f.ShowDialog();

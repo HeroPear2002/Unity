@@ -18,7 +18,10 @@ namespace DAO
 			set => instance = value;
 		}
 		public FactoryDAO() { }
-
+		public FactoryDTO GetItemFac(string code)
+		{
+			return GetList().Find(x => x.FacCode == code);
+		}
 		public FactoryDTO GetItem(string code)
 		{
 			return GetList().Find(x => x.CodeCus == code);

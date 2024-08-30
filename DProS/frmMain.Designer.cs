@@ -403,7 +403,6 @@
             this.btnOutputPart,
             this.accordionControlSeparator12,
             this.btnInventoryDate});
-			this.btnPartjhgjhg.Expanded = true;
 			this.btnPartjhgjhg.Name = "btnPartjhgjhg";
 			this.btnPartjhgjhg.Text = "KHO THÀNH PHẨM";
 			// 
@@ -470,7 +469,6 @@
             this.btnCheckDelivery,
             this.accordionControlSeparator13,
             this.btnTemCheck});
-			this.btnLotDelivery.Expanded = true;
 			this.btnLotDelivery.Name = "btnLotDelivery";
 			this.btnLotDelivery.Text = "LOT XUẤT HÀNG";
 			// 
@@ -507,6 +505,7 @@
             this.accordionControlSeparator4,
             this.accordionControlElement66,
             this.accordionControlSeparator17});
+			this.accordionControlElement1.Expanded = true;
 			this.accordionControlElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement1.ImageOptions.Image")));
 			this.accordionControlElement1.Name = "accordionControlElement1";
 			this.accordionControlElement1.Text = "QUẢN LÝ CHẤT LƯỢNG";
@@ -587,7 +586,6 @@
             this.accordionControlSeparator20,
             this.accordionControlElement27,
             this.accordionControlSeparator21});
-			this.accordionControlElement2.Expanded = true;
 			this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
 			this.accordionControlElement2.Name = "accordionControlElement2";
 			this.accordionControlElement2.Text = "QUẢN LÝ SẢN XUẤT";
@@ -604,7 +602,6 @@
             this.btnDelivery,
             this.accordionControlSeparator25,
             this.btnDirectiveParoduct});
-			this.accordionControlElement3.Expanded = true;
 			this.accordionControlElement3.Name = "accordionControlElement3";
 			this.accordionControlElement3.Text = "QUẢN LÝ PO";
 			// 
@@ -919,6 +916,7 @@
 			this.btnTableProduct.Name = "btnTableProduct";
 			this.btnTableProduct.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnTableProduct.Text = "SẢN XUẤT";
+			this.btnTableProduct.Click += new System.EventHandler(this.btnTableProduct_Click);
 			// 
 			// accordionControlSeparator40
 			// 
@@ -1081,7 +1079,6 @@
             this.accordionControlSeparator51,
             this.accordionControlElement44,
             this.accordionControlSeparator67});
-			this.accordionControlElement39.Expanded = true;
 			this.accordionControlElement39.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement39.ImageOptions.Image")));
 			this.accordionControlElement39.Name = "accordionControlElement39";
 			this.accordionControlElement39.Text = "THIẾT BỊ/ NHÀ XƯỞNG";
@@ -1183,7 +1180,6 @@
             this.btnCategoryDevice,
             this.accordionControlSeparator64,
             this.btnCharMachine});
-			this.accordionControlElement43.Expanded = true;
 			this.accordionControlElement43.Name = "accordionControlElement43";
 			this.accordionControlElement43.Text = "QUẢN LÝ THIẾT BỊ";
 			// 
@@ -1315,7 +1311,6 @@
             this.btnWeather,
             this.accordionControlSeparator66,
             this.btnCharWeather});
-			this.accordionControlElement44.Expanded = true;
 			this.accordionControlElement44.Name = "accordionControlElement44";
 			this.accordionControlElement44.Text = "NHÀ XƯỞNG";
 			// 
@@ -1601,6 +1596,7 @@
 			this.btnBoxPart.Name = "btnBoxPart";
 			this.btnBoxPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
 			this.btnBoxPart.Text = "HỘP ĐỰNG HÀNG";
+			this.btnBoxPart.Click += new System.EventHandler(this.btnBoxPart_Click);
 			// 
 			// accordionControlSeparator68
 			// 

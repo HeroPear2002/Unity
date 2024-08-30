@@ -28,19 +28,34 @@ namespace DTO
 			this.Note = row["Note"].ToString();
 		}
 
+        public MoldDTO(string moldCode, string moldName, string model, string maker, DateTime dateInput, string where, string dateProduct, string emCode, int shotCount, string note, string numberMold, int id)
+        {
+            MoldCode = moldCode;
+            MoldName = moldName;
+            Model = model;
+            Maker = maker;
+            DateInput = dateInput;
+            Where = where;
+            DateProduct = dateProduct;
+            EmCode = emCode;
+            ShotCount = shotCount;
+            Note = note;
+            NumberMold = numberMold;
+            Id = id;
+        }
 
-		private int id;
-		private string moldCode;
-		private string moldName;
-		private string model;
-		private string maker;
-		private DateTime dateInput;
-		private string where;
-		private string dateProduct;
-		private string emCode;
-		private int shotCount;
-		private string numberMold;
-		private string note;
+        private int id;
+        private string moldCode;
+        private string moldName;
+        private string model;
+        private string maker;
+        private DateTime dateInput;
+        private string where;
+        private string dateProduct;
+        private string emCode;
+        private int shotCount;
+        private string numberMold;
+        private string note;
 
 
 		public string MoldCode { get => moldCode; set => moldCode = value; }

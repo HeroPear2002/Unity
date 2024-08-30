@@ -10,6 +10,7 @@ namespace DAO
 {
 	public class MoldDAO
 	{
+
 		private static MoldDAO instance;
 
 		public static MoldDAO Instance
@@ -42,6 +43,7 @@ namespace DAO
 			string query = "select * from Mold where Id= @1 ";
 			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdMold });
 			MoldDTO a = new MoldDTO(data.Rows[0]);
+
 			return a;
 		}
 
@@ -108,14 +110,32 @@ namespace DAO
 
 
 		#region MoldUsing: Quản lý quá trình vận hành của Khuôn
-		public DataTable GetTableMoldUsing()
+
+		public List<MoldUsingDTO> GetTableMoldUsing()
 		{
 			string query = "select * from MoldUsing,Mold WHERE IdMold = Mold.Id";
 			DataTable data = DataProvider.Instance.ExecuteQuery(query);
-			return data;
+			List<MoldUsingDTO> list = new List<MoldUsingDTO>();
+			foreach (DataRow item in data.Rows)
+			{
+				MoldUsingDTO m = new MoldUsingDTO(item);
+				list.Add(m);
+			}
+			return list;
 		}
 
-
+		public List<MoldUsingDTO> GetTableMoldUsing1M()
+		{
+			string query = "select * from MoldUsing,Mold WHERE ((IdMold = Mold.Id) and (TotalShot>1000000))";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query);
+			List<MoldUsingDTO> list = new List<MoldUsingDTO>();
+			foreach (DataRow item in data.Rows)
+			{
+				MoldUsingDTO m = new MoldUsingDTO(item);
+				list.Add(m);
+			}
+			return list;
+		}
 
 		public int UpdateShotRealMoldUsing(int IdMoldUsing, int ShotReal)
 		{
@@ -145,10 +165,17 @@ namespace DAO
 			return data;
 		}
 
-		public int UpdateConfirmMoldUsing(int IdMoldUsing, int Confirm)
+		public int UpdateCategoryMoldUsing(int IdMoldUsing, string Category)
+		{
+			string query = " update MoldUsing set Category= @Category where  IdMold= @ID ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Category, IdMoldUsing });
+			return data;
+		}
+
+		public int UpdateConfirmMoldUsing(int IdMold, int Confirm)
 		{
 			string query = " update MoldUsing set ConfirmMold= @ConFirm where  IdMold= @ID ";
-			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Confirm, IdMoldUsing });
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Confirm, IdMold });
 			return data;
 		}
 
@@ -172,8 +199,16 @@ namespace DAO
 
 		public MoldUsingDTO GetMoldUsingDTO(int IdMold)
 		{
-			string query = "select * from MoldUsing WHERE IdMold = @id ";
+			string query = "select * from MoldUsing,Mold where IdMold=Mold.Id and IdMold = @id ";
 			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdMold });
+			MoldUsingDTO a = new MoldUsingDTO(data.Rows[0]);
+			return a;
+		}
+
+		public MoldUsingDTO GetMoldUsingDTObyCode(string MoldCode)
+		{
+			string query = "select * from MoldUsing,Mold where IdMold=Mold.Id and MoldCode= @moldCode ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { MoldCode });
 			MoldUsingDTO a = new MoldUsingDTO(data.Rows[0]);
 			return a;
 		}
@@ -182,6 +217,22 @@ namespace DAO
 		{
 			string query = "select * from MoldUsing where IdMold= @mold ";
 			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdMoldUsing });
+			int dem = data.Rows.Count;
+			if (dem > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+
+		public bool CheckMoldUsingExistByCode(string MoldCode)
+		{
+			string query = "select * from MoldUsing,Mold where IdMold=Mold.Id and IdMold= @mold ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { MoldCode });
 			int dem = data.Rows.Count;
 			if (dem > 0)
 			{
@@ -205,6 +256,9 @@ namespace DAO
 			return data;
 		}
 
+
+
+
 		public int UpdateMoldUsing(int IdMold, string StatusMold, int Cav, int CavNG, int ShotPlan, int ShotReality, int TotalShot, int ConfirmMold, string Category,
 			string DateCheck, string PlanMold, int Warn, string Note)
 		{
@@ -212,6 +266,15 @@ namespace DAO
 				" DateCheck= @9 , PlanMold= @10 , Warn= @11 , Note= @12 where IdMold= @13 ";
 			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { StatusMold,Cav, CavNG,  ShotPlan,ShotReality,TotalShot,ConfirmMold, Category,
 			DateCheck,  PlanMold,  Warn, Note, IdMold });
+			return data;
+		}
+
+		// moldCode, shotTC, shotTT, totalShot, category, cav, 0
+		public int UpdateMoldUsingQRcode(int IdMold, int ShotPlan, int ShotReality, int TotalShot, int ConfirmMold, string Category, int Cav)
+		{
+			string query = "UPDATE MoldUsing set ShotPlan= @4 , ShotReality= @5 , TotalShot= @6 , ConfirmMold= @7 , Category= @8 ,Cav= @9  where IdMold= @13 ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query,
+				new object[] { ShotPlan, ShotReality, TotalShot, ConfirmMold, Category, Cav, IdMold });
 			return data;
 		}
 
@@ -298,18 +361,20 @@ namespace DAO
 			}
 		}
 
-		public MoldErrorDTO GetItem(string moldcode)
-		{
-			string query = "SELECT * FROM MoldError WHERE MoldCode = @id ";
-			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { moldcode });
-			MoldErrorDTO a = new MoldErrorDTO(data.Rows[0]);
-			return a;
-		}
+
 
 		public MoldErrorDTO GetItemMoldErrorDTO(int Id)
 		{
 			string query = "SELECT * FROM MoldError WHERE Id = @id ";
 			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { Id });
+			MoldErrorDTO a = new MoldErrorDTO(data.Rows[0]);
+			return a;
+		}
+
+		public MoldErrorDTO GetMoldErrorDTObyCode(string NameError)
+		{
+			string query = "SELECT * FROM MoldError WHERE Name = @name ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { NameError });
 			MoldErrorDTO a = new MoldErrorDTO(data.Rows[0]);
 			return a;
 		}
@@ -355,11 +420,17 @@ namespace DAO
 
 
 
-		public DataTable GetHistoryOfMold(int IdMold)
+		public List<MoldHistoryDTO> GetHistoryOfMold(int IdMold)
 		{
 			string query = "select * from MoldHistory,Machine WHERE ((IdMachine = Machine.Id) and (IdMold= @id ))";
 			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdMold });
-			return data;
+			List<MoldHistoryDTO> Ls = new List<MoldHistoryDTO>();
+			foreach (DataRow item in data.Rows)
+			{
+				MoldHistoryDTO a = new MoldHistoryDTO(item);
+				Ls.Add(a);
+			}
+			return Ls;
 		}
 
 		public List<MoldDTO> GetLsMoldHistoryDTO()
@@ -383,6 +454,15 @@ namespace DAO
 				LsMoldDTO.Add(b);
 			}
 			return LsMoldDTO;
+		}
+
+
+		public MoldHistoryDTO GetMoldHistoryDTO(int IdHistory)
+		{
+			string query = "select * from MoldHistory where Id= @id ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdHistory });
+			MoldHistoryDTO a = new MoldHistoryDTO(data.Rows[0]);
+			return a;
 		}
 
 
@@ -414,13 +494,13 @@ namespace DAO
 			return data;
 		}
 
-		public int UpdateMoldHistory(int Id, int IdMachine, int IdMold, DateTime DateError, int CountShort, int TotalShort, string Category, string Error, string TribeError, string Detail,
-		   DateTime DateStart, DateTime DateEnd, string TotalTime, string Detail1, string Detail2, string Detail3, string Detail4, string Detail5, string Detail6)
+		public int UpdateMoldHistory(int Id, int IdMachine, DateTime DateError, int CountShort, int TotalShort, string Category, string Error, string TribeError, string Detail,
+		   DateTime DateStart, DateTime DateEnd, int TotalTime, string Detail1, string Detail2, string Detail3, string Detail4, string Detail5, string Detail6)
 		{
-			string query = "UPDATE MoldHistory set IdMachine= @1 ,IdMold= @2 ,DateError= @3 ,CountShort= @4 ,TotalShort= @5 ,Category= @6 ,Error= @7 ,TribeError= @8 ,Detail= @9 ," +
+			string query = "UPDATE MoldHistory set IdMachine= @1 ,DateError= @3 ,CountShort= @4 ,TotalShort= @5 ,Category= @6 ,Error= @7 ,TribeError= @8 ,Detail= @9 ," +
 						   "DateStart= @10 ,DateEnd= @11 ,TotalTime= @12 ,Detail1= @13 ,Detail2= @14 ,Detail3= @15 ,Detail4= @16 ,Detail5= @17 ,Detail6= @18 where Id= @19 ";
-			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] {IdMachine,IdMold,DateError,CountShort,TotalShort,Category,Error,TribeError,Detail,DateStart,DateEnd,TotalTime,Detail1
-				,Detail2,Detail3,Detail4,Detail5,Detail6 });
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] {IdMachine,DateError,CountShort,TotalShort,Category,Error,TribeError,Detail,DateStart,DateEnd,TotalTime,Detail1
+				,Detail2,Detail3,Detail4,Detail5,Detail6,Id });
 			return data;
 		}
 
@@ -435,6 +515,83 @@ namespace DAO
 
 		#endregion
 
+		#region Xác nhận khuôn.
 
+
+		// insert MoldConFirm(IdMold, IdEmPC, TimePC, IdEmQC, TimeQC, IdEmTool, TimeTool)
+
+
+		public int InsertMoldConfirm(int IdMold, int IdEmPC, DateTime TimePC, int IdEmQC, DateTime TimeQC, int IdEmTool, DateTime TimeTool)
+		{
+			string query = "insert MoldConFirm(IdMold, IdEmPC, TimePC, IdEmQC, TimeQC, IdEmTool, TimeTool)" +
+								" values( @1 , @2 , @3 , @4 , @5 , @6 , @7 )";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { IdMold, IdEmPC, TimePC, IdEmQC, TimeQC, IdEmTool, TimeTool });
+			return data;
+		}
+
+		// Check khuôn có đang xác nhận hay không
+		// Đang xác nhận thì Update.
+		// Không đang xác nhận thì Insert.
+
+		public bool CheckConfirming(int IdMold)
+		{
+			string query = " select * from MoldConFirm where IdMold= @mold and (IdEmPC=0 or IdEmQC=0 or IdEmTool=0 )";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdMold });
+			int Count = data.Rows.Count;
+			if (Count > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+
+		public MoldConFirmDTO GetConfirmingDTO(int IdMold)
+		{
+			string query = " select * from MoldConFirm where IdMold= @mold and (IdEmPC=0 or IdEmQC=0 or IdEmTool=0 )";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { IdMold });
+			MoldConFirmDTO a = new MoldConFirmDTO(data.Rows[0]);
+			return a;
+		}
+
+		public MoldConFirmDTO GetConfirmingDTObyId(int Id)
+		{
+			string query = " select * from MoldConFirm where Id= @id ";
+			DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { Id });
+			MoldConFirmDTO a = new MoldConFirmDTO(data.Rows[0]);
+			return a;
+		}
+
+
+		public int UpdateConFirmPC(int Id, int IdEmPC, DateTime TimePC)
+		{
+			string query = "Update MoldConFirm set IdEmPC= @idEm ,TimePC= @TimePC WHERE Id= @Id ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { IdEmPC, TimePC, Id });
+			return data;
+		}
+
+		public int UpdateConFirmQC(int Id, int IdEmQC, DateTime TimeQC)
+		{
+			string query = "Update MoldConFirm set IdEmQC= @idEm ,TimeQC= @TimeQC WHERE Id= @Id ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { IdEmQC, TimeQC, Id });
+			return data;
+		}
+
+
+		// insert MoldConFirm(IdMold, IdEmPC, TimePC, IdEmQC, TimeQC, IdEmTool, TimeTool)
+
+		public int UpdateConFirmTool(int Id, int IdEmTool, DateTime TimeTool)
+		{
+			string query = "Update MoldConFirm set IdEmTool= @idEm ,TimeTool= @TimeTool WHERE Id= @Id ";
+			int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { IdEmTool, TimeTool, Id });
+			return data;
+		}
+
+
+
+		#endregion
 	}
 }

@@ -62,10 +62,7 @@ namespace DProS.Production_Manager
 					listDE = DeliveryDetailDAO.Instance.GetList(id);
 					foreach (DeliveryDetailDTO item in listDE)
 					{
-						long idPOInput = POInputDAO.Instance.GetItem(item.POCode).Id;
 						bool update = POFixDAO.Instance.Update(item.Id, 2, item.Quantity);
-						// Thay các trường phù hợp vào Insert để thêm vào OutputPart
-						POOutputDAO.Instance.Insert(0, dtpkDateOut.Value, idem, item.Quantity, "", id, idPOInput,"");
 						if (update)
 						{
 							POFixDAO.Instance.Update(item.Id, 2, "PO đã xuất");

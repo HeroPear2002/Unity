@@ -2,6 +2,7 @@
 using DevExpress.XtraBars.FluentDesignSystem;
 using DProS.WareHouseMat;
 using DProS.Mold_Manager;
+using DProS.Production_Manager;
 using DProS.Production_Manager.Box_Manager;
 using DProS.Production_Manager.Oder_Manager;
 using DProS.Production_Manager.PO_Manager;
@@ -65,7 +66,7 @@ namespace DProS
         }
         private void btnProgress_Click(object sender, EventArgs e)
         {
-            OpenForm(typeof(frmLogin));
+            //OpenForm(typeof(frmLogin));
             //if (_uCProgress == null)
             //{
             //    _uCProgress = new uCProgress();
@@ -165,8 +166,8 @@ namespace DProS
 
         private void btnDirectiveParoduct_Click(object sender, EventArgs e)
 		{
-			CloseForm(typeof(frmDirectiveParoduct));
-			OpenForm(typeof(frmDirectiveParoduct));
+			CloseForm(typeof(frmDirectiveProduct));
+			OpenForm(typeof(frmDirectiveProduct));
         }
 
         private void btnBox_Click(object sender, EventArgs e)
@@ -448,6 +449,17 @@ namespace DProS
 		{
 			CloseForm(typeof(frmTem4M));
 			OpenForm(typeof(frmTem4M));
+		}
+
+		private void btnBoxPart_Click(object sender, EventArgs e)
+		{
+			CloseForm(typeof(frmBoxPart));
+			OpenForm(typeof(frmBoxPart));
+		}
+
+		private void btnTableProduct_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
